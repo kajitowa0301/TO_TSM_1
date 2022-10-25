@@ -113,3 +113,27 @@ body{
     transform: translateY(3px);
 
 }
+
+/* いいねボタンの色 */
+.example2 label{
+    color: #CCC;
+}
+.example2 input:checked+label{
+    /* background:pink; */
+     color: pink; 
+}
+.example2 input{
+    display: none;
+}
+
+.card-title{
+    text-align: left;
+    float:left;
+}
+.nedan_2{
+    text-align: left;
+    float:left;
+}
+.clear{
+    clear: both;
+}
