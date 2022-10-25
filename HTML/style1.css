@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+#midasi{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 5ex;
+}
+
+.icon_color{
+color: aliceblue;
+}
+
+.font_whight{
+    font-weight: 900;
+    /* font-family: 'Caveat', cursive; */
+        font-family: 'Itim', cursive; 
+       /* font-family: 'Sacramento', cursive; */
+       text-align: center;
+       font-size: 5ex;
+}
+
+.noline{
+    text-decoration: none;
+    color: black;
+}
+
+/* TELL
+手島先生
+090-8628-3330 
+*/
+
+/* 写真統一のCSS */
+.img_unification{
+   width: 100%;
+   height: 80%;
+   
+}
+
+
+/* 商品説明のCSS */
+.reji{
+    margin-top: 5%;
+    text-align: right;
+}
+
+.mae{
+    margin-top: 5%;
+    text-align: left;
+	    float: left
+}
+
+.nedan{
+    text-align: right;
+}
+
+.ce{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.button{
+    text-align: center;
+}
+
+.size{
+    margin-top: 5%;
+    margin-right: 0%;
+    text-align: right;
+    border-radius: 20%;
+    font-size: larger;   
+}
+.suryou{
+    margin-top: 5%;
+    margin-right: 0%;
+    text-align: right;
+    border-radius: 20%;
+}
+
+img {
+    transition-duration: 0.3s;
+}
+
+img:hover {
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+body{
+    padding-top:7.75rem;
+}
