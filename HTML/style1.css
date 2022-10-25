@@ -91,3 +91,25 @@ img:hover {
 body{
     padding-top:7.75rem;
 }
+/*ログイン*/
+.button_solid003 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 230px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #282828;
+    border-radius: 8px;
+    border-bottom: solid 5px #474849;
+    
+}
+.button_solid003 a:hover {
+    border-bottom: solid 2px #7c7c7c;
+    transform: translateY(3px);
+
+}
