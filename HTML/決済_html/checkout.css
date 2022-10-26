@@ -2,11 +2,10 @@
     max-width: 960px;
   }
 
-  .re_button{
-    text-align: right;
+  .kakutei_button{
+    float: right;
 }
 
-.kakutei_button{
-    text-align: left;
-	    float: left;
+.modoru_button{
+    float: left;
 }
