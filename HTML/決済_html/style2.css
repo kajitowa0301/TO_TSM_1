@@ -1,13 +1,51 @@
+/* font-family */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+
+#midasi{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 5ex;
+}
+
 .reji{
+    margin-top: auto;
+    margin-right: 5%;
     text-align: right;
 }
 
 .mae{
+    margin-top: auto;
+    margin-left: 5%;
     text-align: left;
-	    float: left
+	    float: left;
 }
 
 .kessai_img_size{
     width: 30%;
     height: 20%;
 }
+
+/*ログイン*/
+.button_solid003 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 230px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background:#282828;
+    border-radius: 8px;
+    border-bottom: solid 5px #474849;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+.button_solid003 a:hover {
+    border-bottom: solid 2px #7c7c7c;
+    transform: translateY(3px);
+
+}
+
