@@ -7,7 +7,7 @@ CREATE TABLE customers(
     customers_postcode CHAR(7) NOT NULL,
     customers_pref VARCHAR(191) NOT NULL,
     customers_address VARCHAR(191) NOT NULL,
-    customers_subaddress VARCHAR(191) NOT NULL
+    customers_subaddress VARCHAR(191)
 );
 CREATE TABLE makers(
     makers_id INT PRIMARY KEY,
