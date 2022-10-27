@@ -1,0 +1,103 @@
+/* ログイン画面用のデザイン */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* 見出し */
+#midasi{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 5ex;
+}
+/*フッター */
+.margin-top{
+margin-top: 10%;
+}
+
+/*ログイン*/
+.button_solid003 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:0 auto;
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background:#282828;
+    border-radius: 8px;
+    border-bottom: solid 5px #474849;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+.button_solid003 a:hover {
+    border-bottom: solid 2px #7c7c7c;
+    transform: translateY(3px);
+
+}
+.p-text-weight{
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    margin-left: 10%;
+    letter-spacing: 20px;
+}
+
+.bottom{
+    margin-bottom: 40px;
+}
+
+.login_top{
+    background-color: #eee;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    padding-top: 5%;
+    padding-bottom: 10px;
+}
+
+.login-botton{
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding:25px;
+    font-size: 30px;
+    color:white;
+    background-color: #0066ff;
+    border-color: white;
+    border-style: none;
+    cursor: pointer;
+    
+}
+.login-botton:hover{
+    background-color: violet;
+}
+
+.text-width{
+    width:50%;
+    padding:20px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    box-shadow:5px 5px 5px #7c7c7c;
+}
+.h4_font{
+    margin-right: 45%;
+}
+.user-sign-up{
+    margin: 20px;
+    text-decoration: none;
+    color:#000;
+    font-size: 120%;
+    font-weight: 600;
+}
+.user-sign-up:hover{
+    color: #0066ff;
+}
