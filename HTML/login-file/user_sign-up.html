@@ -71,12 +71,12 @@ $db = new DBManager();
                         <!-- 検索ドロップ終わり -->
         </nav>
     </div>
-    <h1 style="font-size:50px; color: tomato;">はよ新規登録しろや！！🤬</h1>
+    <!-- <h1 style="font-size:50px; color: tomato;">はよ新規登録しろや！！🤬</h1> -->
     <p class="p-top-font"><i class="bi bi-person-lines-fill"></i>新規登録画面</p>
     <div class="container">
         <div class="back-color-center">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
-            <?php
+            <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-2"])) {
                     // 新規登録完了
@@ -84,33 +84,39 @@ $db = new DBManager();
                     // 登録失敗
                 }
             }
-            ?>
+            ?> -->
             <!-- formにactionは指定しないようお願いします -->
             <form method="POST">
                 <h4 class="font-position">メールアドレス</h4>
-                <input type="text" name="mail" class="list"><br>
+                <input type="text" name="mail" class="list" placeholder="totsm@2022.com"><br>
                 <h4 class="font-position">パスワード</h4>
-                <input type="password" name="pass" class="list"><br>
+                <input type="password" name="pass" class="list" placeholder="totsm-2022"><br>
                 <h4 class="font-position">姓</h4>
-                <input type="text" name="sei" class="list"><br>
+                <input type="text" name="sei" class="list" placeholder="麻生"><br>
                 <h4 class="font-position">名</h4>
-                <input type="text" name="name" class="list"><br>
+                <input type="text" name="name" class="list" placeholder="太郎"><br>
                 <h4 class="font-position">郵便番号</h4>
                 <!-- 郵便番号入力(7桁) -->
-                <input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" class="list"><br>
+                <input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" class="list" placeholder="8200054"><br>
                 <h4 class="font-position">住所１</h4>
                 <!-- 住所入力(都道府県+以降の住所) -->
                 <!-- 
                 ↑データベースの都合上、都道府県は別のフィールドにしていただきたいです
                 アカウント名は無くしますか？
              -->
-                <input type="text" name="adress-1" class="list"><br>
+                <input type="text" name="adress-1" class="list" placeholder="飯塚市三丸599-10"><br>
                 <h4 class="font-position">住所２</h4>
+<<<<<<< Updated upstream
                 <input type="text" name="adress-2" class="list"><br>
 
 
                 <button type="submit">新規登録</button>
+=======
+                <input type="text" name="adress-2" class="list" placeholder="パークノヴァ春日原303号室"><br>
+
+>>>>>>> Stashed changes
             </form>
+            <input type="button" name="button" class="button_font" value="会員登録する">
         </div>
     </div>
     <!--フッター始まり-->
