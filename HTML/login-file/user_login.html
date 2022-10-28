@@ -88,7 +88,7 @@ $db = new DBManager();
                 <input type="text" name="mail" class="text-width" placeholder="totsm2022@login.com"><br><br>
                 <h4 class="h4_font">Password</h4>
                 <input type="password" name="pass" class=" text-width" placeholder="totsm2022_Pass"><br>
-                <p><?php 
+                <p class = "log_err"><?php 
                         if($_SERVER['REQUEST_METHOD'] == "POST") {
                             try {
                                 $a = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
