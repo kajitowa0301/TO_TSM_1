@@ -41,11 +41,19 @@
     border-bottom: solid 5px #474849;
     text-decoration: none;
     color: rgb(255, 255, 255);
+   
     
 }
 .button_solid003 a:hover {
     border-bottom: solid 2px #7c7c7c;
     transform: translateY(3px);
+    
 
 }
+.button_solid003 a{
+    margin-bottom:10% ;
+}
+
+
+
 
