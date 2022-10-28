@@ -76,7 +76,7 @@ $db = new DBManager();
         <div class="back-color-center">
             <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST[""], $_POST[""], $_POST[""], $_POST[""], $_POST[""], $_POST[""], $_POST[""], $_POST[""], $_POST[""])) {
+                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-1"])) {
                     // 新規登録完了
                 } else {
                     // 登録失敗
@@ -96,6 +96,10 @@ $db = new DBManager();
             <input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" class="list"><br>
             <h4 class="font-position">住所１</h4>
             <!-- 住所入力(都道府県+以降の住所) -->
+            <!-- 
+                ↑データベースの都合上、都道府県は別のフィールドにしていただきたいです
+                アカウント名は無くしますか？
+             -->
             <input type="text" name="adress-1" class="list"><br>
             <h4 class="font-position">住所２</h4>
             <input type="text" name="adress-2" class="list"><br>
