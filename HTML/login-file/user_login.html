@@ -88,10 +88,13 @@ $db = new DBManager();
                 <input type="text" name="mail" class="text-width" placeholder="totsm2022@login.com"><br><br>
                 <h4 class="h4_font">Password</h4>
                 <input type="password" name="pass" class=" text-width" placeholder="totsm2022_Pass"><br>
+            <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
+
                 <p><?php 
                         if($_SERVER['REQUEST_METHOD'] == "POST") {
                             try {
                                 $a = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
+                                // ユーザ情報をセッション変数に入れてトップページに飛ばす
                             } catch(Exception $e) {
                                 echo $e->getMessage();
                             }
@@ -100,7 +103,8 @@ $db = new DBManager();
                 </p>
                         
 
-                <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a>
+                <!-- <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a> -->
+                <button type="submit">ログイン</button>
             </form>
             <a href="./user_sign-up.html" class="user-sign-up">
                 <p>はじめてご利用の方(新規会員登録)</p>

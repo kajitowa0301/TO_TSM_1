@@ -78,7 +78,7 @@ $db = new DBManager();
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
             <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-1"])) {
+                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-2"])) {
                     // 新規登録完了
                 } else {
                     // 登録失敗
@@ -109,7 +109,7 @@ $db = new DBManager();
                 <input type="text" name="adress-2" class="list"><br>
 
 
-
+                <button type="submit">新規登録</button>
             </form>
         </div>
     </div>
