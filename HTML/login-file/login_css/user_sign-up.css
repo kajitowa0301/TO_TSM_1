@@ -41,4 +41,11 @@
 
 .back-color-center{
     background-color: #eee;
+    text-align: center;
+    width: 80%;
+    margin:auto
+}
+
+.list{
+    width:80%
 }
