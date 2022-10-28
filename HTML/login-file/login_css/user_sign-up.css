@@ -33,3 +33,12 @@
     transform: translateY(3px);
 
 }
+
+.p-top-font{
+    font-size: 40px;
+    font-weight:900;   
+}
+
+.back-color-center{
+    background-color: #eee;
+}
