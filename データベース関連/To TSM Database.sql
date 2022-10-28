@@ -34,7 +34,7 @@ CREATE TABLE items(
 );
 CREATE TABLE itemsinfo(
     items_id INT,
-    itemsinfo_size VARCHAR(191),
+    itemsinfo_size VARCHAR(191) UNIQUE,
     itemsinfo_stock INT NOT NULL,
     itemsinfo_width INT,
     itemsinfo_height INT,
@@ -59,6 +59,6 @@ CREATE TABLE details(
     details_vol INT NOT NULL,
     PRIMARY KEY(buys_id, items_id, itemsinfo_size),
     FOREIGN KEY fkey1 (buys_id) REFERENCES buys(buys_id),
-    FOREIGN KEY fkey2 (items_id) REFERENCES items(items_id),
+    FOREIGN KEY fkey2 (items_id) REFERENCES itemsinfo(items_id),
     FOREIGN KEY fkey3 (itemsinfo_size) REFERENCES itemsinfo(itemsinfo_size)
 );
