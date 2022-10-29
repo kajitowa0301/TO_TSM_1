@@ -31,9 +31,9 @@ $db = new DBManager();
                 <div class="btn-toolbar">
                     <div class="btn-toolbar">
                         <!--新規登録-->
-                        <div class="button_solid003">
+                        <!-- <div class="button_solid003">
                             <a href="./user_sign-up.html">新規登録</a>
-                        </div>
+                        </div> -->
                         <!-- 新規登録 -->
 
                         <!-- ログインボタン -->
@@ -80,7 +80,7 @@ $db = new DBManager();
         </nav>
     </div>
     <!-- ログイン始まり -->
-    <p class="p-text-weight">ログイン</p>
+    <p class="p-text-weight"><i class="bi bi-person-circle"></i>ログイン</p>
     <div class="container">
         <div class="login_top">
             <form action="#" method="post">
@@ -91,7 +91,7 @@ $db = new DBManager();
                 <p class = "log_err"><?php 
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
 
-                <p><?php 
+                <!-- <p><?php 
                         if($_SERVER['REQUEST_METHOD'] == "POST") {
                             try {
                                 $a = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
@@ -101,11 +101,11 @@ $db = new DBManager();
                             }
                         }
                     ?>
-                </p>
+                </p> -->
                         
 
-                <!-- <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a> -->
-                <button type="submit">ログイン</button>
+                <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a>
+                <!-- <button type="submit"class="login-botton" onclick="location.href='./../決済_html/住所登録.html'">ログイン</button> -->
             </form>
             <a href="./user_sign-up.html" class="user-sign-up">
                 <p>はじめてご利用の方(新規会員登録)</p>
