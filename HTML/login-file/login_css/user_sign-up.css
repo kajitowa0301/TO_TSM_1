@@ -63,8 +63,8 @@
     border-radius: 10px;
     margin-top: 5%;
     margin-bottom: 3%;
-    padding: 25px;
-    font-size: 30px;
+    padding: 20px;
+    font-size: 20px;
     color: white;
     background-color: #06f;
     border-color: white;
@@ -78,3 +78,28 @@
     margin-left: 25px;
     padding-top: 5%;
 }
+/* 郵便番号 */
+.p-postal-code{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+/*住所１*/
+.p-region{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+/* 住所２ */
+.p-locality{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+
