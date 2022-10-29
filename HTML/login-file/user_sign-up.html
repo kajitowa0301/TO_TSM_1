@@ -103,18 +103,16 @@ $db = new DBManager();
                 <h4 class="font-position">名</h4>
                 <input type="text" name="name" class="list" placeholder="太郎"><br>
                 <h4 class="font-position">郵便番号</h4>
-                <!-- 郵便番号入力(7桁) -->
-                <input type="text" name="yuubin" size="10" maxlength="8"
-                    onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" class="list" placeholder="8200054"><br>
-                <h4 class="font-position">住所１</h4>
-                <!-- 住所入力(都道府県+以降の住所) -->
-                <!-- 
-                ↑データベースの都合上、都道府県は別のフィールドにしていただきたいです
-                アカウント名は無くしますか？
-             -->
-                <input type="text" name="adress" class="list" placeholder="飯塚市三丸599-10"><br>
-                <h4 class="font-position">住所２</h4>
-                <input type="text" name="adress-2" class="list" placeholder="パークノヴァ春日原３０３号室"><br>
+                <!-- 郵便番号入力(8桁) -->
+                <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+                <div class="h-adr">
+                    <span class="p-country-name" style="display:none;">Japan</span>
+                    <input type="text" class="p-postal-code" size="8" maxlength="8" placeholder="820-0054"><br>
+                    <h4 class="font-position">住所１</h4>
+                    <input type="text" class="p-region"placeholder="福岡県" /><br>
+                    <h4 class="font-position">住所２</h4>
+                    <input type="text" class="p-locality p-street-address p-extended-address"placeholder="春日市春日原東町" /><br>
+                </div>
             </form>
             <input type="button" name="button" class="button_font" value="会員登録する">
         </div>
