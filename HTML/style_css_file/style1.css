@@ -168,8 +168,8 @@ body{
     display: none;
 }
 .card{
-    border-style: solid ;
-    border-width: 6px;
+    border-style:solid;
+    border-width: 1em;
     border-color: #eee;
     /* border-right-width: 6px; */
 }
