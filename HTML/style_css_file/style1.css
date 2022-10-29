@@ -57,10 +57,28 @@ color: aliceblue;
 .ce{
     text-align: center;
     margin-top: 10%;
+    margin-bottom:5%;
 }
-
-.button{
+.div_button{
     text-align: center;
+}
+.button_kounyuu{
+    width:30%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-bottom:2em;
+    border-radius: 8px;
+    background-color:white;
+    color: #06f;;
+    border-style: solid;
+    border-color: #0066ff;
+}
+.button_kounyuu:hover{
+    background-color: #0066ff;
+    border-style: solid;
+    color:white;
+    box-shadow:2px 2px 5px #7c7c7c;
 }
 
 .size{
