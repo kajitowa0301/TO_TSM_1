@@ -101,3 +101,11 @@ margin-top: 10%;
 .user-sign-up:hover{
     color: #0066ff;
 }
+
+/* ログイン時のエラー */
+.log_err {
+    color:red;
+}
+.button_solid003 a{
+    margin-right: 10px;
+}

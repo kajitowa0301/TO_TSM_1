@@ -36,16 +36,70 @@
 
 .p-top-font{
     font-size: 40px;
-    font-weight:900;   
+    font-weight:900;
+    margin-left: 3%; 
+    margin-top: 5%;
 }
 
 .back-color-center{
     background-color: #eee;
     text-align: center;
     width: 80%;
-    margin:auto
+    margin:auto;
+    border-radius: 10px;
+    padding: 10%;
 }
 
 .list{
-    width:80%
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
 }
+
+.button_font{
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #06f;
+    border-color: white;
+    border-style: none;
+    cursor: pointer;
+}
+
+.font-position{
+    font-size: 30px;
+    text-align: left;
+    margin-left: 25px;
+    padding-top: 5%;
+}
+/* 郵便番号 */
+.p-postal-code{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+/*住所１*/
+.p-region{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+/* 住所２ */
+.p-locality{
+    width:80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 3%;
+    box-shadow: 5px 5px 15px #444;
+}
+

@@ -12,7 +12,8 @@ $db = new DBManager();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./login_css/user_sign-up.css">
     <title>新規登録画面</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
@@ -43,74 +44,77 @@ $db = new DBManager();
                         <!-- ログインボタン -->
 
                         <!--お気に入り閲覧ボタン始  -->
-                        <button class="navbar-toggler" type="button" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+                        <button class="navbar-toggler" type="button" data-bs-target="#navbar" aria-controls="navbar"
+                            aria-expanded="false">
                             <i class="bi bi-person-heart"></i></button>
                         <!-- お気に入り閲覧ボタン終 -->
 
                         <!-- 検索のアイコン -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                            aria-controls="navbar" aria-expanded="false">
                             <i class="bi bi-search"></i>
                         </button>
 
                         <!-- カゴのアイコン -->
-                        <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i class="bi bi-cart4"></i></button>
+                        <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i
+                                class="bi bi-cart4"></i></button>
                         <!-- 検索ドロップ -->
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav me-auto mb-2">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="./../janru_html/outer.html">-----outer-----</a>
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./../janru_html/outer.html">-----outer-----</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="./../janru_html/sweat.html">-----sweat-----</a>
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./../janru_html/sweat.html">-----sweat-----</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="./../janru_html/pants.html">-----pants-----</a>
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./../janru_html/pants.html">-----pants-----</a>
                                 </li>
                             </ul>
                         </div>
                         <!-- 検索ドロップ終わり -->
         </nav>
     </div>
-    <h1 style="font-size:50px; color: tomato;">はよ新規登録しろや！！🤬</h1>
+    <!-- <h1 style="font-size:50px; color: tomato;">はよ新規登録しろや！！🤬</h1> -->
     <p class="p-top-font"><i class="bi bi-person-lines-fill"></i>新規登録画面</p>
     <div class="container">
         <div class="back-color-center">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
-            <?php
+            <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-1"])) {
+                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-2"])) {
                     // 新規登録完了
                 } else {
                     // 登録失敗
                 }
             }
-            ?>
+            ?> -->
             <!-- formにactionは指定しないようお願いします -->
             <form method="POST">
                 <h4 class="font-position">メールアドレス</h4>
-                <input type="text" name="mail" class="list"><br>
+                <input type="text" name="mail" class="list" placeholder="totsm@2022.com"><br>
                 <h4 class="font-position">パスワード</h4>
-                <input type="password" name="pass" class="list"><br>
+                <input type="password" name="pass" class="list" placeholder="totsm-2022"><br>
                 <h4 class="font-position">姓</h4>
-                <input type="text" name="sei" class="list"><br>
+                <input type="text" name="sei" class="list" placeholder="麻生"><br>
                 <h4 class="font-position">名</h4>
-                <input type="text" name="name" class="list"><br>
+                <input type="text" name="name" class="list" placeholder="太郎"><br>
                 <h4 class="font-position">郵便番号</h4>
-                <!-- 郵便番号入力(7桁) -->
-                <input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" class="list"><br>
-                <h4 class="font-position">住所１</h4>
-                <!-- 住所入力(都道府県+以降の住所) -->
-                <!-- 
-                ↑データベースの都合上、都道府県は別のフィールドにしていただきたいです
-                アカウント名は無くしますか？
-             -->
-                <input type="text" name="adress-1" class="list"><br>
-                <h4 class="font-position">住所２</h4>
-                <input type="text" name="adress-2" class="list"><br>
-
-
-
+                <!-- 郵便番号入力(8桁) -->
+                <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+                <div class="h-adr">
+                    <span class="p-country-name" style="display:none;">Japan</span>
+                    <input type="text" class="p-postal-code" size="8" maxlength="8" placeholder="820-0054"><br>
+                    <h4 class="font-position">住所１</h4>
+                    <input type="text" class="p-region"placeholder="福岡県" /><br>
+                    <h4 class="font-position">住所２</h4>
+                    <input type="text" class="p-locality p-street-address p-extended-address"placeholder="春日市春日原東町" /><br>
+                </div>
             </form>
+            <input type="button" name="button" class="button_font" value="会員登録する">
         </div>
     </div>
     <!--フッター始まり-->
@@ -127,7 +131,8 @@ $db = new DBManager();
         </footer>
     </div>
     <!-- フッター終わり -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 </body>
