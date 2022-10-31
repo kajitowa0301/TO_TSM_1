@@ -47,7 +47,7 @@
     width: 80%;
     margin:auto;
     border-radius: 10px;
-    padding: 10%;
+    padding: 5%;
 }
 
 .list{
@@ -59,10 +59,10 @@
 }
 
 .button_font{
-    width: 80%;
+    width: 90%;
     border-radius: 10px;
-    margin-top: 5%;
-    margin-bottom: 3%;
+    margin-top: 10%;
+    margin-bottom: 15px;
     padding: 20px;
     font-size: 20px;
     color: white;
