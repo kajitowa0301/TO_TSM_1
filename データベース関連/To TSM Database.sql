@@ -30,11 +30,11 @@ CREATE TABLE items(
     items_genre VARCHAR(191) NOT NULL,
     items_material VARCHAR(191) NOT NULL,
     items_color VARCHAR(191) NOT NULL,
-    FOREIGN KEY fkey1 (makers_id) REFERENCES makers(makers_id)
+    FOREIGN KEY fkey2 (makers_id) REFERENCES makers(makers_id)
 );
 CREATE TABLE itemsinfo(
     items_id INT,
-    itemsinfo_size VARCHAR(191) UNIQUE,
+    itemsinfo_size VARCHAR(191),
     itemsinfo_stock INT NOT NULL,
     itemsinfo_width INT,
     itemsinfo_height INT,
@@ -49,16 +49,16 @@ CREATE TABLE itemsinfo(
     itemsinfo_inseam INT,
     itemsinfo_rise INT,
     itemsinfo_thigh INT,
-    PRIMARY KEY(items_id, itemsinfo_size),
-    FOREIGN KEY fkey1 (items_id) REFERENCES items(items_id)
+    FOREIGN KEY fkey3 (items_id) REFERENCES items(items_id),
+    PRIMARY KEY(items_id, itemsinfo_size)
 );
 CREATE TABLE details(
     buys_id INT,
     items_id INT,
     itemsinfo_size VARCHAR(191),
     details_vol INT NOT NULL,
-    PRIMARY KEY(buys_id, items_id, itemsinfo_size),
-    FOREIGN KEY fkey1 (buys_id) REFERENCES buys(buys_id),
-    FOREIGN KEY fkey2 (items_id) REFERENCES itemsinfo(items_id),
-    FOREIGN KEY fkey3 (itemsinfo_size) REFERENCES itemsinfo(itemsinfo_size)
+    FOREIGN KEY fkey4 (buys_id) REFERENCES buys(buys_id),
+    FOREIGN KEY fkey5 (items_id, itemsinfo_size) REFERENCES itemsinfo(items_id, itemsinfo_size),
+    -- FOREIGN KEY fkey6 (itemsinfo_size) REFERENCES itemsinfo(itemsinfo_size),
+    PRIMARY KEY(buys_id, items_id, itemsinfo_size)
 );
