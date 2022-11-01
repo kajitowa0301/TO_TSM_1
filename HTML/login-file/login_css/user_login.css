@@ -109,3 +109,8 @@ margin-top: 10%;
 .button_solid003 a{
     margin-right: 10px;
 }
+/* ナブバ―のボタンのフォントサイズ */
+.font-word-break{
+    font-size: 15px;   
+    color: #eee;
+  }
