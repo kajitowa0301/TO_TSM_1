@@ -213,3 +213,8 @@ body{
     border-style:none;
     box-shadow:0px 3px 10px #666;
 }
+
+.font-word-break{
+  font-size: 15px;   
+  color: #eee;
+}
