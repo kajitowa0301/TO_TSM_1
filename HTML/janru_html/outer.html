@@ -23,6 +23,7 @@
       background-size: cover;
       background-position: center 60%;
     }
+
     #photo {
       width: 100%;
       height: 300px;
@@ -40,6 +41,7 @@
   </style>
   <!-- ジャンボトロン -->
 </head>
+
 <body>
   <!-- ナブバーの記述始まり -->
   <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -49,7 +51,7 @@
       </a>
       <div class="btn-toolbar">
         <div class="btn-toolbar">
-           <!-- 新規登録ボタン
+          <!-- 新規登録ボタン
            <div class="button_solid003">
             <a href="https://zozo.jp/_member/regist/?pattern=">新規登録
             </a>
@@ -61,46 +63,58 @@
             <a href="./../login-file/user_login.html">ログイン</a>
           </div>
           <!-- ログインボタン -->
-          <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler" type="button" data-bs-target="#navbar" aria-controls="navbar"
-            aria-expanded="false">
-            <i class="bi bi-person-heart"></i></button>
-          <!-- お気に入り閲覧ボタン終 -->
-          <!-- homeボタン -->
-          <button class="navbar-toggler" onClick="location.href='./../index.html'"><i class="bi bi-house-door-fill"></i></button>
-          <!-- 検索のアイコン -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-            aria-controls="navbar" aria-expanded="false">
-            <i class="bi bi-search"></i>
-          </button>
-          <!-- カゴのアイコン -->
-          <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i class="bi bi-cart4"></i></button>
-          <!-- 検索ドロップ -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto mb-2">
+          <div class="btn-group">
+            <!--お気に入り閲覧ボタン始  -->
+            <button class="navbar-toggler" type="button" data-bs-target="#navbar" aria-controls="navbar"
+              aria-expanded="false">
+              <i class="bi bi-person-heart"></i>
+              <span class="font-word-break">お気に入り</span>
+            </button>
+            <!-- お気に入り閲覧ボタン終 -->
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./sweat.html">-----sweat-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pants.html">-----pants-----</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 検索ドロップ終わり -->
+            <!-- homeボタン -->
+            <button class="navbar-toggler" onClick="location.href='./../index.html'"><i
+                class="bi bi-house-door-fill"></i>
+              <span class="font-word-break">ホーム</span>
+            </button>
+            <!-- 検索のアイコン -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+              aria-controls="navbar" aria-expanded="false">
+              <i class="bi bi-search"></i>
+              <span class="font-word-break">検索</span>
+            </button>
+            <!-- カゴのアイコン -->
+            <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i
+                class="bi bi-cart4"></i>
+              <span class="font-word-break">カート</span>
+            </button>
+            <!-- 検索ドロップ -->
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav me-auto mb-2">
 
-          <!-- アカウントドロップ -->
-          <div class="collapse navbar-collapse" id="person">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="person"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ログイン</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">新規登録</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./sweat.html">-----sweat-----</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pants.html">-----pants-----</a>
+                </li>
+              </ul>
+            </div>
+            <!-- 検索ドロップ終わり -->
+
+            <!-- アカウントドロップ -->
+            <div class="collapse navbar-collapse" id="person">
+              <ul class="navbar-nav me-auto mb-2">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="person"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ログイン</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">新規登録</a>
+                </li>
+            </div>
           </div>
         </div>
   </nav>
@@ -110,7 +124,7 @@
 
   <!-- ジャンボトロン -->
   <div id="photo">
-   <img src="./../back_photo/images4.jpg"/>
+    <img src="./../back_photo/images4.jpg" />
   </div>
   <!--ジャンボトロン-->
   <!-- Card1 開始 -->
@@ -136,7 +150,7 @@
       <div class="card col-sm-3">
         <img class="img_unification" src="./../outer_photo/outer_2.jpg" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">Hard ROCK</h5>
+          <h5 class="card-title">adidas</h5>
           <!-- いいねボタン始 -->
           <div align="right">
             <div class="example2">
@@ -183,7 +197,8 @@
   <div class="container">
     <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
       <div class="card col-sm-3">
-        <img  class="img_unification" src="./../outer_photo/i-img552x545-1664057330b6lapp14.jpg" class="card-img-top" alt="...">
+        <img class="img_unification" src="./../outer_photo/i-img552x545-1664057330b6lapp14.jpg" class="card-img-top"
+          alt="...">
         <div class="card-body">
           <h5 class="card-title">XLARGE</h5>
           <!-- いいねボタン始 -->
@@ -227,7 +242,7 @@
       <div class="card col-sm-3">
         <img class="img_unification" src="./../outer_photo/outer_4.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">POLO RALPH LAUREN</h5>
+          <h5 class="card-title">POLO</h5>
           <!-- いいねボタン始 -->
           <div align="right">
             <div class="example2">
@@ -246,7 +261,8 @@
   <div class="container">
     <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
       <div class="card col-sm-3">
-        <img class="img_unification" src="./../outer_photo/i-img900x1200-1664508826a06fnz38053.jpg" class="card-img-top">
+        <img class="img_unification" src="./../outer_photo/i-img900x1200-1664508826a06fnz38053.jpg"
+          class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Perushu</h5>
           <!-- いいねボタン始 -->
@@ -266,7 +282,8 @@
           <!-- いいねボタン始 -->
           <div align="right">
             <div class="example2">
-              <input type="checkbox" name="example2" id="10"><label for="10"><i class="bi bi-heart-fill fs-5"></i></label>
+              <input type="checkbox" name="example2" id="10"><label for="10"><i
+                  class="bi bi-heart-fill fs-5"></i></label>
             </div>
           </div>
           <!-- いいねボタン終 -->
@@ -280,7 +297,8 @@
           <!-- いいねボタン始 -->
           <div align="right">
             <div class="example2">
-              <input type="checkbox" name="example2" id="11"><label for="11"><i class="bi bi-heart-fill fs-5"></i></label>
+              <input type="checkbox" name="example2" id="11"><label for="11"><i
+                  class="bi bi-heart-fill fs-5"></i></label>
             </div>
           </div>
           <!-- いいねボタン終 -->
@@ -294,7 +312,8 @@
           <!-- いいねボタン始 -->
           <div align="right">
             <div class="example2">
-              <input type="checkbox" name="example2" id="12"><label for="12"><i class="bi bi-heart-fill fs-5"></i></label>
+              <input type="checkbox" name="example2" id="12"><label for="12"><i
+                  class="bi bi-heart-fill fs-5"></i></label>
             </div>
           </div>
           <!-- いいねボタン終 -->
@@ -304,7 +323,7 @@
     </div>
   </div>
   <!-- Card3　終わり -->
-  
+
   <!-- トップに戻るボタン -->
   <a href="#"><button class="top-return-button"><i class="bi bi-arrow-up"></i></button></a>
   <!--トップボタンここまで -->
