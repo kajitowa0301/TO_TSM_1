@@ -102,4 +102,8 @@
     padding: 3%;
     box-shadow: 5px 5px 15px #444;
 }
-
+/* ナブバ―のボタンのフォントのサイズ */
+.font-word-break{
+    font-size: 15px;   
+    color: #eee;
+  }
