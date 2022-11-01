@@ -192,3 +192,24 @@ body{
 .button_solid003 a{
     margin-right: 10px;
 }
+
+.top-return-button{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    font-size:30px;
+    width: 65px;
+    border-radius: 100%;
+    opacity: 0.4; 
+    color:#0066ff;
+    border-style:solid;
+    border-color:#0066ff;
+    background-color:white;
+}
+.top-return-button:hover{
+    opacity: 0.9;
+    color: white;
+    background-color: #0066ff;
+    border-style:none;
+    box-shadow:0px 3px 10px #666;
+}
