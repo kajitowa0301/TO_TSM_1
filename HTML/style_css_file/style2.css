@@ -15,7 +15,6 @@
 .mae{
     margin-top: auto;
     margin-left: 5%;
-    text-align: left;
 	    float: left;
 }
 
@@ -54,6 +53,51 @@
     margin-right: 10px;
 }
 
+.font-word-break{
+    font-size: 15px;   
+    color: #eee;
+  }
 
+  .return-btn{
+    width: 150px;
+    padding:13px;
+    border-radius:15px;
+    border-style: solid;
+    color: green;
+    border-color: green;
+    background-color: #FFF;
+  }
+.return-btn:hover{
+    color: white;
+    background-color: green;
+    box-shadow: 0px 3px 20px #bbb;
+}
 
+.return-btn_2{
+    width: 130px;
+    padding:13px;
+    border-radius:15px;
+    border-style: solid;
+    color: green;
+    border-color: green;
+    background-color: #FFF;
+    float: left;
+  }
+.return-btn_2:hover{
+    color: white;
+    background-color: green;
+    box-shadow: 0px 3px 20px #bbb;
+}
+.kakutei_button{
+ text-align: right;
+}
 
+.bg-light{
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+.bg-margin{
+    margin-left: 10%;
+    margin-right: 10%;
+}
