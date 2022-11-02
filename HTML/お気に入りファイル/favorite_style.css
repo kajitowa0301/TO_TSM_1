@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+#midasi{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 5ex;   
+}
+
+/*ログイン*/
+.button_solid003 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:0 auto;
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background:#282828;
+    border-radius: 8px;
+    border-bottom: solid 5px #474849;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    
+}
+.button_solid003 a:hover {
+    border-bottom: solid 2px #7c7c7c;
+    transform: translateY(3px);
+}
