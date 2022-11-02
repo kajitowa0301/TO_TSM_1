@@ -90,7 +90,7 @@ $db = new DBManager();
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
             <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST[""], $_POST["adress-1"], $_POST["adress-2"])) {
+                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"])) {
                     // 新規登録完了
                 } else {
                     // 登録失敗
@@ -99,28 +99,28 @@ $db = new DBManager();
             ?> -->
             <!-- formにactionは指定しないようお願いします -->
             <form method="POST">
-                <h4 class="font-position">メールアドレス</h4>
+                <h4 class="font-position">メールアドレス<span class="fs-6 text-danger">（必須）</span></h4>
                 <input type="text" name="mail" class="list" placeholder="totsm@2022.com"><br>
-                <h4 class="font-position">パスワード</h4>
+                <h4 class="font-position">パスワード<span class="fs-6 text-danger">（必須）</span></h4>
                 <input type="password" name="pass" class="list" placeholder="totsm-2022"><br>
-                <h4 class="font-position">姓</h4>
+                <h4 class="font-position">姓<span class="fs-6 text-danger">（必須）</span></h4>
                 <input type="text" name="sei" class="list" placeholder="麻生"><br>
-                <h4 class="font-position">名</h4>
+                <h4 class="font-position">名<span class="fs-6 text-danger">（必須）</span></h4>
                 <input type="text" name="name" class="list" placeholder="太郎"><br>
-                <h4 class="font-position">郵便番号</h4>
+                <h4 class="font-position">郵便番号<span class="fs-6 text-danger">（必須）</span></h4>
                 <!-- 郵便番号入力(8桁) -->
                 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
                 <div class="h-adr">
                     <span class="p-country-name" style="display:none;">Japan</span>
                     <input type="text" class="p-postal-code" size="8" maxlength="8" placeholder="820-0054"><br>
-                    <h4 class="font-position">県名</h4>
-                    <input type="text" class="p-region" placeholder="福岡県" /><br>
-                    <h4 class="font-position">住所１</h4>
-                    <input type="text" class="p-locality p-street-address p-extended-address"
+                    <h4 class="font-position">都道府県<span class="fs-6 text-danger">（必須）</span></h4>
+                    <input type="text" name="pref" class="p-region" placeholder="福岡県" /><br>
+                    <h4 class="font-position">市区町村<span class="fs-6 text-danger">（必須）</span></h4>
+                    <input type="text" name="ad1" class="p-locality p-street-address p-extended-address"
                         placeholder="春日市春日原東町４－６４" /><br>
                 </div>
-                <h4 class="font-position">住所２</h4>
-                <input type="text" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
+                <h4 class="font-position">建物名</h4>
+                <input type="text" name="ad2" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
                 <input type="button" name="button" class="button_font" value="会員登録する">
         </div>
         </form>
