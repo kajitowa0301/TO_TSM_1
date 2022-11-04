@@ -1,7 +1,7 @@
 CREATE TABLE customers(
     customers_mail VARCHAR(191) PRIMARY KEY,
     customers_pass VARCHAR(191) NOT NULL,
-    customers_nick VARCHAR(191) NOT NULL,
+    -- customers_nick VARCHAR(191) NOT NULL,
     customers_ln VARCHAR(191) NOT NULL,
     customers_fn VARCHAR(191) NOT NULL,
     customers_postcode CHAR(7) NOT NULL,
