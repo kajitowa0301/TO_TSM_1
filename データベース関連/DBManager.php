@@ -44,5 +44,12 @@
                 throw new BadMethodCallException("メールアドレスが存在しません");
             }
         }
+
+        public function getAllItems()
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items");
+            $ps->execute();
+            return json_encode($ps->fetchAll());
+        }
     }
 ?>
