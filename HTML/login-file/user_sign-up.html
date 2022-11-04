@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <?php
+// セッション
+session_start();
+
 // データベースマネージャの読込
 require_once "../../データベース関連/DBManager.php";
 $db = new DBManager();
 ?>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -90,10 +93,14 @@ $db = new DBManager();
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
             <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST[""], $_POST["sei"], $_POST["name"], $_POST["yuubin"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"])) {
+                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST["sei"], $_POST["name"], $_POST["post"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"])) {
                     // 新規登録完了
+                    echo '登録が完了しました。ログインページにてログインしてください。';
+                    echo "<button onclick=\"location.href='./user_login.html'\">ログインページへ</button>";
+                    exit;
                 } else {
                     // 登録失敗
+                    echo '情報の登録に失敗しました。<br />時間をおいて再度お試しください。';
                 }
             }
             ?> -->
@@ -112,7 +119,7 @@ $db = new DBManager();
                 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
                 <div class="h-adr">
                     <span class="p-country-name" style="display:none;">Japan</span>
-                    <input type="text" class="p-postal-code" size="8" maxlength="8" placeholder="820-0054"><br>
+                    <input type="text" name="post" class="p-postal-code" size="8" maxlength="8" placeholder="820-0054"><br>
                     <h4 class="font-position">都道府県<span class="fs-6 text-danger">（必須）</span></h4>
                     <input type="text" name="pref" class="p-region" placeholder="福岡県" /><br>
                     <h4 class="font-position">市区町村<span class="fs-6 text-danger">（必須）</span></h4>
@@ -121,7 +128,8 @@ $db = new DBManager();
                 </div>
                 <h4 class="font-position">建物名</h4>
                 <input type="text" name="ad2" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
-                <input type="button" name="button" class="button_font" value="会員登録する">
+                <!-- <input type="button" name="button" class="button_font" value="会員登録する"> -->
+                <button type="submit" class="button_font">会員登録する</button>
         </div>
         </form>
     </div>
