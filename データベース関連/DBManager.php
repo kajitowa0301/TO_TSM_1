@@ -3,7 +3,8 @@
     {
         public function connectDb()
         {
-            $pdo = new PDO("mysql:host=mysql207.phy.lolipop.lan;dbname=LAA1417836-totsm;charset=utf8",'LAA1417836','GgfFQ3wVGbcDTk9');
+            // $pdo = new PDO("mysql:host=mysql207.phy.lolipop.lan;dbname=LAA1417836-totsm;charset=utf8",'LAA1417836','GgfFQ3wVGbcDTk9');// 本番用
+            $pdo = new PDO("mysql:host=localhost;dbname=totsm;charset=utf8", 'root', '');// 開発用
             return $pdo;
         }
     
