@@ -7,26 +7,32 @@
     <title>insert</title>
 </head>
 <body>
+    メーカーID：<input type="number" id="0"><br />
     商品名：<input type="text" name="" id="1"><br />
     説明：<input type="text" name="" id="2"><br />
     価格：<input type="number" name="" id="3"><br />
     ファイル名：<input type="url" name="" id="4"><br />
     ジャンル：<input type="text" name="" id="5"><br />
+    素材：<input type="text" id="6"><br />
+    色：<input type="text" id="7"><br />
     <button onclick="submit()">確定</button>
 
     <p id="p"></p>
 
     <script>
         function submit() {
+            var maker = document.getElementById("0");
             var name = document.getElementById("1");
             var des = document.getElementById("2");
             var price = document.getElementById("3");
             var file = document.getElementById("4");
             var gen = document.getElementById("5");
+            var mate = document.getElementById("6");
+            var col = document.getElementById("7");
 
             var p = document.getElementById("p");
 
-            p.innerHTML += "INSERT INTO items (items_name,items_description,items_price,items_url,items_genre) VALUES (\""+ name.value +"\",\""+ des.value +"\","+ price.value +",\""+ file.value +"\",\""+ gen.value +"\");<br />";
+            p.innerHTML += "INSERT INTO items (makers_id,items_name,items_description,items_price,items_url,items_genre,items_material,items_color) VALUES (\""+ maker.value +"\",\""+ name.value +"\",\""+ des.value +"\","+ price.value +",\""+ file.value +"\",\""+ gen.value +"\",\""+ mate.value +"\",\""+ col.value +"\");<br />";
 
         }
     </script>
