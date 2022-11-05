@@ -1,6 +1,6 @@
 
-// カート追加機能（引数：商品ID）
-function addCart(itemId) {
+// カート追加機能（引数：商品ID,サイズ,数量）
+function addCart(itemId, itemSize, itemVol) {
     // 配列用意
     let cartItemsList = [];
     // localstorageにカートが既に存在していればそれを取得
@@ -10,7 +10,12 @@ function addCart(itemId) {
     }
     // console.log(cartItemsList);
     // カート配列に商品追加
-    cartItemsList.push(itemId);
+    const itemData = {
+        id: itemId,
+        size: itemSize,
+        vol: itemVol
+    };
+    cartItemsList.push(itemData);
 
     // localstorageに保存
     localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
@@ -30,10 +35,13 @@ function getCart(itemsList) {
 
     // console.log("cart:",cartItemsList);
     // console.log("allitems:",allItemsList);
-    // console.log("search:",allItemsList[cartItemsList[0] - 1].items_name);
+    // console.log("search:",allItemsList[cartItemsList[0].id - 1].items_name);
 
-    // カートにある商品を全商品から検索して商品名をログに出力
+    // カートにある商品を全商品から検索して商品情報をログに出力
     cartItemsList.forEach(ele => {
-        console.log("search:",allItemsList[ele - 1].items_name);   
+        console.log("search_name:",allItemsList[ele.id - 1].items_name);
+        console.log("search_size:",ele.size);   
+        console.log("search_vol:",ele.vol);   
+        console.log("search_price:",allItemsList[ele.id - 1].items_price);   
     });
 }
