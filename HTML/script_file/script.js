@@ -39,9 +39,9 @@ function getCart(itemsList) {
 
     // カートにある商品を全商品から検索して商品情報をログに出力
     cartItemsList.forEach(ele => {
-        console.log("search_name:",allItemsList[ele.id - 1].items_name);
-        console.log("search_size:",ele.size);   
-        console.log("search_vol:",ele.vol);   
-        console.log("search_price:",allItemsList[ele.id - 1].items_price);   
+        console.log("search_name:", allItemsList[ele.id - 1].items_name);
+        console.log("search_size:", ele.size);
+        console.log("search_vol:", ele.vol);
+        console.log("search_price:", allItemsList[ele.id - 1].items_price);
     });
 }
