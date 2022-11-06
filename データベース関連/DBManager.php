@@ -52,5 +52,13 @@
             $ps->execute();
             return json_encode($ps->fetchAll());
         }
+
+        public function getItem(int $itemId)
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items WHERE items_id = ?");
+            $ps->bindValue(1, $itemId, pdo::PARAM_INT);
+            $ps->execute();
+            return $ps->fetch();
+        }
     }
 ?>
