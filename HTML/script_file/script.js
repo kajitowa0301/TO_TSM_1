@@ -44,4 +44,27 @@ function getCart(itemsList) {
         console.log("search_vol:", ele.vol);
         console.log("search_price:", allItemsList[ele.id - 1].items_price);
     });
+
+    // 今ログに出してる情報をオブジェクト配列で返すことになると思う
+    // return cart;
+}
+
+// カート削除機能（引数：要素位置）
+function delCart(index) {
+    // 配列用意
+    let cartItemsList = [];
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('cartItems') != null) {
+        // json解読
+        cartItemsList = JSON.parse(localStorage.getItem('cartItems'));
+    }
+
+    // データ削除
+    cartItemsList.splice(index, 1);
+}
+
+// お気に入り追加機能（引数：商品ID）
+function addFavorite(itemId) {
+    let favItemsList = new Set();
+
 }
