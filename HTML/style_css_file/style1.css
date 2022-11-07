@@ -221,3 +221,27 @@ body{
 .senni{
     margin: 15%;
 }
+
+/* おすすめの配色のボタン*/
+.color-btn-raido label{
+    display:inline-block;
+    width: 40px;
+    height: 30px;
+    background:#CCC;
+    color:#474849;
+    padding:10px;
+    margin: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+    cursor: pointer;
+    
+}
+.color-btn-raido input:checked+label{
+    background: #66ccff;
+    color: #FFF;
+}
+.color-btn-raido input{
+    display: none;
+}
