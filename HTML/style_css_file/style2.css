@@ -100,6 +100,19 @@
     margin-left: 10%;
     margin-right: 10%;
 }
-.delete_btn{
+.kessai_img_size{
+    width : 200px;
+    height: 200px;
+
+}
+.td_css{
+    width: 800px;
+    
+}
+.flex_left{
+    float: left;
+}
+.flex_right{
+    float:right;
     
 }
