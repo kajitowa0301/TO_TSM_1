@@ -106,13 +106,18 @@
 
 }
 .td_css{
-    width: 800px;
+    width: 67vw;
     
 }
 .flex_left{
     float: left;
+    margin-left: 2vw ;
 }
 .flex_right{
     float:right;
+    width: 27vw;
+    margin-right: 2vw;
+    background-color: aqua;
     
 }
+
