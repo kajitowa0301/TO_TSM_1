@@ -353,13 +353,16 @@ $db = new DBManager();
     const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
     allItemsList.forEach(ele => {
       // console.log(allMakersList[ele.makers_id - 1]);
-      createItemCard(ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price);
+      createItemCard(ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
     });
 
-    function createItemCard(genre, maker, itemName, price) {
+    function createItemCard(itemId, genre, maker, itemName, price, url) {
       let outerDiv = document.getElementById(genre);
       const cardDiv = document.createElement('div');
-      const cardImg = document.createElement('img');
+      const cardForm = document.createElement('form');
+      const cardId = document.createElement('input');
+      const cardImg = document.createElement('input');
+      // const cardImg = document.createElement('img');
       const cardBody = document.createElement('div');
       const cardH5 = document.createElement('h5');
       const cardLikeDiv1 = document.createElement('div');
@@ -371,10 +374,15 @@ $db = new DBManager();
       const cardPrice = document.createElement('h6');
 
       cardDiv.setAttribute('class', 'card col-sm-3');
+      cardForm.setAttribute('action','./Shohin_seni.html');
+      cardForm.setAttribute('method','post');
+      cardId.setAttribute('type', 'hidden');
+      cardId.setAttribute('name', 'itemId');
+      cardId.setAttribute('value', itemId);
       cardImg.setAttribute('class', 'img_unification card-img-top img-fluid')
-      cardImg.setAttribute('type', 'submit');
-      cardImg.setAttribute('src', './outer_photo/outer_5.jpg');
-      cardImg.setAttribute('onClick', "location.href='./Shohin_seni.html'");
+      cardImg.setAttribute('type', 'image');
+      cardImg.setAttribute('src', './outer_photo/' + url);
+      // cardImg.setAttribute('onClick', "location.href='./Shohin_seni.html'");
       cardBody.setAttribute('class', 'card-body');
       cardH5.setAttribute('class', 'card-title');
       cardLikeDiv1.setAttribute('align', 'right');
@@ -392,7 +400,9 @@ $db = new DBManager();
       cardPrice.textContent = "¥" + price;
 
       outerDiv.appendChild(cardDiv);
-      cardDiv.appendChild(cardImg);
+      cardDiv.appendChild(cardForm);
+      cardForm.appendChild(cardId);
+      cardForm.appendChild(cardImg);
       cardDiv.appendChild(cardBody);
       cardBody.appendChild(cardH5);
       cardBody.appendChild(cardLikeDiv1);
