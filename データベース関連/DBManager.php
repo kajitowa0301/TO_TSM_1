@@ -60,5 +60,12 @@
             $ps->execute();
             return $ps->fetch();
         }
+
+        public function getAllMaker()
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM makers");
+            $ps->execute();
+            return json_encode($ps->fetchAll());
+        }
     }
 ?>
