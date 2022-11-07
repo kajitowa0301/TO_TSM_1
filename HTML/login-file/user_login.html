@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 // セッション
 session_start();
@@ -10,7 +8,7 @@ if (isset($_SESSION['login_id'])) {
 require_once "../../データベース関連/DBManager.php";
 $db = new DBManager();
 ?>
-
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -102,7 +100,6 @@ $db = new DBManager();
                 <h4 class="h4_font">Password</h4>
                 <input type="password" name="pass" class="text-width" placeholder="totsm2022_Pass"><br>
                 <p class="log_err">
-                    <!-- <?php  -->
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
 
                 <!-- <p><?php 
@@ -111,7 +108,6 @@ $db = new DBManager();
                                 $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
                                 // ユーザ情報をセッション変数に入れてトップページに飛ばす
                                 $_SESSION['login_id'] = $result['customers_mail'];
-                                header("Location: ./../index.html");
                             } catch(Exception $e) {
                                 // エラー表示
                                 echo $e->getMessage();

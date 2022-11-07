@@ -3,7 +3,8 @@
     {
         public function connectDb()
         {
-            $pdo = new PDO("mysql:host=mysql207.phy.lolipop.lan;dbname=LAA1417836-totsm;charset=utf8",'LAA1417836','GgfFQ3wVGbcDTk9');
+            // $pdo = new PDO("mysql:host=mysql207.phy.lolipop.lan;dbname=LAA1417836-totsm;charset=utf8",'LAA1417836','GgfFQ3wVGbcDTk9');// 本番用
+            $pdo = new PDO("mysql:host=localhost;dbname=totsm;charset=utf8", 'root', '');// 開発用
             return $pdo;
         }
     
@@ -43,6 +44,21 @@
             } else {
                 throw new BadMethodCallException("メールアドレスが存在しません");
             }
+        }
+
+        public function getAllItems()
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items");
+            $ps->execute();
+            return json_encode($ps->fetchAll());
+        }
+
+        public function getItem(int $itemId)
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items WHERE items_id = ?");
+            $ps->bindValue(1, $itemId, pdo::PARAM_INT);
+            $ps->execute();
+            return $ps->fetch();
         }
     }
 ?>
