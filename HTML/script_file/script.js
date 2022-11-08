@@ -61,10 +61,58 @@ function delCart(index) {
 
     // データ削除
     cartItemsList.splice(index, 1);
+
+    // localstorageに保存
+    localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
 }
 
 // お気に入り追加機能（引数：商品ID）
 function addFavorite(itemId) {
-    let favItemsList = new Set();
+    // 変数用意
+    let favItemsList;
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('favItems') != null) {
+        // json解読
+        favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
+    } else {
+        favItemsList = new Set();
+    }
 
+    // 追加
+    favItemsList.add(itemId);
+    // localstorageに保存
+    localStorage.setItem('favItems', JSON.stringify(Array.from(favItemsList), undefined, 1));
+}
+
+// お気に入り取得機能
+function getFavorite() {
+    // 変数用意
+    let favItemsList;
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('favItems') != null) {
+        // json解読
+        favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
+    } else {
+        favItemsList = new Set();
+    }
+
+    return Array.from(favItemsList);
+}
+
+// お気に入り削除機能（引数：商品ID）
+function delFavorite(itemId) {
+    // 変数用意
+    let favItemsList;
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('favItems') != null) {
+        // json解読
+        favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
+    } else {
+        favItemsList = new Set();
+    }
+
+    // 削除
+    favItemsList.delete(itemId);
+    // localstorageに保存
+    localStorage.setItem('favItems', JSON.stringify(Array.from(favItemsList), undefined, 1));
 }

@@ -374,8 +374,8 @@ $db = new DBManager();
       const cardPrice = document.createElement('h6');
 
       cardDiv.setAttribute('class', 'card col-sm-3');
-      cardForm.setAttribute('action','./Shohin_seni.html');
-      cardForm.setAttribute('method','post');
+      cardForm.setAttribute('action', './Shohin_seni.html');
+      cardForm.setAttribute('method', 'post');
       cardId.setAttribute('type', 'hidden');
       cardId.setAttribute('name', 'itemId');
       cardId.setAttribute('value', itemId);
@@ -389,8 +389,12 @@ $db = new DBManager();
       cardLikeDiv2.setAttribute('class', 'example2');
       cardInput.setAttribute('type', 'checkbox');
       cardInput.setAttribute('name', 'example2');
-      cardInput.setAttribute('id', '1');
-      cardLabel.setAttribute('for', '1');
+      cardInput.setAttribute('id', itemId);
+      cardInput.setAttribute('onClick', 'checkFavSt(' + itemId + ')');
+      if (new Set(getFavorite()).has(itemId)) {
+        cardInput.setAttribute('checked', 'true');
+      }
+      cardLabel.setAttribute('for', itemId);
       cardI.setAttribute('class', 'bi bi-heart-fill fs-5');
       cardName.setAttribute('class', 'clear');
       cardPrice.setAttribute('class', 'nedan_2');
@@ -412,6 +416,16 @@ $db = new DBManager();
       cardLabel.appendChild(cardI);
       cardBody.appendChild(cardName);
       cardBody.appendChild(cardPrice);
+    }
+
+    function checkFavSt(itemId) {
+      const favorite = document.getElementById(itemId);
+      // console.log(favorite.checked);
+      if (favorite.checked) {
+        addFavorite(itemId);
+      } else {
+        delFavorite(itemId);
+      }
     }
   </script>
 </body>
