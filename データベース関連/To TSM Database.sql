@@ -23,8 +23,8 @@ CREATE TABLE buys(
 CREATE TABLE items(
     items_id INT PRIMARY KEY AUTO_INCREMENT,
     makers_id INT NOT NULL,
-    items_name VARCHAR(191) NOT NULL,
-    items_description VARCHAR(191) NOT NULL,
+    items_name VARCHAR(20) NOT NULL,
+    items_description VARCHAR(1000) NOT NULL,
     items_price INT NOT NULL,
     items_url VARCHAR(191) NOT NULL,
     items_genre VARCHAR(191) NOT NULL,
