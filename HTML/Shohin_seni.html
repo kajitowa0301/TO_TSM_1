@@ -5,7 +5,8 @@ session_start();
 // データベースマネージャの読込
 require_once "../データベース関連/DBManager.php";
 $db = new DBManager();
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -99,7 +100,7 @@ $db = new DBManager();
 
   <div class="senni">
     <div>
-      <img src="./outer_photo/outer_5.jpg" width="500px" height="600px" align="left" alt="アウター">
+      <img src="./outer_photo/outer_5.jpg" width="500px" height="600px" align="left" alt="アウター" id="pic">
       <p align="left" id="description">
         1889年にアメリカのミシガン州デトロイトで誕生したCarhartt（カーハート）。タフなダック地とデニムで作られたオーバーオールを世に送り出したcarhartt(カーハート)は、その後120年以上に渡り愛され続けるワークウェアブランドとして活躍。<br>
         <br>■大人のストリートシーンを演出する都会的なアイテム!【MONO-MARTセレクション】シンプルながらも程よく洗練されたシルエット。こなれたヴィンテージ感漂う魅力的な１着。<br>
@@ -143,7 +144,8 @@ $db = new DBManager();
 
     <div class="reji">
       <a href="./決済_html/住所登録.html"><button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button></a>
-      <a href="./kounyuu.html"><button type="button" class="btn btn-outline-primary btn-lg" onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button></a>
+      <a href="./kounyuu.html"><button type="button" class="btn btn-outline-primary btn-lg"
+          onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button></a>
     </div>
   </div>
 
@@ -243,6 +245,7 @@ $db = new DBManager();
     // console.log(itemData);
     document.getElementById('description').innerHTML = itemData.items_description;
     document.getElementById('price').innerHTML = itemData.items_price;
+    document.getElementById('pic').src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
   </script>
 </body>
 

@@ -95,11 +95,11 @@ color: aliceblue;
     border-radius: 20%;
 }
 
-img {
+form {
     transition-duration: 0.3s;
 }
 
-img:hover {
+form:hover {
     opacity: 0.4;
     transition-duration: 0.3s;
 }
