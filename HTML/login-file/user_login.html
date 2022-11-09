@@ -102,7 +102,7 @@ $db = new DBManager();
                 <p class="log_err">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
 
-                <!-- <p><?php 
+                <p><?php 
                         if($_SERVER['REQUEST_METHOD'] == "POST") {
                             try {
                                 $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
@@ -114,7 +114,7 @@ $db = new DBManager();
                             }
                         }
                     ?>
-                </p> -->
+                </p>
 
 
                 <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a>
