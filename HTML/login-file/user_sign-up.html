@@ -91,7 +91,7 @@ $db = new DBManager();
     <div class="container">
         <div class="back-color-center">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
-            <!-- <?php
+            <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST["sei"], $_POST["name"], $_POST["post"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"])) {
                     // 新規登録完了
@@ -103,28 +103,28 @@ $db = new DBManager();
                     echo '情報の登録に失敗しました。<br />時間をおいて再度お試しください。';
                 }
             }
-            ?> -->
+            ?>
             <!-- formにactionは指定しないようお願いします -->
             <form method="POST">
                 <h4 class="font-position">メールアドレス<span class="fs-6 text-danger">（必須）</span></h4>
-                <input type="text" name="mail" class="list" placeholder="totsm@2022.com"><br>
+                <input type="text" name="mail" class="list" placeholder="totsm@2022.com" required><br>
                 <h4 class="font-position">パスワード<span class="fs-6 text-danger">（必須）</span></h4>
-                <input type="password" name="pass" class="list" placeholder="totsm-2022"><br>
+                <input type="password" name="pass" class="list" placeholder="totsm-2022" required><br>
                 <h4 class="font-position">姓<span class="fs-6 text-danger">（必須）</span></h4>
-                <input type="text" name="sei" class="list" placeholder="麻生"><br>
+                <input type="text" name="sei" class="list" placeholder="麻生" required><br>
                 <h4 class="font-position">名<span class="fs-6 text-danger">（必須）</span></h4>
-                <input type="text" name="name" class="list" placeholder="太郎"><br>
+                <input type="text" name="name" class="list" placeholder="太郎" required><br>
                 <h4 class="font-position">郵便番号<span class="fs-6 text-danger">（必須）</span></h4>
                 <!-- 郵便番号入力(7桁) -->
                 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
                 <div class="h-adr">
                     <span class="p-country-name" style="display:none;">Japan</span>
-                    <input type="text" name="post" class="p-postal-code" size="8" maxlength="7" placeholder="8200054"><br>
+                    <input type="text" name="post" class="p-postal-code" size="8" maxlength="7" placeholder="8200054" required><br>
                     <h4 class="font-position">都道府県<span class="fs-6 text-danger">（必須）</span></h4>
-                    <input type="text" name="pref" class="p-region" placeholder="福岡県" /><br>
+                    <input type="text" name="pref" class="p-region" placeholder="福岡県" required/><br>
                     <h4 class="font-position">市区町村<span class="fs-6 text-danger">（必須）</span></h4>
                     <input type="text" name="ad1" class="p-locality p-street-address p-extended-address"
-                        placeholder="春日市春日原東町４－６４" /><br>
+                        placeholder="春日市春日原東町４－６４" required/><br>
                 </div>
                 <h4 class="font-position">建物名</h4>
                 <input type="text" name="ad2" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
