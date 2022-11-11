@@ -1,0 +1,11 @@
+.container {
+    max-width: 960px;
+  }
+
+  .kakutei_button{
+    float: right;
+}
+
+.modoru_button{
+    float: left;
+}
