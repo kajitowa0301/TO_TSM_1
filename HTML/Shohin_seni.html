@@ -150,7 +150,9 @@ $db = new DBManager();
       </form>
       <form action="./kounyuu.html" method="post">
         <!-- <a href="./kounyuu.html"> -->
-        <input type="hidden" name="itemdata" value="" id="itemId">
+        <input type="hidden" name="itemid" value="" id="itemId">
+        <input type="hidden" name="itemsize" value="S" id="itemSize">
+        <input type="hidden" name="itemvol" value="10" id="itemVol">
         <button type="submit" class="btn btn-outline-primary btn-lg"
           onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button>
         <!-- </a> -->
