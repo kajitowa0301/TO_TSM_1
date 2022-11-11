@@ -100,29 +100,4 @@
     margin-left: 10%;
     margin-right: 10%;
 }
-.kessai_img_size{
-    width : 200px;
-    height: 200px;
-
-}
-.td_css{
-    width: 67vw;
-    
-}
-.flex_left{
-    float: left;
-    margin-left: 2vw ;
-    padding: 10px;
-    
-
-    
-}
-.flex_right{
-    float:right;
-    width: 27vw;
-    margin-right: 2vw;
-    background-color: aqua;
-
-    
-}
 
