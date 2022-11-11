@@ -1,3 +1,11 @@
+<?php
+// セッション
+session_start();
+
+// データベースマネージャの読込
+require_once "../データベース関連/DBManager.php";
+$db = new DBManager();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -92,8 +100,8 @@
 
   <div class="senni">
     <div>
-      <img src="./outer_photo/outer_5.jpg" width="500px" height="600px" align="left" alt="アウター">
-      <p align="left">
+      <img src="./outer_photo/outer_5.jpg" width="500px" height="600px" align="left" alt="アウター" id="pic">
+      <p align="left" id="description">
         1889年にアメリカのミシガン州デトロイトで誕生したCarhartt（カーハート）。タフなダック地とデニムで作られたオーバーオールを世に送り出したcarhartt(カーハート)は、その後120年以上に渡り愛され続けるワークウェアブランドとして活躍。<br>
         <br>■大人のストリートシーンを演出する都会的なアイテム!【MONO-MARTセレクション】シンプルながらも程よく洗練されたシルエット。こなれたヴィンテージ感漂う魅力的な１着。<br>
         <br>■ワークウェアと言う垣根を越えた理想の逸品。
@@ -101,8 +109,13 @@
         <br>■タフな仕様で長く付き合える仕上がり。ワーク系ブランドらしい程よい厚みのコットン×ポリエステル混紡素材のスウェット生地を採用。良質の裏起毛生地で肌触りは心地よく抜群の着心地を実現！カラーは定番のブラックやグレーをはじめカラーバリエーション豊富で思わず色違いで揃えたくなるほど！絶妙なルーズ感と上品な落ち感を兼ね備えた是非、手に入れたい今シーズンおすすめのマストバイアイテム。
       </p><br style="clear:both;">
     </div>
+    <div class="color-btn-raido">
+      <input type="radio" name="btn-radio" id="1"><label for="1"></label>
+      <input type="radio" name="btn-radio" id="2"><label for="2"></label>
+      <input type="radio" name="btn-radio" id="3"><label for="3"></label>
+    </div>
     <div class="nedan">
-      <h3>￥1919</h3>
+      <h3>￥<span id="price">1919</span></h3>
     </div>
     <!-- いいねボタン始 -->
     <div align="right">
@@ -130,8 +143,20 @@
     </div>
 
     <div class="reji">
-      <a href="./決済_html/住所登録.html"><button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button></a>
-      <a href="./kounyuu.html"><button type="button" class="btn btn-outline-primary btn-lg" onclick="addCart('1','s','2')">カートに入れる</button></a>
+      <form action="" method="post" class="buynow">
+        <!-- <a href="./決済_html/住所登録.html"> -->
+        <button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button>
+        <!-- </a> -->
+      </form>
+      <form action="./kounyuu.html" method="post">
+        <!-- <a href="./kounyuu.html"> -->
+        <input type="hidden" name="itemid" value="" id="itemId">
+        <input type="hidden" name="itemsize" value="S" id="itemSize">
+        <input type="hidden" name="itemvol" value="10" id="itemVol">
+        <button type="submit" class="btn btn-outline-primary btn-lg"
+          onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button>
+        <!-- </a> -->
+      </form>
     </div>
   </div>
 
@@ -226,6 +251,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
+  <script>
+    const itemData = JSON.parse('<?php echo $db->getItem($_GET["itemId"]) ?>');
+    // console.log(itemData);
+    document.getElementById('itemId').value = itemData.items_id;
+    document.getElementById('description').innerHTML = itemData.items_description;
+    document.getElementById('price').innerHTML = itemData.items_price;
+    document.getElementById('pic').src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
+  </script>
 </body>
 
 </html>

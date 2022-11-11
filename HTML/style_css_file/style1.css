@@ -38,10 +38,24 @@ color: aliceblue;
    width: 100%;
    height: 70%;
 }
+
+.card-btn {
+    border: none;
+    padding: 0%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* 商品説明のCSS */
 .reji{
     margin-top: 5%;
     text-align: right;
+    display: flex;
+}
+
+.buynow {
+    margin-left: auto;
+    margin-right: 1%;
 }
 
 .mae{
@@ -95,11 +109,11 @@ color: aliceblue;
     border-radius: 20%;
 }
 
-img {
+form.card {
     transition-duration: 0.3s;
 }
 
-img:hover {
+form.card:hover {
     opacity: 0.4;
     transition-duration: 0.3s;
 }
