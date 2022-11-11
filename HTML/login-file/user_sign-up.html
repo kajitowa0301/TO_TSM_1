@@ -93,14 +93,23 @@ $db = new DBManager();
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
             <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                if ($db->submitUser($_POST["mail"], $_POST["pass"], $_POST["sei"], $_POST["name"], $_POST["post"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"])) {
+
+                $res = false;
+
+                try {
+                    $res = $db->submitUser($_POST["mail"], $_POST["pass"], $_POST["sei"], $_POST["name"], $_POST["post"], $_POST["pref"], $_POST["ad1"], $_POST["ad2"]);
+                } catch(Exception $e) {
+                    echo 'このメールアドレスは既に登録されています。<br />';
+                }
+
+                if ($res) {
                     // 新規登録完了
                     echo '登録が完了しました。ログインページにてログインしてください。';
                     echo "<button onclick=\"location.href='./user_login.html'\">ログインページへ</button>";
                     exit;
                 } else {
                     // 登録失敗
-                    echo '情報の登録に失敗しました。<br />時間をおいて再度お試しください。';
+                    echo '情報の登録に失敗しました。';
                 }
             }
             ?>
