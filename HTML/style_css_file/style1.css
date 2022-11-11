@@ -110,6 +110,7 @@ color: aliceblue;
 }
 
 form.card {
+    border: 0;
     transition-duration: 0.3s;
 }
 
