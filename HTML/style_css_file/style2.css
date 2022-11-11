@@ -9,13 +9,13 @@
 .reji{
     margin-top: auto;
     margin-right: 5%;
-    text-align: right;
+    text-align: center;
+
 }
 
 .mae{
-    margin-top: auto;
-    margin-left: 5%;
-	    float: left;
+    margin-top: 50px;
+	text-align: center;
 }
 
 .kessai_img_size{
@@ -106,23 +106,61 @@
 
 }
 .td_css{
-    width: 67vw;
-    
+    width: 45vw;
 }
 .flex_left{
     float: left;
-    margin-left: 2vw ;
-    padding: 10px;
-    
-
-    
+    margin-left: 2%;
 }
-.flex_right{
+/* .flex_right{
     float:right;
+    background-color: #474849;
     width: 27vw;
-    margin-right: 2vw;
-    background-color: aqua;
+} */
 
-    
+.fixed_text{
+    position: fixed;
+    margin: auto;
+    right: 3vw;
+    padding: 6px 40px;
+    background-color: cornsilk;
+    width: 25vw;
+    border: 3px solid #282828;
+    border-radius: 5px;
 }
 
+.sum_mny {
+    font-size: 30px;
+}
+
+.sum_text {
+    text-align: center;
+}
+
+.some_actions {
+    display: flex;
+
+    align-items: stretch;
+}
+
+/* .cnt_btn {
+ 
+}
+
+.delete_btn {
+   
+   
+}
+
+.shohin_val {
+ 
+    
+} */
+
+.teble_dai {
+    text-align: center;
+}
+
+.shohin_name {
+    font-size: 25px;
+}
