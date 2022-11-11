@@ -104,8 +104,10 @@ $db = new DBManager();
 
                 if ($res) {
                     // 新規登録完了
-                    echo '登録が完了しました。ログインページにてログインしてください。';
-                    echo "<button onclick=\"location.href='./user_login.html'\">ログインページへ</button>";
+                    echo '登録中...';
+                    echo '<script>';
+                    echo "location.replace('./user_kanryo.html');";
+                    echo '</script>';
                     exit;
                 } else {
                     // 登録失敗
