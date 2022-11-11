@@ -105,9 +105,8 @@ $db = new DBManager();
                 if ($res) {
                     // 新規登録完了
                     echo '登録中...';
-                    echo '<script>';
-                    echo "location.replace('./user_kanryo.html');";
-                    echo '</script>';
+                    $_SESSION['login_id'] = $_POST["mail"];
+                    echo "<script>location.replace('./user_kanryo.html');</script>";
                     exit;
                 } else {
                     // 登録失敗

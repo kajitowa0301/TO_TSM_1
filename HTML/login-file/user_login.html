@@ -107,9 +107,7 @@ $db = new DBManager();
                                 $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
                                 // ユーザ情報をセッション変数に入れてトップページに飛ばす
                                 $_SESSION['login_id'] = $result['customers_mail'];
-                                echo '<script>';
-                                echo "location.replace('../index.html');";
-                                echo '</script>';
+                                echo "<script>location.replace('../index.html');</script>";
                             } catch(Exception $e) {
                                 // エラー表示
                                 echo $e->getMessage();
