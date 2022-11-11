@@ -29,11 +29,6 @@ color: aliceblue;
     color: black;
 }
 
-/* TELL
-手島先生
-090-8628-3330 
-*/
-
 /* 写真統一のCSS */
 .img_unification{
    width: 100%;
@@ -206,6 +201,7 @@ body{
     border-width: 1em;
     border-color: #eee;
     /* border-right-width: 6px; */
+
 }
 
 
@@ -241,7 +237,7 @@ body{
 }
 
 .senni{
-    margin: 7%;
+    margin: 8%;
 }
 
 .btn-kounyu-148{
@@ -278,4 +274,58 @@ body{
     border-color:#0066ff;
     color: #FFF;
     box-shadow: none;
+}
+.unkounko{
+    text-align: center;
+    margin-bottom: 5%;
+
+}
+
+.oritatami{
+    font-size: 40px;
+}
+
+/*配色の新機能のやつ*/
+.color-btn-raido label{
+    display:inline-block;
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;  
+}
+
+input[type=radio][value="color1"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color2"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color3"]:checked+label > p{
+    opacity: 1;
+}
+/* .color-btn-raido input:checked+label{
+    background: #66ccff;
+    color: #FFF;
+    border-style: solid;
+    border-color: #282828;
+} */
+.color-btn-raido input{
+    display: none;
+}
+#haishoku-1{
+    background-color: olivedrab;
+}
+#haishoku-2{
+    background-color: #000;
+}
+#haishoku-3{
+    background-color: #0066ff; 
+}
+
+.haishoku-1{
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0;
 }

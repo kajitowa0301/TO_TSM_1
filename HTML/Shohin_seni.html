@@ -98,21 +98,36 @@ $db = new DBManager();
   </div>
   <!--ナブバの記述終わり  -->
 
+   <!-- <details>
+    <summary>クリック</summary>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </details> -->
+
   <div class="senni">
     <div>
-      <img src="./outer_photo/outer_5.jpg" width="500px" height="600px" align="left" alt="アウター" id="pic">
-      <p align="left" id="description">
+      <div class="unkounko">
+      <img src="./outer_photo/outer_5.jpg" width="45%"  align="text-center" alt="アウター" id="pic">
+    </div>
+
+    <details>
+      <summary class="oritatami"><u>商品詳細</u></summary>
+      <p id="description">
         1889年にアメリカのミシガン州デトロイトで誕生したCarhartt（カーハート）。タフなダック地とデニムで作られたオーバーオールを世に送り出したcarhartt(カーハート)は、その後120年以上に渡り愛され続けるワークウェアブランドとして活躍。<br>
         <br>■大人のストリートシーンを演出する都会的なアイテム!【MONO-MARTセレクション】シンプルながらも程よく洗練されたシルエット。こなれたヴィンテージ感漂う魅力的な１着。<br>
         <br>■ワークウェアと言う垣根を越えた理想の逸品。
         豊富なサイズバリエーションながらも身幅にややゆとりを持たせ、程よく肩をドロップさせたトレンド感のあるUSA規格のオーバーサイズシルエット。ゆったりとした印象を与えながらもまとまりのあるサイズバランスで抜け感のあるシルエットを実現。又、カンガルーポケットに施されたブランドピスネームが主張し過ぎない目を引くアクセントになっているのもポイント。スキニー等と合わせたメリハリのあるコーデやストリート、アメカジライクなスタイリング等、幅広いトレンドを楽しめる注目のスウェットアイテム。<br>
         <br>■タフな仕様で長く付き合える仕上がり。ワーク系ブランドらしい程よい厚みのコットン×ポリエステル混紡素材のスウェット生地を採用。良質の裏起毛生地で肌触りは心地よく抜群の着心地を実現！カラーは定番のブラックやグレーをはじめカラーバリエーション豊富で思わず色違いで揃えたくなるほど！絶妙なルーズ感と上品な落ち感を兼ね備えた是非、手に入れたい今シーズンおすすめのマストバイアイテム。
       </p><br style="clear:both;">
+    </details>
+    <br>
+      
     </div>
     <div class="color-btn-raido">
-      <input type="radio" name="btn-radio" id="1" checked><label for="1"></label>
-      <input type="radio" name="btn-radio" id="2"><label for="2"></label>
-      <input type="radio" name="btn-radio" id="3"><label for="3"></label>
+      <input type="radio" name="btn-radio" id="5" value="color1" checked><label id="haishoku-1"  for="5"><p class="haishoku-1">✓</p></label>
+      <input type="radio" name="btn-radio" id="6" value="color2"><label id="haishoku-2"  for="6"><p class="haishoku-1">✓</p></label>
+      <input type="radio" name="btn-radio" id="7" value="color3"><label id="haishoku-3"  for="7"><p class="haishoku-1">✓</p></label>
     </div>
     <div class="nedan">
       <h3>￥<span id="price">1919</span></h3>
@@ -233,6 +248,7 @@ $db = new DBManager();
     </div>
   </div>
 
+ 
 
   <!--フッター始まり-->
   <div>
