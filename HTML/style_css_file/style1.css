@@ -219,5 +219,20 @@ body{
 }
 
 .senni{
-    margin: 15%;
+    margin: 7%;
+}
+
+.return-button{
+    width: 150px;
+    padding:13px;
+    border-radius:15px;
+    border-style: solid;
+    color: #f66;
+    border-color: #f66;
+    background-color: #FFF;
+  }
+.return-button:hover{
+    color: white;
+    background-color: #f66;
+    box-shadow: 0px 3px 20px #bbb;
 }
