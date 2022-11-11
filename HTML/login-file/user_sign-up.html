@@ -104,8 +104,10 @@ $db = new DBManager();
 
                 if ($res) {
                     // 新規登録完了
-                    echo '登録が完了しました。ログインページにてログインしてください。';
-                    echo "<button onclick=\"location.href='./user_login.html'\">ログインページへ</button>";
+                    echo '登録中...';
+                    echo '<script>';
+                    echo "location.replace('./user_kanryo.html');";
+                    echo '</script>';
                     exit;
                 } else {
                     // 登録失敗
@@ -138,7 +140,7 @@ $db = new DBManager();
                 <h4 class="font-position">建物名</h4>
                 <input type="text" name="ad2" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
                 <!-- <input type="button" name="button" class="button_font" value="会員登録する"> -->
-                <button type="submit" class="button_font">会員登録する</button>
+                <a href="./user_kanryo.html"><button class="button_font" type="submit">会員登録する</button></a>
         </div>
         </form>
     </div>

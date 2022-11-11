@@ -123,28 +123,28 @@ $db = new DBManager();
         <img class="img_unification" src="./../outer_photo/outer_4.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">POLO</h5> -->
-          <!-- いいねボタン始 -->
-          <!-- <div align="right">
+  <!-- いいねボタン始 -->
+  <!-- <div align="right">
             <div class="example2">
               <input type="checkbox" name="example2" id="8"><label for="8"><i class="bi bi-heart-fill fs-5"></i></label>
             </div>
           </div> -->
-          <!-- いいねボタン終 -->
-          <!-- <p class="clear">￥2,450</p>
+  <!-- いいねボタン終 -->
+  <!-- <p class="clear">￥2,450</p>
         </div>
       </div>
       <div class="card col-sm-3">
         <img class="img_unification" src="./../photo/swet_5.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">adidas</h5> -->
-          <!-- いいねボタン始 -->
-          <!-- <div align="right">
+  <!-- いいねボタン始 -->
+  <!-- <div align="right">
             <div class="example2">
               <input type="checkbox" name="example2" id="7"><label for="7"><i class="bi bi-heart-fill fs-5"></i></label>
             </div>
           </div> -->
-          <!-- いいねボタン終 -->
-          <!-- <h6 class="clear">スウェット</h6>
+  <!-- いいねボタン終 -->
+  <!-- <h6 class="clear">スウェット</h6>
           <h6 class="nedan_2">￥6,450</h6>
         </div>
       </div>
@@ -268,6 +268,16 @@ $db = new DBManager();
       cardLabel.appendChild(cardI);
       cardBody.appendChild(cardName);
       cardBody.appendChild(cardPrice);
+    }
+
+    function checkFavSt(itemId) {
+      const favorite = document.getElementById(itemId);
+      // console.log(favorite.checked);
+      if (favorite.checked) {
+        addFavorite(itemId);
+      } else {
+        delFavorite(itemId);
+      }
     }
   </script>
 </body>
