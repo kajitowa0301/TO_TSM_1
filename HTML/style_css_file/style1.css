@@ -270,6 +270,7 @@ body{
     box-shadow: none;
 }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 .unkounko{
     text-align: center;
@@ -283,3 +284,49 @@ body{
 
 =======
 >>>>>>> 3eabe71e631b3fafebf41cc136fadf9adcd9210f
+=======
+/*配色の新機能のやつ*/
+.color-btn-raido label{
+    display:inline-block;
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;  
+}
+
+input[type=radio][value="color1"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color2"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color3"]:checked+label > p{
+    opacity: 1;
+}
+/* .color-btn-raido input:checked+label{
+    background: #66ccff;
+    color: #FFF;
+    border-style: solid;
+    border-color: #282828;
+} */
+.color-btn-raido input{
+    display: none;
+}
+#haishoku-1{
+    background-color: olivedrab;
+}
+#haishoku-2{
+    background-color: #000;
+}
+#haishoku-3{
+    background-color: #0066ff; 
+}
+
+.haishoku-1{
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0;
+}
+>>>>>>> Stashed changes
