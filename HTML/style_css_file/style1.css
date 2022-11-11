@@ -21,6 +21,7 @@ color: aliceblue;
        /* font-family: 'Sacramento', cursive; */
        text-align: center;
        font-size: 5ex;
+       margin-left: 20px;
 }
 
 .noline{
