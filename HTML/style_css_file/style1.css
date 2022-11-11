@@ -29,11 +29,6 @@ color: aliceblue;
     color: black;
 }
 
-/* TELL
-手島先生
-090-8628-3330 
-*/
-
 /* 写真統一のCSS */
 .img_unification{
    width: 100%;
@@ -235,7 +230,7 @@ body{
 }
 
 .senni{
-    margin: 7%;
+    margin: 8%;
 }
 
 .btn-kounyu-148{
@@ -273,3 +268,14 @@ body{
     color: #FFF;
     box-shadow: none;
 }
+
+.unkounko{
+    text-align: center;
+    margin-bottom: 5%;
+
+}
+
+.oritatami{
+    font-size: 40px;
+}
+
