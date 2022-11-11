@@ -33,117 +33,187 @@
 
           <!--ログインボタン-->
           <div class="button_solid003">
-            <a href="./login-file/user_login.html">ログイン</a>
+            <a href="./../login-file/user_login.html">ログイン</a>
           </div>
           <!-- ログインボタン -->
+          <div class="btn btn-group">
+            
+            <!-- 検索のアイコン -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+              aria-controls="navbar" aria-expanded="false">
+              <i class="button-submunu  bi bi-search"></i>
+              <span class="font-word-break">検索</span>
+            </button>
 
-          <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler" type="button" data-bs-target="#navbar" aria-controls="navbar"
-            aria-expanded="false">
-            <i class="bi bi-person-heart"></i>
-            <span class="font-word-break">お気に入り</span>
-          </button>
-          <!-- お気に入り閲覧ボタン終 -->
-
-          <!-- 検索のアイコン -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-            aria-controls="navbar" aria-expanded="false">
-            <i class="bi bi-search"></i>
-            <span class="font-word-break">検索</span>
-          </button>
-
-          <!-- カゴのアイコン -->
-          <button class="navbar-toggler" onClick="location.href='./決済_html/カート内確認.html'"><i
-              class="bi bi-cart4 fs-4"></i>
-            <span class="font-word-break">カート</span>
-          </button>
-          <!-- 検索ドロップ -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 検索ドロップ終わり -->
+            <!-- カゴのアイコン -->
+            <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i
+                class="bi bi-cart4 fs-4"></i>
+              <span class="font-word-break">カート</span>
+            </button>
+            <!-- 検索ドロップ -->
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav me-auto mb-2">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./../janru_html/outer.html">-----outer-----</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./../janru_html/sweat.html">-----sweat-----</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./../janru_html/pants.html">-----pants-----</a>
+                </li>
+              </ul>
+            </div>
+            <!-- 検索ドロップ終わり -->
   </nav>
   <br><br><br><br><br><br>
   <!--ナブバの記述終わり  -->
 
-  <!-- サイトの中身 -->
-  <div class="content">
-    <div class="card-wrap">
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
+  <!-- お気に入り画面　始まり -->
+  <h2 class="favorite">
+    -----お気に入り-----
+  </h2>
+  <!-- 1行目　始まり -->
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
+      <div class="card col-sm-3 ">
+        <img class="img_unification" type="submit" src="./../outer_photo/outer_5.jpg" class="card-img-top img-fluid"
+          onClick="location.href='./Shohin_seni.html'">
+        <div class="card-body">
+          <h5 class="card-title">stussy</h5>
+          <!-- いいねボタン始 -->
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="1"><label for="1"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <!-- いいねボタン終 -->
+          <h6 class="clear">パーカー</h6>
+          <h6 class="nedan_2">¥1919</h6>
+          <div class="text-end">
+            <!-- <button type="button" class="btn btn-primary rounded-pill" onclick="location.href='Shohin_seni.html'">商品を見る</button>  -->
+          </div>
+        </div>
       </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../outer_photo/i-img480x640-1664002978wjim0r82974.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">BROWNS</h5>
+          <!-- いいねボタン始 -->
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="4"><label for="4"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <!-- いいねボタン終 -->
+          <p class="clear">￥4,570</p>
+        </div>
       </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../outer_photo/m33724311291_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">TO TSM.</h5>
+          <!-- いいねボタン始 -->
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="6"><label for="6"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <!-- いいねボタン終 -->
+          <p class="clear">￥1,980</p>
+        </div>
       </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg"class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
-      </div>
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
-      </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
-      </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg" class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
-      </div>
-
-      <div class="card-list">
-        <!--カードの本体部分-->
-        <p class="card-list-Image"><img src="./../outer_photo/outer_5.jpg"class="favorite-img"></p>
-        <h2 class="card-list-title">タイトルが入ります</h2>
-        <p class="card-list-text">本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります本文が入ります
-          本文が入ります本文が入ります本文が入ります</p>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../pants_photo/m80628845913_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">POLO RALPH LAUREN</h5>
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="8"><label for="8"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <h6 class="clear">￥2,450</h6>
+        </div>
       </div>
     </div>
   </div>
-  <!-- サイトの中身 -->
+  <!-- 1行目　終わり -->
+
+  <!-- 2行目　始まり -->
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
+      <div class="card col-sm3">
+        <img class="img_unification" src="./../pants_photo/m52528363102_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">XLARGE</h5>
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="8"><label for="8"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <h6 class="clear">￥7,690</h6>
+        </div>
+      </div>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../pants_photo/m80628845913_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">POLO RALPH LAUREN</h5>
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="8"><label for="8"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <h6 class="clear">￥2,450</h6>
+        </div>
+      </div>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../outer_photo/outer_4.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">POLO</h5>
+          <!-- いいねボタン始 -->
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="8"><label for="8"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <!-- いいねボタン終 -->
+          <p class="clear">￥2,450</p>
+        </div>
+      </div>
+      <div class="card col-sm-3">
+        <img class="img_unification" src="./../photo/swet_5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">adidas</h5>
+          <!-- いいねボタン始 -->
+          <div align="right">
+            <div class="example2">
+              <input type="checkbox" name="example2" id="7"><label for="7"><i class="bi bi-heart-fill fs-5"></i></label>
+            </div>
+          </div>
+          <!-- いいねボタン終 -->
+          <h6 class="clear">スウェット</h6>
+          <h6 class="nedan_2">￥6,450</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 2行目　終わり -->
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
+    </div>
+  </div>
+  <!-- 3行目　始まり -->
+
+
+
+
+
+
+
+
+
+
+
 
   <!--フッター始まり-->
   <div>
