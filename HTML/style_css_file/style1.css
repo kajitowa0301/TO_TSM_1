@@ -195,6 +195,7 @@ body{
     border-width: 1em;
     border-color: #eee;
     /* border-right-width: 6px; */
+
 }
 
 
@@ -269,6 +270,7 @@ body{
     box-shadow: none;
 }
 
+<<<<<<< HEAD
 .unkounko{
     text-align: center;
     margin-bottom: 5%;
@@ -279,3 +281,5 @@ body{
     font-size: 40px;
 }
 
+=======
+>>>>>>> 3eabe71e631b3fafebf41cc136fadf9adcd9210f
