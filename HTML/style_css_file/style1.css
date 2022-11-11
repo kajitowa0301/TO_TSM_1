@@ -269,9 +269,6 @@ body{
     color: #FFF;
     box-shadow: none;
 }
-
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 .unkounko{
     text-align: center;
     margin-bottom: 5%;
@@ -282,9 +279,6 @@ body{
     font-size: 40px;
 }
 
-=======
->>>>>>> 3eabe71e631b3fafebf41cc136fadf9adcd9210f
-=======
 /*配色の新機能のやつ*/
 .color-btn-raido label{
     display:inline-block;
@@ -329,4 +323,3 @@ input[type=radio][value="color3"]:checked+label > p{
     font-size: 30px;
     opacity: 0;
 }
->>>>>>> Stashed changes
