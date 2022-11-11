@@ -21,6 +21,7 @@ color: aliceblue;
        /* font-family: 'Sacramento', cursive; */
        text-align: center;
        font-size: 5ex;
+       margin-left: 20px;
 }
 
 .noline{
@@ -110,6 +111,7 @@ color: aliceblue;
 }
 
 form.card {
+    border: 0;
     transition-duration: 0.3s;
 }
 
@@ -233,29 +235,41 @@ body{
 }
 
 .senni{
-    margin: 15%;
+    margin: 7%;
 }
 
-/* おすすめの配色のボタン*/
-.color-btn-raido label{
-    display:inline-block;
-    width: 40px;
-    height: 30px;
-    background:#CCC;
-    color:#474849;
-    padding:10px;
-    margin: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 60%;
-    cursor: pointer;
-    
+.btn-kounyu-148{
+    width: 200px;
+    height: 80px;
+    background-color:#FFF;
+    color: yellowgreen;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: yellowgreen;
+    box-shadow:0px 5px 5px #bbb;
 }
-.color-btn-raido input:checked+label{
-    background: #66ccff;
+.btn-kounyu-148:hover{
+    background-color: yellowgreen;
+    border-color:yellowgreen;
     color: #FFF;
+    box-shadow: none;
 }
-.color-btn-raido input{
-    display: none;
+
+.btn-cart{
+    width: 200px;
+    height: 80px;
+    padding:5%;
+    background-color:#FFF;
+    color: #0066ff;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: #0066ff;
+    box-shadow:0px 5px 5px #bbb;
+}
+
+.btn-cart:hover{
+    background-color:#0066ff;
+    border-color:#0066ff;
+    color: #FFF;
+    box-shadow: none;
 }
