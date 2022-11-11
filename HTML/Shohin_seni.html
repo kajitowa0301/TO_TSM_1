@@ -143,9 +143,17 @@ $db = new DBManager();
     </div>
 
     <div class="reji">
-      <a href="./決済_html/住所登録.html"><button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button></a>
-      <a href="./kounyuu.html"><button type="button" class="btn btn-outline-primary btn-lg"
-          onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button></a>
+      <form action="./kounyuu.html" method="post">
+        <!-- <a href="./決済_html/住所登録.html"> -->
+          <button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button>
+        <!-- </a> -->
+      </form>
+      <form action="./kounyuu.html" method="post">
+        <!-- <a href="./kounyuu.html"> -->
+        <button type="submit" class="btn btn-outline-primary btn-lg"
+          onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button>
+        <!-- </a> -->
+      </form>
     </div>
   </div>
 
@@ -241,7 +249,7 @@ $db = new DBManager();
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
   <script>
-    const itemData = JSON.parse('<?php echo $db->getItem($_POST["itemId"]) ?>');
+    const itemData = JSON.parse('<?php echo $db->getItem($_GET["itemId"]) ?>');
     // console.log(itemData);
     document.getElementById('description').innerHTML = itemData.items_description;
     document.getElementById('price').innerHTML = itemData.items_price;
