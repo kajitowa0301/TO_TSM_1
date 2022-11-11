@@ -110,6 +110,7 @@ color: aliceblue;
 }
 
 form.card {
+    border: 0;
     transition-duration: 0.3s;
 }
 
@@ -233,29 +234,20 @@ body{
 }
 
 .senni{
-    margin: 15%;
+    margin: 7%;
 }
 
-/* おすすめの配色のボタン*/
-.color-btn-raido label{
-    display:inline-block;
-    width: 40px;
-    height: 30px;
-    background:#CCC;
-    color:#474849;
-    padding:10px;
-    margin: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 60%;
-    cursor: pointer;
-    
-}
-.color-btn-raido input:checked+label{
-    background: #66ccff;
-    color: #FFF;
-}
-.color-btn-raido input{
-    display: none;
+.return-button{
+    width: 150px;
+    padding:13px;
+    border-radius:15px;
+    border-style: solid;
+    color: #f66;
+    border-color: #f66;
+    background-color: #FFF;
+  }
+.return-button:hover{
+    color: white;
+    background-color: #f66;
+    box-shadow: 0px 3px 20px #bbb;
 }
