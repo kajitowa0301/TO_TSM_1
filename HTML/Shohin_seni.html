@@ -143,13 +143,14 @@ $db = new DBManager();
     </div>
 
     <div class="reji">
-      <form action="./kounyuu.html" method="post">
+      <form action="" method="post" class="buynow">
         <!-- <a href="./決済_html/住所登録.html"> -->
-          <button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button>
+        <button type="button" class="btn btn-outline-success btn-lg">今すぐ購入</button>
         <!-- </a> -->
       </form>
       <form action="./kounyuu.html" method="post">
         <!-- <a href="./kounyuu.html"> -->
+        <input type="hidden" name="itemdata" value="" id="itemId">
         <button type="submit" class="btn btn-outline-primary btn-lg"
           onclick="addCart(itemData.items_id,'s','2')">カートに入れる</button>
         <!-- </a> -->
@@ -251,6 +252,7 @@ $db = new DBManager();
   <script>
     const itemData = JSON.parse('<?php echo $db->getItem($_GET["itemId"]) ?>');
     // console.log(itemData);
+    document.getElementById('itemId').value = itemData.items_id;
     document.getElementById('description').innerHTML = itemData.items_description;
     document.getElementById('price').innerHTML = itemData.items_price;
     document.getElementById('pic').src = './' + itemData.items_genre + '_photo/' + itemData.items_url;

@@ -50,6 +50,12 @@ color: aliceblue;
 .reji{
     margin-top: 5%;
     text-align: right;
+    display: flex;
+}
+
+.buynow {
+    margin-left: auto;
+    margin-right: 1%;
 }
 
 .mae{
