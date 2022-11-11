@@ -1,4 +1,7 @@
 <?php
+// セッション
+session_start();
+
 // データベースマネージャの読込
 require_once "../../データベース関連/DBManager.php";
 $db = new DBManager();
@@ -41,7 +44,7 @@ $allItemsList = $db->getAllItems();
           <!-- ログインボタン -->
 
           <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler"  onClick="location.href='./お気に入りファイル/favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
+          <button class="navbar-toggler"  onClick="location.href='../お気に入りファイル/favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
             aria-expanded="false">
             <i class="bi bi-person-heart"></i>
             <span class="font-word-break">お気に入り</span>
@@ -165,7 +168,7 @@ $allItemsList = $db->getAllItems();
     <h6>合計　<span class = "sum_mny">¥6500</span></h6>
 
     <!-- レジに進むボタン始まり -->
-  <form class="reji" action="./../login-file/user_login.html">
+  <form class="reji" action="" id="goReji">
     <div class="reji_button">
       <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg">
     </div>
@@ -211,6 +214,14 @@ $allItemsList = $db->getAllItems();
     crossorigin="anonymous"></script>
   <script>
     getCart('<?php echo $allItemsList; ?>');
+
+    const reji = document.getElementById('goReji');
+    const flag = "<?php echo isset($_SESSION['login_id']); ?>";
+    if (flag != "") {
+      reji.action = "./住所登録.html";
+    } else {
+      reji.action = "./../login-file/user_login.html";
+    }
   </script>
 </body>
 

@@ -38,7 +38,13 @@ $db = new DBManager();
         <div class="btn-toolbar">
           <!--ログインボタン-->
           <div class="button_solid003">
-            <a href="./login-file/user_login.html">ログイン</a>
+            <?php
+              if(isset($_SESSION['login_id'])) {
+                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
+              } else {
+                echo "<a href='./login-file/user_login.html'>ログイン</a>";
+              }
+            ?>
           </div>
           <!-- ログインボタン -->
           <!--お気に入り閲覧ボタン始  -->
