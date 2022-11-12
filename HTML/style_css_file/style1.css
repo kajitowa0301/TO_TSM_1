@@ -201,10 +201,7 @@ body{
     border-width: 1em;
     border-color: #eee;
     /* border-right-width: 6px; */
-
 }
-
-
 
 .button_solid003 a{
     margin-right: 10px;
@@ -241,8 +238,8 @@ body{
 }
 
 .btn-kounyu-148{
-    width: 200px;
-    height: 80px;
+    width: 120px;
+    height: 60px;
     background-color:#FFF;
     color: yellowgreen;
     border-radius: 10px;
@@ -258,8 +255,8 @@ body{
 }
 
 .btn-cart{
-    width: 200px;
-    height: 80px;
+    width: 120px;
+    height: 60px;
     padding:5%;
     background-color:#FFF;
     color: #0066ff;
@@ -278,7 +275,6 @@ body{
 .unkounko{
     text-align: center;
     margin-bottom: 5%;
-
 }
 
 .oritatami{
@@ -316,11 +312,20 @@ input[type=radio][value="color3"]:checked+label > p{
 #haishoku-1{
     background-color: olivedrab;
 }
+#haishoku-1:hover{
+    opacity: 0.5;
+}
 #haishoku-2{
     background-color: #000;
 }
+#haishoku-2:hover{
+    opacity: 0.5;
+}
 #haishoku-3{
     background-color: #0066ff; 
+}
+#haishoku-3:hover{
+    opacity: 0.5;
 }
 
 .haishoku-1{
@@ -328,4 +333,7 @@ input[type=radio][value="color3"]:checked+label > p{
     text-align: center;
     font-size: 30px;
     opacity: 0;
+}
+#kakusu{
+    display: none;
 }
