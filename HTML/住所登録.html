@@ -43,7 +43,8 @@ $db = new DBManager();
                         <span class="font-word-break">検索</span>
                     </button>
                     <!-- お気に入りのアイコン -->
-                    <button class="navbar-toggler"  onClick="location.href='./favorite.html'" type="button" data-bs-toggle="collapse" data-bs-target="#person">
+                    <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#person">
                         <i class="bi bi-person-heart"></i>
                         <span class="font-word-break">お気に入り</span>
                     </button>
@@ -97,14 +98,16 @@ $db = new DBManager();
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <label for="familyName" class="form-label">姓</label>
-                                <input type="text" class="form-control" id="familyName" placeholder="" value="<?php echo $_SESSION['login_ln']; ?>">
+                                <input type="text" class="form-control" id="familyName" placeholder=""
+                                    value="<?php echo $_SESSION['login_ln']; ?>">
                                 <div class="invalid-feedback">
                                     名字を入力してください
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <label for="givenName" class="form-label">名</label>
-                                <input type="text" class="form-control" id="givenName" placeholder="" value="<?php echo $_SESSION['login_fn']; ?>" >
+                                <input type="text" class="form-control" id="givenName" placeholder=""
+                                    value="<?php echo $_SESSION['login_fn']; ?>">
                                 <div class="invalid-feedback">
                                     名前を入力してください
                                 </div>
@@ -124,15 +127,36 @@ $db = new DBManager();
 
                             <div class="col-12">
                                 <label for="email" class="form-label">Eメール <span class="text-muted">(任意)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo $_SESSION['login_id']; ?>">
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                    value="<?php echo $_SESSION['login_id']; ?>">
                                 <div class="invalid-feedback">
                                     配送の更新に有効なメールアドレスを入力してください
                                 </div>
+                            </div> 
+
+                            <div class="col-md-5">
+                                <label for="pref" class="form-label">都道府県</label>
+                                <input type="text" class=" form-control d-block w-100" placeholder="福岡県">
                             </div>
+                            <div class="col-md-4">
+                                <label for="city" class="form-label">市町村</label>
+                                <input type="text" class="form-control d-block w-100" placeholder="春日市">
+                            </div>
+
+                            <!-- 郵便番号 -->
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">郵便番号</label>
+                                <input type="text" class="form-control" id="zip" placeholder=""
+                                    value="<?php echo $_SESSION['login_post']; ?>">
+                                <div class="invalid-feedback">
+                                    郵便番号を入力してください
+                                </div>
+                            </div>
+                        </div>
 
                             <div class="col-12">
                                 <label for="address" class="form-label">住所</label>
-                                <input type="text" class="form-control" id="address" placeholder="地番" >
+                                <input type="text" class="form-control" id="address" placeholder="地番">
                                 <div class="invalid-feedback">
                                     配送先住所を入力してください
                                 </div>
@@ -142,100 +166,92 @@ $db = new DBManager();
                                 <label for="address2" class="form-label">住所 2 <span
                                         class="text-muted">(任意)</span></label>
                                 <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名">
-                            </div>
-
-                            <div class="col-md-5">
-                                <label for="pref" class="form-label">都道府県</label>
-                                <select class="form-select d-block w-100" id="pref" >
-                                    <option>選択...</option>
-                                    <option>福岡</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    都道府県を選択してください
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="city" class="form-label">市町村</label>
-                                <select class="form-select d-block w-100" id="city" >
-                                    <option>選択...</option>
-                                    <option>春日</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    市町村を選択してください
-                                </div>
-                            </div>
-
-                            <!-- 郵便番号 -->
-                            <div class="col-md-3">
-                                <label for="zip" class="form-label">郵便番号</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" value="<?php echo $_SESSION['login_post']; ?>">
-                                <div class="invalid-feedback">
-                                    郵便番号を入力してください
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="my-4">
-
+                            </div><br><br>
                         <!-- お支払方法 -->
                         <h4 class="mb-3">お支払い方法</h4>
-
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
-                                    >
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
+                                    onclick="crebitFunc()">
                                 <label class="form-check-label" for="credit">クレジットカード</label>
                             </div>
                             <div class="form-check">
-                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" >
-                                <label class="form-check-label" for="debit">コンビニ支払い</label>
+                                <input id="conbini" name="paymentMethod" type="radio" class="form-check-input"
+                                    onclick="conbiniFunc()">
+                                <label class="form-check-label" for="conbini">コンビニ支払い</label>
                             </div>
                             <div class="form-check">
-                                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" >
-                                <label class="form-check-label" for="paypal">代金引換</label>
+                                <input id="paypay" name="paymentMethod" type="radio" class="form-check-input"
+                                    onclick="paypayFunc()">
+                                <label class="form-check-label" for="paypay">代金引換</label>
                             </div>
                         </div>
-                        <div class="row gy-3">
-                            <div class="col-md-6">
-                                <label for="cc-name" class="form-label">カードの名義</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" >
-                                <small class="text-muted">カード上に表示されているフルネーム</small>
-                                <div class="invalid-feedback">
-                                    カードの名義を入力してください
+                        <script>
+                            function crebitFunc() {
+                                document.getElementById("siharai").style.display = 'inline';
+                                document.getElementById("siharai-conbini").style.display = 'none';
+
+                            }
+                            function conbiniFunc(){
+                                document.getElementById("siharai").style.display = 'none';
+                                document.getElementById("siharai-conbini").style.display = 'inline';
+                            }
+                        </script>
+                        <!-- クレジットカード支払専用画面 -->
+                        <div id="siharai">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <label for="cc-name" class="form-label">カードの名義</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="">
+                                    <small class="text-muted">カード上に表示されているフルネーム</small>
+                                    <div class="invalid-feedback">
+                                        カードの名義を入力してください
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cc-number" class="form-label">クレジットカード番号</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="">
+                                    <div class="invalid-feedback">
+                                        クレジットカード番号を入力してください
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cc-expiration" class="form-label">有効期限</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="">
+                                    <div class="invalid-feedback">
+                                        有効期限を入力してください
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cc-cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="">
+                                    <div class="invalid-feedback">
+                                        セキュリティコードを入力してください
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="cc-number" class="form-label">クレジットカード番号</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" >
-                                <div class="invalid-feedback">
-                                    クレジットカード番号を入力してください
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="cc-expiration" class="form-label">有効期限</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" >
-                                <div class="invalid-feedback">
-                                    有効期限を入力してください
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="cc-cvv" class="form-label">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" >
-                                <div class="invalid-feedback">
-                                    セキュリティコードを入力してください
-                                </div>
-                            </div>
+                        </div>
+                        <!-- コンビニ支払専用画面 -->
+                        <div id="siharai-conbini">
+                            <select class="conbini" name="conbini-Name">
+                                <option value="seven" style="color: #f66;">セブンイレブン</option>
+                                <option value="lowson" style="color:#0af;">ローソン</option>
+                                <option value="famima" style="color:#7f7 ;">ファミリーマート</option>
+                                <option value="mini" style="color:#00f ;">ミニストップ</option>
+                                <option value="popura" style="color: #d60;">ポプラ</option>
+                                <option value="dayry" style="color:#f33 ;">デイリー</option>
+                            </select>
                         </div>
                         <!-- 確認画面遷移ボタン -->
                         <hr class="my-4">
                         <FORM>
-                            <INPUT type="button" value="戻る" onClick="location.href='./カート内確認.html'" class="return-btn_2" >
-                    
-                          <div class="kakutei_button">
-                            <button class="kakunin" type="submit">確認画面</button>
-                        </div>
+                            <INPUT type="button" value="戻る" onClick="location.href='./カート内確認.html'"
+                                class="return-btn_2">
+
+                            <div class="kakutei_button">
+                                <button class="kakunin" type="submit">確認画面</button>
+                            </div>
                         </FORM>
-                    </form>
                 </div>
             </div>
         </main>
