@@ -205,3 +205,19 @@
     background-color: #0066ff;
     color: #FFF;
 }
+
+#siharai{
+    display: none;
+}
+
+#siharai-conbini{
+    display: none;
+}
+
+.conbini{
+    width: 50%;
+    font-weight: bold;
+    padding:2% 4%;
+    margin-bottom: 13px;
+    border:2px solid #474849;
+}
