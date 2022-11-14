@@ -9,13 +9,13 @@
 .reji{
     margin-top: auto;
     margin-right: 5%;
-    text-align: right;
+    text-align: center;
+
 }
 
 .mae{
-    margin-top: auto;
-    margin-left: 5%;
-	    float: left;
+    margin-top: 50px;
+	text-align: center;
 }
 
 .kessai_img_size{
@@ -100,4 +100,83 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+.kessai_img_size{
+    width : 200px;
+    height: 200px;
 
+}
+.td_css{
+    width: 45vw;
+}
+.flex_left{
+    float: left;
+    margin-left: 2%;
+}
+/* .flex_right{
+    float:right;
+    background-color: #474849;
+    width: 27vw;
+} */
+
+.fixed_text{
+    position: fixed;
+    margin: auto;
+    right: 3vw;
+    padding: 6px 40px;
+    background-color: cornsilk;
+    width: 25vw;
+    border: 3px solid #282828;
+    border-radius: 5px;
+}
+
+.sum_mny {
+    font-size: 30px;
+}
+
+.sum_text {
+    text-align: center;
+}
+
+.some_actions {
+    display: flex;
+
+    align-items: stretch;
+}
+
+/* .cnt_btn {
+ 
+}
+
+.delete_btn {
+   
+   
+}
+
+.shohin_val {
+ 
+    
+} */
+
+.teble_dai {
+    text-align: center;
+}
+
+.shohin_name {
+    font-size: 25px;
+}
+
+/* 住所登録.htmlの確認ボタン */
+.kakunin{
+    width: 130px;
+    height: 60px;
+    background-color:#FFF;
+    color: #0066ff;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: #0066ff;
+    box-shadow:0px 5px 5px #bbb;
+}
+.kakunin:hover{
+    background-color: #0066ff;
+    color: #FFF;
+}

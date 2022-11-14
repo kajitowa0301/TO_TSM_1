@@ -48,7 +48,7 @@ $db = new DBManager();
                         <!-- ログインボタン -->
                         <div class="btn-group">
                             <!--お気に入り閲覧ボタン始  -->
-                            <button class="navbar-toggler" onClick="location.href='./お気に入りファイル/favorite.html'"
+                            <button class="navbar-toggler" onClick="location.href='./../favorite.html'"
                                 type="button" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
                                 <i class="bi bi-person-heart"></i>
                                 <span class="font-word-break">お気に入り</span>
@@ -63,7 +63,7 @@ $db = new DBManager();
                             </button>
 
                             <!-- カゴのアイコン -->
-                            <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i
+                            <button class="navbar-toggler" onClick="location.href='./../カート内確認.html'"><i
                                     class="bi bi-cart4"></i>
                                 <span class="font-word-break">カート</span>
                             </button>
@@ -107,9 +107,13 @@ $db = new DBManager();
                                 $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
                                 // ユーザ情報をセッション変数に入れてトップページに飛ばす
                                 $_SESSION['login_id'] = $result['customers_mail'];
-                                echo '<script>';
-                                echo "location.replace('../index.html');";
-                                echo '</script>';
+                                $_SESSION['login_ln'] = $result['customers_ln'];
+                                $_SESSION['login_fn'] = $result['customers_fn'];
+                                $_SESSION['login_post'] = $result['customers_postcode'];
+                                $_SESSION['login_pref'] = $result['customers_pref'];
+                                $_SESSION['login_ad1'] = $result['customers_address'];
+                                $_SESSION['login_ad2'] = $result['customers_subaddress'];
+                                echo "<script>location.replace('../index.html');</script>";
                             } catch(Exception $e) {
                                 // エラー表示
                                 echo $e->getMessage();

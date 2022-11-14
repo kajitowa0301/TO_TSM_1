@@ -43,11 +43,17 @@ $db = new DBManager();
 
           <!--ログインボタン-->
           <div class="button_solid003">
-            <a href="./login-file/user_login.html">ログイン</a>
+            <?php
+              if(isset($_SESSION['login_id'])) {
+                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
+              } else {
+                echo "<a href='./login-file/user_login.html'>ログイン</a>";
+              }
+            ?>
           </div>
           <!-- ログインボタン -->
           <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler"  onClick="location.href='./お気に入りファイル/favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
+          <button class="navbar-toggler"  onClick="location.href='./favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
             aria-expanded="false">
             <i class="bi bi-person-heart"></i>
             <span class="font-word-break">お気に入り</span>
@@ -62,7 +68,7 @@ $db = new DBManager();
           </button>
 
           <!-- カゴのアイコン -->
-          <button class="navbar-toggler" onClick="location.href='./決済_html/カート内確認.html'"><i
+          <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
               class="bi bi-cart4 fs-4"></i>
             <span class="font-word-break">カート</span>
           </button>
@@ -193,7 +199,7 @@ $db = new DBManager();
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">概要</a></li>
       </ul>
-      <p class="text-center text-muted"><img src="./photo/beni2.png" style="height: 100px;"></p>
+      <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
     </footer>
   </div>
   <!-- フッター終わり -->

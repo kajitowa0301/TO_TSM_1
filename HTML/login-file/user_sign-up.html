@@ -47,8 +47,8 @@ $db = new DBManager();
                         <!-- ログインボタン -->
 
                         <!--お気に入り閲覧ボタン始  -->
-                        <button class="navbar-toggler"  onClick="location.href='./お気に入りファイル/favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
-                            aria-expanded="false">
+                        <button class="navbar-toggler" onClick="location.href='../favorite.html'" type="button"
+                            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
                             <i class="bi bi-person-heart"></i>
                             <span class="font-word-break">お気に入り</span>
                         </button>
@@ -62,10 +62,10 @@ $db = new DBManager();
                         </button>
 
                         <!-- カゴのアイコン -->
-                        <button class="navbar-toggler" onClick="location.href='./../決済_html/カート内確認.html'"><i
+                        <button class="navbar-toggler" onClick="location.href='./../カート内確認.html'"><i
                                 class="bi bi-cart4"></i>
-                                <span class="font-word-break">カート</span>
-                            </button>
+                            <span class="font-word-break">カート</span>
+                        </button>
                         <!-- 検索ドロップ -->
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav me-auto mb-2">
@@ -105,9 +105,14 @@ $db = new DBManager();
                 if ($res) {
                     // 新規登録完了
                     echo '登録中...';
-                    echo '<script>';
-                    echo "location.replace('./user_kanryo.html');";
-                    echo '</script>';
+                    $_SESSION['login_id'] = $_POST["mail"];
+                    $_SESSION['login_ln'] = $_POST['sei'];
+                    $_SESSION['login_fn'] = $_POST['name'];
+                    $_SESSION['login_post'] = $_POST['post'];
+                    $_SESSION['login_pref'] = $_POST['pref'];
+                    $_SESSION['login_ad1'] = $_POST['ad1'];
+                    $_SESSION['login_ad2'] = $_POST['ad2'];
+                    echo "<script>location.replace('./user_kanryo.html');</script>";
                     exit;
                 } else {
                     // 登録失敗
@@ -130,17 +135,21 @@ $db = new DBManager();
                 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
                 <div class="h-adr">
                     <span class="p-country-name" style="display:none;">Japan</span>
-                    <input type="text" name="post" class="p-postal-code" size="8" maxlength="7" placeholder="8200054" required><br>
+                    <input type="text" name="post" class="p-postal-code" size="8" maxlength="7" placeholder="8200054"
+                        required><br>
                     <h4 class="font-position">都道府県<span class="fs-6 text-danger">（必須）</span></h4>
-                    <input type="text" name="pref" class="p-region" placeholder="福岡県" required/><br>
+                    <input type="text" name="pref" class="p-region" placeholder="福岡県" required /><br>
                     <h4 class="font-position">市区町村<span class="fs-6 text-danger">（必須）</span></h4>
                     <input type="text" name="ad1" class="p-locality p-street-address p-extended-address"
-                        placeholder="春日市春日原東町４－６４" required/><br>
+                        placeholder="春日市春日原東町４－６４" required /><br>
                 </div>
                 <h4 class="font-position">建物名</h4>
-                <input type="text" name="ad2" class="p-locality p-street-address p-extended-address" placeholder="アンビシャス江崎２０６号室" /><br>
+                <input type="text" name="ad2" class="p-locality p-street-address p-extended-address"
+                    placeholder="アンビシャス江崎２０６号室" /><br>
                 <!-- <input type="button" name="button" class="button_font" value="会員登録する"> -->
-                <a href="./user_kanryo.html"><button class="button_font" type="submit">会員登録する</button></a>
+                <!-- <a href="./user_kanryo.html"> -->
+                <button class="button_font" type="submit">会員登録する</button>
+                <!-- </a> -->
         </div>
         </form>
     </div>
