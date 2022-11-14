@@ -143,19 +143,44 @@
     align-items: stretch;
 }
 
-/* .cnt_btn {
- 
+.cnt_btn{
+ width: 60px;
+ font-weight: bold;
+ padding:7%;
+ background-color:olivedrab;
+ color:white ;
+ border-style: solid;
+ border-radius: 10px;
+ border-color:olivedrab;
+ box-shadow: 0px 3px 3px #bbb;
+}
+.cnt_btn:hover{
+    background-color: white;
+    color: olivedrab;
+    box-shadow: none;
 }
 
-.delete_btn {
-   
-   
+.delete_btn{
+    width:60px;
+    font-weight: bold;
+   padding:7%;
+   background-color:#f55;
+   color: #eee;
+   border-style: solid;
+   border-color:#f55;
+   border-radius: 10px;
+   box-shadow: 0px 3px 3px #bbb;
+}
+.delete_btn:hover{
+    background-color: white;
+    color: #f55;
+    box-shadow: none;
 }
 
-.shohin_val {
+/* .shohin_val {
  
     
-} */
+}  */
 
 .teble_dai {
     text-align: center;
