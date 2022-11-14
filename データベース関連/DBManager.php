@@ -61,6 +61,14 @@
             return json_encode($ps->fetch());
         }
 
+        public function getItemsFromGenre(string $genre)
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items WHERE items_genre = ?");
+            $ps->bindValue(1, $genre, pdo::PARAM_STR);
+            $ps->execute();
+            return json_encode($ps->fetchAll());
+        }
+
         public function getAllMaker()
         {
             $ps = $this->connectDb()->prepare("SELECT * FROM makers");
