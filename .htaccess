@@ -26,3 +26,7 @@ php_value error_reporting 6135
   AddType application/x-httpd-php .html
 </FilesMatch>
 # ---
+
+# 404エラーページ
+ErrorDocument 404 http://localhost/Web/github/TO_TSM_1/HTML/404.html
+# ---
