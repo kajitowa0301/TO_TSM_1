@@ -136,7 +136,7 @@ $db = new DBManager();
 
                             <div class="col-md-5">
                                 <label for="pref" class="form-label">都道府県</label>
-                                <input type="text" class=" form-control d-block w-100" placeholder="福岡県">
+                                <input type="text" class=" form-control d-block w-100" placeholder="福岡県" value="<?php echo $_SESSION['login_pref']; ?>">
                             </div>
                             <div class="col-md-4">
                                 <label for="city" class="form-label">市町村</label>
@@ -165,7 +165,7 @@ $db = new DBManager();
                             <div class="col-12">
                                 <label for="address2" class="form-label">住所 2 <span
                                         class="text-muted">(任意)</span></label>
-                                <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名">
+                                <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名" value="<?php echo $_SESSION['login_ad2']; ?>">
                             </div><br><br>
                         <!-- お支払方法 -->
                         <h4 class="mb-3">お支払い方法</h4>
