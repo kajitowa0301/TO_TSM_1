@@ -109,7 +109,6 @@
     width: 45vw;
 }
 .flex_left{
-    float: left;
     margin-left: 2%;
 }
 /* .flex_right{
@@ -119,12 +118,11 @@
 } */
 
 .fixed_text{
-    position: fixed;
-    margin: auto;
+    margin: 0 auto 2em;
     right: 3vw;
     padding: 6px 40px;
     background-color: cornsilk;
-    width: 25vw;
+    width: 400px;
     border: 3px solid #282828;
     border-radius: 5px;
 }
@@ -139,7 +137,6 @@
 
 .some_actions {
     display: flex;
-
     align-items: stretch;
 }
 
