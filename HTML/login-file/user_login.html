@@ -48,8 +48,8 @@ $db = new DBManager();
                         <!-- ログインボタン -->
                         <div class="btn-group">
                             <!--お気に入り閲覧ボタン始  -->
-                            <button class="navbar-toggler" onClick="location.href='./../favorite.html'"
-                                type="button" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+                            <button class="navbar-toggler" onClick="location.href='./../favorite.html'" type="button"
+                                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
                                 <i class="bi bi-person-heart"></i>
                                 <span class="font-word-break">お気に入り</span>
                             </button>
@@ -92,43 +92,39 @@ $db = new DBManager();
     <p class="p-text-weight"><i class="bi bi-person-circle"></i>ログイン</p>
     <div class="container">
         <div class="login_top">
+            <span class="text-danger fw-bold">
+                <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
+                <?php 
+                    if($_SERVER['REQUEST_METHOD'] == "POST") {
+                        try {
+                            $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
+                            // ユーザ情報をセッション変数に入れてトップページに飛ばす
+                            $_SESSION['login_id'] = $result['customers_mail'];
+                            $_SESSION['login_ln'] = $result['customers_ln'];
+                            $_SESSION['login_fn'] = $result['customers_fn'];
+                            $_SESSION['login_post'] = $result['customers_postcode'];
+                            $_SESSION['login_pref'] = $result['customers_pref'];
+                            $_SESSION['login_ad1'] = $result['customers_address'];
+                            $_SESSION['login_ad2'] = $result['customers_subaddress'];
+                            echo "<script>location.replace('../index.html');</script>";
+                        } catch(PDOException $e) {
+                            if($e->getCode() == '2002') {
+                                echo '情報の登録に失敗しました。<br />しばらく時間をおいて再度お試しください。';
+                            }
+                        } catch(Exception $e) {
+                            // エラー表示
+                            echo $e->getMessage();
+                        }
+                    }
+                ?>
+            </span>
             <form action="#" method="post">
                 <h4 class="h4_font">Mailadress</h4>
                 <input type="text" name="mail" class="text-width" placeholder="totsm2022@login.com"><br><br>
                 <h4 class="h4_font">Password</h4>
                 <input type="password" name="pass" class="text-width" placeholder="totsm2022_Pass"><br>
-                <p class="log_err">
-                    <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
-
-                <p>
-                    <?php 
-                        if($_SERVER['REQUEST_METHOD'] == "POST") {
-                            try {
-                                $result = $db->loginAllowed($_POST["mail"],$_POST["pass"]);
-                                // ユーザ情報をセッション変数に入れてトップページに飛ばす
-                                $_SESSION['login_id'] = $result['customers_mail'];
-                                $_SESSION['login_ln'] = $result['customers_ln'];
-                                $_SESSION['login_fn'] = $result['customers_fn'];
-                                $_SESSION['login_post'] = $result['customers_postcode'];
-                                $_SESSION['login_pref'] = $result['customers_pref'];
-                                $_SESSION['login_ad1'] = $result['customers_address'];
-                                $_SESSION['login_ad2'] = $result['customers_subaddress'];
-                                echo "<script>location.replace('../index.html');</script>";
-                            } catch(PDOException $e) {
-                                if($e->getCode() == '2002') {
-                                    echo '情報の登録に失敗しました。<br />しばらく時間をおいて再度お試しください。';
-                                }
-                            } catch(Exception $e) {
-                                // エラー表示
-                                echo $e->getMessage();
-                            }
-                        }
-                    ?>
-                </p>
-
-
                 <!-- <a href="./../決済_html/住所登録.html"><input type="button" value="ログイン" class="login-botton"></a> -->
-                <button type="submit"class="login-botton" >ログイン</button>
+                <button type="submit" class="login-botton">ログイン</button>
                 <!-- onclick="location.href='./../決済_html/住所登録.html'" -->
             </form>
             <a href="./user_sign-up.html" class="user-sign-up">

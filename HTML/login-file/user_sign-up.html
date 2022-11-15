@@ -91,6 +91,7 @@ $db = new DBManager();
     <div class="container">
         <div class="back-color-center">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
+            <span class="text-danger fw-bold">
             <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -125,6 +126,7 @@ $db = new DBManager();
                 }
             }
             ?>
+            </span>
             <!-- formにactionは指定しないようお願いします -->
             <form method="POST">
                 <h4 class="font-position">メールアドレス<span class="fs-6 text-danger">（必須）</span></h4>

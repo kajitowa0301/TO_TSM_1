@@ -82,6 +82,14 @@
             return json_encode($ps->fetchAll());
         }
 
+        public function getItemsFromMaker(string $makerId)
+        {
+            $ps = $this->connectDb()->prepare("SELECT * FROM items WHERE makers_id = ?");
+            $ps->bindValue(1, $makerId, pdo::PARAM_INT);
+            $ps->execute();
+            return json_encode($ps->fetchAll());
+        }
+
         public function getAllMaker()
         {
             $ps = $this->connectDb()->prepare("SELECT * FROM makers");
