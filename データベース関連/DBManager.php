@@ -1,6 +1,14 @@
 <?php
     class DBManager
     {
+        public function isMail(string $mail) {
+            if (preg_match('/^[a-z0-9._+^~-]+@[a-z0-9.-]+$/i', $mail)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         public function connectDb()
         {
             // $pdo = new PDO("mysql:host=mysql207.phy.lolipop.lan;dbname=LAA1417836-totsm;charset=utf8",'LAA1417836','GgfFQ3wVGbcDTk9');// 本番用
@@ -10,6 +18,11 @@
     
         public function submitUser(string $mail, string $pass, string $lastname, string $firstname, string $post, string $pref, string $address, string $address2)
         {
+
+            if (!($this->isMail($mail))) {
+                throw new LogicException("メールアドレスの形式で入力してください。<br />", 1);
+                return false;
+            }
             $ps = $this->connectDb()->prepare("INSERT INTO customers VALUES (?,?,?,?,?,?,?,?)");
             $ps->bindValue(1,$mail,pdo::PARAM_STR);
             $ps->bindValue(2,password_hash($pass,PASSWORD_DEFAULT),pdo::PARAM_STR);
