@@ -1,0 +1,205 @@
+<?php
+// セッション
+session_start();
+
+// データベースマネージャの読込
+require_once "../データベース関連/DBManager.php";
+$db = new DBManager();
+?>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not found</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./style_css_file/style1.css">
+    <script src="./script_file/script.js">
+    </script>
+
+
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- ジャンボトロン 
+  <style>
+    .bg-img {
+        background-image: url("./photo/cloud_backo_img.JPG");
+        background-size: cover;
+        background-position: center 60%;
+    }
+</style>
+ ジャンボトロン -->
+    <style type="text/css">
+        #photo {
+            width: 100%;
+            height: 300px;
+            margin: 0 auto;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #photo img {
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var setImg = '#photo';
+            var fadeSpeed = 2000;
+            var switchDelay = 5000;
+
+            $(setImg).children('img').css({ opacity: '0' });
+            $(setImg + ' img:first').stop().animate({ opacity: '1', zIndex: '20' }, fadeSpeed);
+
+            setInterval(function () {
+                $(setImg + ' :first-child').animate({ opacity: '0' }, fadeSpeed).next('img').animate({ opacity: '1' }, fadeSpeed).end().appendTo(setImg);
+            }, switchDelay);
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <!-- ナブバーの記述始まり -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <p id="midasi">To TSM.</p>
+            </a>
+            <div class="btn-toolbar">
+                <div class="btn-toolbar">
+                    <!--新規登録
+          <div class="button_solid003">
+            <a href="https://zozo.jp/_member/login.html?bkurl=%2F%3F">新規登録</a>
+          </div>
+        -->
+                    <!-- 新規登録 -->
+
+                    <!-- ログインボタン -->
+
+                    <!--ログインボタン-->
+                    <div class="button_solid003">
+                        <?php
+              if(isset($_SESSION['login_id'])) {
+                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
+              } else {
+                echo "<a href='./login-file/user_login.html'>ログイン</a>";
+              }
+            ?>
+                    </div>
+                    <!-- ログインボタン -->
+                    <div class="btn btn-group">
+                        <!--お気に入り閲覧ボタン始  -->
+                        <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+                            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+
+                            <i class="bi bi-person-heart"></i>
+                            <span class="font-word-break">お気に入り</span>
+                        </button>
+                        <!-- お気に入り閲覧ボタン終 -->
+
+                        <!-- 検索のアイコン -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                            aria-controls="navbar" aria-expanded="false">
+                            <i class="button-submunu  bi bi-search"></i>
+                            <span class="font-word-break">検索</span>
+                        </button>
+
+                        <!-- カゴのアイコン -->
+                        <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
+                                class="bi bi-cart4 fs-4"></i>
+                            <span class="font-word-break">カート</span>
+                        </button>
+                        <!-- 検索ドロップ -->
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="navbar-nav me-auto mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./janru_html/outer.html">-----outer-----</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./janru_html/sweat.html">-----sweat-----</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="./janru_html/pants.html">-----pants-----</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 検索ドロップ終わり -->
+                    </div>
+    </nav>
+    <!--ナブバの記述終わり  -->
+
+    <!-- ジャンボトロン 
+  <div class="bg-img p-5 text-center">
+    <img src="./photo/beni2.png" width="50%" />
+    <p style="color: white; font-size: 2vw;">
+    </p>
+  </div> 
+  -ジャンボトロン-->
+
+
+    <!-- 画像切り替えのとこ -->
+    <div id="photo">
+        <img src="./back_photo/welcome.jpg" width="100%" height="100%" alt="">
+        <img src="./sweat_photo/beni2.png" width="100%" height="100%" alt="">
+        <img src="./back_photo/images4.jpg" width="100%" height="100%" alt="">
+        <img src="./back_photo/shop_back_3.jpg" width="100%" height="100%" alt="">
+        <img src="./back_photo/shop-back_2.jpg" width="100%" height="100%" alt="">
+        <img src="./back_photo/back_photo_2.jpg" width="100%" height="100%" alt="">
+    </div>
+    <!--画像切り替えのとこ  -->
+    <!-- サブメニュー表示 -->
+    <div class="text-center">
+        <h1>404 ページが見つかりませんでした</h1>
+        <p>URLが間違っているか、リンクが切れています。</p>
+        <div class="div_button">
+            <input type="button" value="トップページへ" class="button_kounyuu" onclick="location.href='./index.html'">
+        </div>
+    </div>
+
+
+    <!-- トップに戻るボタン -->
+    <a href="#"><button class="top-return-button"><i class="bi bi-arrow-up"></i></button></a>
+    <!--トップボタンここまで -->
+
+    <br><br><br>
+
+    <!--フッター始まり-->
+    <div>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">概要</a></li>
+            </ul>
+            <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
+        </footer>
+    </div>
+    <!-- フッター終わり -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+    <script src="./script_file/script.js"></script>
+</body>
+
+</html>
