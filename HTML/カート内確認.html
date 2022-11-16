@@ -214,7 +214,8 @@ $allItemsList = $db->getAllItems();
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
   <script>
-    getCart('<?php echo $allItemsList; ?>');
+    const cart = getCart('<?php echo $allItemsList; ?>');
+    console.log(cart);
 
     const reji = document.getElementById('goReji');
     const flag = "<?php echo isset($_SESSION['login_id']); ?>";
@@ -222,6 +223,39 @@ $allItemsList = $db->getAllItems();
       reji.action = "./住所登録.html";
     } else {
       reji.action = "./login-file/user_login.html";
+    }
+
+    function createTr() {
+      const parent = document.getElementsByTagName('tbody');
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      const tdImg = document.createElement('img');
+      const tdSpan = document.createElement('span');
+      const div = document.createElement('div');
+      // const divTd1 = 
+//       <tr>
+
+// <td><img src="./photo/swet_4.jpg" class="kessai_img_size" align="left">
+//   <span class="shohin_name">商品名</span>
+// </td>
+// <div valign="bottom" class="some_actions">
+
+//   <td valign="middle">
+//     <span>S</span>
+//   </td>
+//   <td valign="middle">
+//     <button class="cnt_btn">数量</button>
+//   </td>
+//   <td valign="middle">
+//     <button class="delete_btn">削除</button>
+//   </td>
+//   <td valign="middle">
+//     <span>¥198000</span>
+//   </td>
+
+// </div>
+
+// </tr>
     }
   </script>
 </body>

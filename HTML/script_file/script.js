@@ -38,15 +38,26 @@ function getCart(itemsList) {
     // console.log("search:",allItemsList[cartItemsList[0].id - 1].items_name);
 
     // カートにある商品を全商品から検索して商品情報をログに出力
-    cartItemsList.forEach(ele => {
-        console.log("search_name:", allItemsList[ele.id - 1].items_name);
-        console.log("search_size:", ele.size);
-        console.log("search_vol:", ele.vol);
-        console.log("search_price:", allItemsList[ele.id - 1].items_price);
-    });
+    // cartItemsList.forEach(ele => {
+    //     console.log("search_name:", allItemsList[ele.id - 1].items_name);
+    //     console.log("search_size:", ele.size);
+    //     console.log("search_vol:", ele.vol);
+    //     console.log("search_price:", allItemsList[ele.id - 1].items_price);
+    // });
 
     // 今ログに出してる情報をオブジェクト配列で返すことになると思う
-    // return cart;
+    let cart = [];
+    let i = 0;
+    cartItemsList.forEach(ele => {
+        cart[i] = {
+            name: allItemsList[ele.id - 1].items_name,
+            size: ele.size,
+            vol: ele.vol,
+            price: allItemsList[ele.id - 1].items_price
+        }
+        i++;
+    });
+    return cart;
 }
 
 // カート削除機能（引数：要素位置）
