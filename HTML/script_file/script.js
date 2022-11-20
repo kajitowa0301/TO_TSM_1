@@ -45,7 +45,7 @@ function getCart(itemsList) {
     //     console.log("search_price:", allItemsList[ele.id - 1].items_price);
     // });
 
-    // 今ログに出してる情報をオブジェクト配列で返すことになると思う
+    // カートにある商品を全商品から検索して商品情報をオブジェクト配列で返す
     let cart = [];
     let i = 0;
     cartItemsList.forEach(ele => {
