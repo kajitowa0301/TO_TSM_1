@@ -1,3 +1,11 @@
+<?php
+// セッション
+session_start();
+
+// データベースマネージャの読込
+require_once "../データベース関連/DBManager.php";
+$db = new DBManager();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -151,7 +159,7 @@
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Eメール <span class="text-muted">(任意)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo $_SESSION['buyData']['mail']; ?>">
                             <div class="invalid-feedback">
                                 配送の更新に有効なメールアドレスを入力してください
                             </div>
