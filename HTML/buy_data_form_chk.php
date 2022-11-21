@@ -20,14 +20,43 @@
         $errMsg .= "メールアドレスの形式で入力してください<br />";
     }
     // 住所チェック
-    if (true) {
+    if ($_POST['pref'] == "" || $_POST['post'] == "") {
+        $chkFlag = false;
+        $errMsg .= "住所を入力してください<br />";
+    }
+
+    // 支払方法ごとの内容チェック
+    switch ($_POST['paymentMethod']) {
+        case '1':
+            if ($_POST['ccName'] == "") {
+                $chkFlag = false;
+                $errMsg .= "カード名義を入力してください<br />";
+            }
+            break;
         
+        case '2':
+            if ($_POST['conbini-Name'] == "") {
+                $chkFlag = false;
+                $errMsg .= "意図しない挙動<br />";
+            }
+            break;
     }
 
     if ($chkFlag == true) {
         $_SESSION['buyData'] = [
-            'ln' => '',
-            'mail' => $_POST['mail']
+            'ln' => $_POST['ln'],
+            'fn' => $_POST['fn'],
+            'mail' => $_POST['mail'],
+            'post' => $_POST['post'],
+            'pref' => $_POST['pref'],
+            'ad' => $_POST['ad'],
+            'ad2' => $_POST['ad2'],
+            'pay' => $_POST['paymentMethod'],
+            'ccName' => $_POST['ccName'],
+            'ccNum' => $_POST['ccNum'],
+            'ccExp' => $_POST['ccExp'],
+            'ccCvv' => $_POST['ccCvv'],
+            'conveni' => $_POST['conbini-Name']
         ];
         header('Location: ./最終確認.html');
         exit;
