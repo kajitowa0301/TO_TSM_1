@@ -95,9 +95,9 @@ $db = new DBManager();
           <div class="button_solid003">
             <?php
               if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
+                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
               } else {
-                echo "<a href='./login-file/user_login.html'>ログイン</a>";
+                echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
               }
             ?>
           </div>
@@ -222,7 +222,7 @@ $db = new DBManager();
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">概要</a></li>
       </ul>
       <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
