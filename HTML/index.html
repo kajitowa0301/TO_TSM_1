@@ -92,53 +92,48 @@ $db = new DBManager();
           <!-- ログインボタン -->
 
           <!--ログインボタン-->
-          <div class="button_solid003">
-            <?php
+            <div class="button_solid003">
+              <?php
               if(isset($_SESSION['login_id'])) {
                 echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
               } else {
                 echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
               }
             ?>
-          </div>
-          <!-- ログインボタン -->
-          <div class="btn btn-group">
-            <!--お気に入り閲覧ボタン始  -->
-            <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
-              data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
-
-              <i class="bi bi-person-heart"></i>
-              <span class="font-word-break">お気に入り</span>
-            </button>
-            <!-- お気に入り閲覧ボタン終 -->
-
-            <!-- 検索のアイコン -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-              aria-controls="navbar" aria-expanded="false">
-              <i class="button-submunu  bi bi-search"></i>
-              <span class="font-word-break">検索</span>
-            </button>
-
-            <!-- カゴのアイコン -->
-            <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-4"></i>
-              <span class="font-word-break">カート</span>
-            </button>
-            <!-- 検索ドロップ -->
-            <div class="collapse navbar-collapse" id="navbar">
-              <ul class="navbar-nav me-auto mb-2">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
-                </li>
-              </ul>
             </div>
-            <!-- 検索ドロップ終わり -->
-          </div>
+            <!-- ログインボタン -->
+            <div class="btn btn-group">
+              <!--お気に入り閲覧ボタン始  -->
+              <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+                <i class="bi bi-heart-fill fs-2"></i>
+              </button>
+              <!-- お気に入り閲覧ボタン終 -->
+
+              <!-- 検索のアイコン -->
+              <button class="navbar-toggler" type="button" id="submenuFunc()">
+                <i class="button-submunu  bi bi-search fs-2"></i>
+              </button>
+
+              <!-- カゴのアイコン -->
+              <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
+              </button>
+              <!-- 検索ドロップ -->
+              <!-- <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
+                  </li>
+                </ul>
+              </div> -->
+              <!-- 検索ドロップ終わり -->
+            </div>
   </nav>
   <!--ナブバの記述終わり  -->
 
