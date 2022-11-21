@@ -20,6 +20,17 @@ CREATE TABLE buys(
     buys_payment INT NOT NULL,
     FOREIGN KEY fkey1 (customers_mail) REFERENCES customers(customers_mail)
 );
+
+-- buys_payment番号対応表（購入処理は今回の実習で扱わないので、最低限の情報だけ保持）
+-- 0 クレジットカード
+-- 1 セブンイレブン
+-- 2 ローソン
+-- 3 ファミリーマート
+-- 4 ミニストップ
+-- 5 ポプラ
+-- 6 デイリー
+-- 7 代金引換
+
 CREATE TABLE items(
     items_id INT PRIMARY KEY AUTO_INCREMENT,
     makers_id INT NOT NULL,

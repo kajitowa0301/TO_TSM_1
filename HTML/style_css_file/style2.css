@@ -218,3 +218,11 @@
     margin-bottom: 13px;
     border:2px solid #474849;
 }
+
+.errField {
+    border: 2px solid #ff2c2c;
+    border-radius: 5px;
+    background-color: #ffd1d1;
+    padding: 1%;
+    margin: 1%;
+}

@@ -88,26 +88,32 @@ $db = new DBManager();
 
 <body class="bg-light">
     <div class="container">
+        <?php
+            if(isset($_SESSION['buyDataErr'])) {
+                echo "<div class='errField'>".$_SESSION['buyDataErr']."</div>";
+            }
+            $_SESSION['buyDataErr'] = null;
+        ?>
         <main>
             <div class="row g-5">
                 <div class="col-md-7 col-lg-12">
                     <div class="col-md-5 col-lg-4 order-md-last">
                     </div>
                     <h4 class="mb-3">請求先住所</h4>
-                    <form class="needs-validation" novalidate action="最終確認.html">
+                    <form class="needs-validation" novalidate action="buy_data_form_chk.php" method="post">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <label for="familyName" class="form-label">姓</label>
-                                <input type="text" class="form-control" id="familyName" placeholder=""
-                                    value="<?php echo $_SESSION['login_ln']; ?>">
+                                <input type="text" class="form-control" name="ln" id="familyName" placeholder=""
+                                    value="<?php echo $_SESSION['login_ln']; ?>" required>
                                 <div class="invalid-feedback">
                                     名字を入力してください
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <label for="givenName" class="form-label">名</label>
-                                <input type="text" class="form-control" id="givenName" placeholder=""
-                                    value="<?php echo $_SESSION['login_fn']; ?>">
+                                <input type="text" class="form-control" name="fn" id="givenName" placeholder=""
+                                    value="<?php echo $_SESSION['login_fn']; ?>" required>
                                 <div class="invalid-feedback">
                                     名前を入力してください
                                 </div>
@@ -127,52 +133,53 @@ $db = new DBManager();
 
                             <div class="col-12">
                                 <label for="email" class="form-label">Eメール <span class="text-muted">(任意)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com"
-                                    value="<?php echo $_SESSION['login_id']; ?>">
+                                <input type="email" class="form-control" name="mail" id="email"
+                                    placeholder="you@example.com" value="<?php echo $_SESSION['login_id']; ?>" required>
                                 <div class="invalid-feedback">
                                     配送の更新に有効なメールアドレスを入力してください
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="col-md-5">
                                 <label for="pref" class="form-label">都道府県</label>
-                                <input type="text" class=" form-control d-block w-100" placeholder="福岡県" value="<?php echo $_SESSION['login_pref']; ?>">
+                                <input type="text" class=" form-control d-block w-100" name="pref" placeholder="福岡県"
+                                    value="<?php echo $_SESSION['login_pref']; ?>" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="city" class="form-label">市町村</label>
-                                <input type="text" class="form-control d-block w-100" placeholder="春日市">
+                                <input type="text" class="form-control d-block w-100" placeholder="春日市" required>
                             </div>
 
                             <!-- 郵便番号 -->
                             <div class="col-md-3">
                                 <label for="zip" class="form-label">郵便番号</label>
-                                <input type="text" class="form-control" id="zip" placeholder=""
-                                    value="<?php echo $_SESSION['login_post']; ?>">
+                                <input type="text" class="form-control" name="post" id="zip" placeholder=""
+                                    value="<?php echo $_SESSION['login_post']; ?>" required>
                                 <div class="invalid-feedback">
                                     郵便番号を入力してください
                                 </div>
                             </div>
                         </div>
 
-                            <div class="col-12">
-                                <label for="address" class="form-label">住所</label>
-                                <input type="text" class="form-control" id="address" placeholder="地番">
-                                <div class="invalid-feedback">
-                                    配送先住所を入力してください
-                                </div>
+                        <div class="col-12">
+                            <label for="address" class="form-label">住所</label>
+                            <input type="text" class="form-control" name="ad" id="address" placeholder="地番" required>
+                            <div class="invalid-feedback">
+                                配送先住所を入力してください
                             </div>
+                        </div>
 
-                            <div class="col-12">
-                                <label for="address2" class="form-label">住所 2 <span
-                                        class="text-muted">(任意)</span></label>
-                                <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名" value="<?php echo $_SESSION['login_ad2']; ?>">
-                            </div><br><br>
+                        <div class="col-12">
+                            <label for="address2" class="form-label">住所 2 <span class="text-muted">(任意)</span></label>
+                            <input type="text" class="form-control" name="ad2" id="address2" placeholder="アパート・マンション名"
+                                value="<?php echo $_SESSION['login_ad2']; ?>">
+                        </div><br><br>
                         <!-- お支払方法 -->
                         <h4 class="mb-3">お支払い方法</h4>
                         <div class="my-3">
                             <div class="form-check">
                                 <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
-                                    onclick="crebitFunc()">
+                                    onclick="crebitFunc()" required>
                                 <label class="form-check-label" for="credit">クレジットカード</label>
                             </div>
                             <div class="form-check">
@@ -186,27 +193,13 @@ $db = new DBManager();
                                 <label class="form-check-label" for="paypay">代金引換</label>
                             </div>
                         </div>
-                        <script>
-                            function crebitFunc() {
-                                document.getElementById("siharai").style.display = 'inline';
-                                document.getElementById("siharai-conbini").style.display = 'none';
 
-                            }
-                            function conbiniFunc(){
-                                document.getElementById("siharai").style.display = 'none';
-                                document.getElementById("siharai-conbini").style.display = 'inline';
-                            }
-                            function paypayFunc(){
-                                document.getElementById("siharai").style.display = 'none';
-                                document.getElementById("siharai-conbini").style.display = 'none';
-                            }
-                        </script>
                         <!-- クレジットカード支払専用画面 -->
                         <div id="siharai">
                             <div class="row gy-3">
                                 <div class="col-md-6">
                                     <label for="cc-name" class="form-label">カードの名義</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder="">
+                                    <input type="text" class="form-control" name="ccName" id="cc-name" placeholder="" required>
                                     <small class="text-muted">カード上に表示されているフルネーム</small>
                                     <div class="invalid-feedback">
                                         カードの名義を入力してください
@@ -214,21 +207,21 @@ $db = new DBManager();
                                 </div>
                                 <div class="col-md-6">
                                     <label for="cc-number" class="form-label">クレジットカード番号</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder="">
+                                    <input type="text" class="form-control" name="ccNum" id="cc-number" placeholder="" required>
                                     <div class="invalid-feedback">
                                         クレジットカード番号を入力してください
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="cc-expiration" class="form-label">有効期限</label>
-                                    <input type="text" class="form-control" id="cc-expiration" placeholder="">
+                                    <input type="text" class="form-control" name="ccExp" id="cc-expiration" placeholder="" required>
                                     <div class="invalid-feedback">
                                         有効期限を入力してください
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="cc-cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cc-cvv" placeholder="">
+                                    <input type="text" class="form-control" name="ccCvv" id="cc-cvv" placeholder="" required>
                                     <div class="invalid-feedback">
                                         セキュリティコードを入力してください
                                     </div>
@@ -248,14 +241,14 @@ $db = new DBManager();
                         </div>
                         <!-- 確認画面遷移ボタン -->
                         <hr class="my-4">
-                        <FORM>
-                            <INPUT type="button" value="戻る" onClick="location.href='./カート内確認.html'"
-                                class="return-btn_2">
+                        <!-- <FORM method="post"> -->
+                        <INPUT type="button" value="戻る" onClick="location.href='./カート内確認.html'" class="return-btn_2">
 
-                            <div class="kakutei_button">
-                                <button class="kakunin" type="submit">確認画面</button>
-                            </div>
-                        </FORM>
+                        <div class="kakutei_button">
+                            <button class="kakunin" type="submit">確認画面</button>
+                        </div>
+                        <!-- </FORM> -->
+                    </form>
                 </div>
             </div>
         </main>
@@ -281,6 +274,21 @@ $db = new DBManager();
         crossorigin="anonymous"></script>
     <!-- JSの設定ファイル -->
     <script src="form-validation.js"></script>
+    <script>
+        function crebitFunc() {
+            document.getElementById("siharai").style.display = 'inline';
+            document.getElementById("siharai-conbini").style.display = 'none';
+
+        }
+        function conbiniFunc() {
+            document.getElementById("siharai").style.display = 'none';
+            document.getElementById("siharai-conbini").style.display = 'inline';
+        }
+        function paypayFunc() {
+            document.getElementById("siharai").style.display = 'none';
+            document.getElementById("siharai-conbini").style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
