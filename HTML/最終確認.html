@@ -28,26 +28,22 @@ $db = new DBManager();
             </a>
             <div class="btn-toolbar">
                 <div class="btn-toolbar">
-                    <!-- home ボタン -->
-                    <a href="./index.html">
-                        <button class="navbar-toggler" type="button">
-                            <i class="bi bi-house-door-fill fs-3"></i>
-                            <span class="font-word-break">ホーム</span>
-                        </button>
-                    </a>
-                    <!-- 検索のアイコン -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false">
-                        <i class="bi bi-search"></i>
-                        <span class="font-word-break">検索</span>
-                    </button>
                     <!-- お気に入りのアイコン -->
                     <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
                         data-bs-toggle="collapse" data-bs-target="#person">
-                        <i class="bi bi-person-heart"></i>
-                        <span class="font-word-break">お気に入り</span>
+                        <i class="bi bi-person-heart fs-2"></i>
                     </button>
-
+                    <!-- 検索のアイコン -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false">
+                        <i class="bi bi-search fs-2"></i>
+                    </button>
+                    <!-- home ボタン -->
+                    <a href="./index.html">
+                        <button class="navbar-toggler" type="button">
+                            <i class="bi bi-house-door-fill fs-2"></i>
+                        </button>
+                    </a>
                     <!-- 検索ドロップ -->
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav me-auto mb-2">
@@ -145,37 +141,39 @@ $db = new DBManager();
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="familyName" class="form-label">姓</label>
-                            <input type="text" class="form-control" id="familyName" placeholder="" value="<?php echo $_SESSION['buyData']['ln']; ?>">
+                            <input type="text" class="form-control" id="familyName" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ln']; ?>">
                             <div class="invalid-feedback">
                                 名字を入力してください
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <label for="givenName" class="form-label">名</label>
-                            <input type="text" class="form-control" id="givenName" placeholder="" value="<?php echo $_SESSION['buyData']['fn']; ?>">
+                            <input type="text" class="form-control" id="givenName" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['fn']; ?>">
                             <div class="invalid-feedback">
                                 名前を入力してください
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Eメール <span class="text-muted">(任意)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo $_SESSION['buyData']['mail']; ?>">
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                value="<?php echo $_SESSION['buyData']['mail']; ?>">
                             <div class="invalid-feedback">
                                 配送の更新に有効なメールアドレスを入力してください
                             </div>
                         </div>
-
-                        <div class="col-md-5">
+                        <!-- 都道府県 -->
+                        <div class="col-md-6">
                             <label for="pref" class="form-label">都道府県</label>
-                            <input type="text" class="form-control d-block w-100" placeholder="福岡県" value="<?php echo $_SESSION['buyData']['pref']; ?>">
+                            <input type="text" class="form-control d-block w-100" placeholder="福岡県"
+                                value="<?php echo $_SESSION['buyData']['pref']; ?>">
                         </div>
-                        <div class="col-md-4">
-                            <label for="city" class="form-label">市町村</label>
-                            <input type="text" class="form-control d-block w-100" placeholder="春日市">
-                        </div>
-                        <div class="col-md-3">
+                        <!-- 郵便番号 -->
+                        <div class="col-md-6">
                             <label for="zip" class="form-label">郵便番号</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" value="<?php echo $_SESSION['buyData']['post']; ?>">
+                            <input type="text" class="form-control" id="zip" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['post']; ?>">
                             <div class="invalid-feedback">
                                 郵便番号を入力してください
                             </div>
@@ -183,8 +181,9 @@ $db = new DBManager();
                     </div>
 
                     <div class="col-12">
-                        <label for="address" class="form-label">住所</label>
-                        <input type="text" class="form-control" id="address" placeholder="地番" value="<?php echo $_SESSION['buyData']['ad']; ?>">
+                        <label for="address" class="form-label">市区町村</label>
+                        <input type="text" class="form-control" id="address" placeholder="地番"
+                            value="<?php echo $_SESSION['buyData']['ad']; ?>">
                         <div class="invalid-feedback">
                             配送先住所を入力してください
                         </div>
@@ -192,7 +191,8 @@ $db = new DBManager();
 
                     <div class="col-12">
                         <label for="address2" class="form-label">住所 2 <span class="text-muted">(任意)</span></label>
-                        <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名" value="<?php echo $_SESSION['buyData']['ad2']; ?>">
+                        <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名"
+                            value="<?php echo $_SESSION['buyData']['ad2']; ?>">
                     </div>
                     <hr class="my-4">
 
@@ -200,7 +200,7 @@ $db = new DBManager();
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
                             <label class="form-check-label" for="credit">クレジットカード</label>
                         </div>
                         <div class="form-check">
@@ -215,7 +215,8 @@ $db = new DBManager();
                     <div class="row gy-3">
                         <div class="col-md-6">
                             <label for="cc-name" class="form-label">カードの名義</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" value="<?php echo $_SESSION['buyData']['ccName']; ?>">
+                            <input type="text" class="form-control" id="cc-name" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ccName']; ?>">
                             <small class="text-muted">カード上に表示されているフルネーム</small>
                             <div class="invalid-feedback">
                                 カードの名義を入力してください
@@ -223,21 +224,24 @@ $db = new DBManager();
                         </div>
                         <div class="col-md-6">
                             <label for="cc-number" class="form-label">クレジットカード番号</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" value="<?php echo $_SESSION['buyData']['ccNum']; ?>">
+                            <input type="text" class="form-control" id="cc-number" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ccNum']; ?>">
                             <div class="invalid-feedback">
                                 クレジットカード番号を入力してください
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label for="cc-expiration" class="form-label">有効期限</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" value="<?php echo $_SESSION['buyData']['ccExp']; ?>">
+                            <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ccExp']; ?>">
                             <div class="invalid-feedback">
                                 有効期限を入力してください
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label for="cc-cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder="" value="<?php echo $_SESSION['buyData']['ccCvv']; ?>">
+                            <input type="text" class="form-control" id="cc-cvv" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ccCvv']; ?>">
                             <div class="invalid-feedback">
                                 セキュリティコードを入力してください
                             </div>
