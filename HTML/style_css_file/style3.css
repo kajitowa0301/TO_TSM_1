@@ -11,13 +11,47 @@
     width:40%
 }
 
-.final-bottom{
+.continue-button-style{
+  width:200px;
+  background-color: #0066ff;
+  color: white;
+  text-align: center;
+  margin-left:30px ;
+  margin-right: 30%;
+  padding:3% 2%;
+  border-radius: 10px;
+  border: solid #0066ff;
+}
+.continue-button-style:hover{
+  background-color: white;
+  color: #0066ff;
+}
+.log-out-button-style{
+  width:200px;
+  background-color:#f66;
+  color: white;
+  text-align: center;
+  padding: 3% 2%;
+  border-radius: 10px;
+  border:solid #f66;
+}
+.log-out-button-style:hover{
+ background-color:  white;
+ color:#f66;
+}
+.continue-shop{
+  margin-top: 5%;
+  text-align: center;
+}
+
+/* .final-bottom{
   width:50%;
   padding: 15px;
   border-radius: 15px;
   color: #000;
-  background-color: yellow;
+  background-color:yellow;
   border-style: solid;
+  float: left;
 }
 
 .final-bottom:hover{
@@ -33,6 +67,7 @@
   color: #fff;
   background:#d55;
   border-style: solid;
+  text-align: center;
 }
 
 .log-out:hover{
@@ -41,6 +76,7 @@
   border-color: #eee;
   box-shadow: 0px 5px 15px #000;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 .textlenlim-1{
@@ -56,3 +92,8 @@
 
 >>>>>>> 9e4e7b489d84a124349d954b59afc872d823b861
 }
+=======
+.flex-button-style{
+  flex-wrap: wrap;
+} */
+>>>>>>> e20ff7e9ba3be72873cf3b7389579cb80c3f1e21
