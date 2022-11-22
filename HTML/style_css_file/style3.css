@@ -45,3 +45,22 @@
   text-decoration: none;
 
 }
+.paaa{
+margin-top: 40px;
+margin-left: 40px;
+
+}
+
+
+.margin{
+  margin-left: 40px;
+  float: right;
+}
+.nyo{
+  text-align: left;
+  float: left;
+  
+}
+.dis{
+  display: inline-block;
+}
