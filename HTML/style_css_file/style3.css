@@ -90,9 +90,32 @@
 .line a{
   text-decoration: none;
 
+<<<<<<< HEAD
+}
+.paaa{
+margin-top: 40px;
+margin-left: 40px;
+
+}
+
+
+.margin{
+  margin-left: 40px;
+  float: right;
+}
+.nyo{
+  text-align: left;
+  float: left;
+  
+}
+.dis{
+  display: inline-block;
+}
+=======
 >>>>>>> 9e4e7b489d84a124349d954b59afc872d823b861
 }
 =======
 .flex-button-style{
   flex-wrap: wrap;
 } */
+
