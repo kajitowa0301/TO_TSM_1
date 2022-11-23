@@ -1,0 +1,204 @@
+/* メーカー画面のデザイン */
+.maker-flex{
+    max-width: 80%;
+    margin: 20px auto;
+    /* background-color: #ccc; */
+    display:flex;
+}
+.maker-list-1{
+    width: 25%;
+    background-color: #ddd;
+    border-radius:10px ;
+    font-size: 20px;
+}
+.maker-list-1 > ul > li{
+    padding:20px 0;
+    color: #444;
+    list-style: none;
+}
+.maker-list-1 > ul > li:hover{
+ text-decoration:underline #09f;
+}
+.maker-list-2{
+    width: 25%; 
+    background-color: #ddd;
+    border-radius:10px ;
+    font-size: 20px;
+}
+.maker-list-2 > ul > li{
+    padding:20px 0;
+    color: #444;
+    list-style: none;
+}
+.maker-list-2 > ul > li:hover{
+    text-decoration:underline #09f;
+   }
+.maker-list-3{
+    width: 25%;
+    background-color: #ddd;
+    border-radius:10px ;
+    font-size: 20px;
+}
+.maker-list-3 > ul > li{
+    padding:20px 0;
+    color: #444;
+    list-style: none;
+}
+.maker-list-3 > ul > li:hover{
+    text-decoration:underline #09f;
+   }
+.maker-list-4{
+    width: 25%;
+    background-color: #ddd;
+    border-radius:10px ;
+    font-size: 20px;
+}
+.maker-list-4 > ul > li{
+    padding:20px 0;
+    color: #444;
+    list-style: none;
+}
+.maker-list-4 > ul > li:hover{
+    text-decoration:underline #09f;
+   }
+   /* hrefの設定 */
+.li-href{
+    color: #444;
+    text-decoration: none;
+}
+.li-href:hover{
+    color: #444;
+    text-decoration: underline #09f;
+}
+
+/* カラー検索画面のデザイン */
+#color-margin{
+    margin-top: 9%;
+}
+.select-color{
+    font-size: 25px;
+    font-weight: 600;
+    position: fixed;
+    top: 30%;
+    left:10px;
+}
+.select-color > span{
+    /* text-decoration: underline #444; */
+    background-color:#ccc;
+}
+
+.color-1{
+    width: 80%;
+    margin: 5% 13%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.color-1 > input[type= button]{
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;
+}
+.color-2{
+    width: 80%;
+    margin: 5% 13%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.color-2 > input[type= button]{
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;
+}
+.color-3{
+    width: 80%;
+    margin: 5% 13%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.color-3 > input[type= button]{
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;
+}
+/* カラー選択するボタンの色の付け */
+#red{
+    background-color: red;
+}
+#red:hover{
+    opacity:0.5;
+}
+#green{
+    background-color: green;
+}
+#green:hover{
+    opacity: 0.5;
+}
+#yellow{
+    background-color: yellow;
+}
+#yellow:hover{
+    opacity: 0.5;
+}
+#blue{
+    background-color: #09f;
+}
+#blue:hover{
+    opacity: 0.5;
+}
+#black{
+    background-color: black;
+}
+#black:hover{
+    opacity: 0.5;
+}
+#olive{
+    background-color: olive;
+}
+#olive:hover{
+    opacity: 0.5;
+}
+#purple{
+    background-color: purple;
+}
+#purple:hover{
+    opacity: 0.5;
+}
+#violet{
+    background-color: violet;
+}
+#violet:hover{
+    opacity: 0.5;
+}
+#brown{
+background-color: brown;
+}
+#brown:hover{
+    opacity: 0.5;
+}
+#aqua{
+    background-color: aqua;
+}
+#aqua:hover{
+    opacity: 0.5;
+}
+#gold{
+    background-color: gold;
+}
+#gold:hover{
+    opacity: 0.5;
+}
+#wheat{
+    background-color: wheat;
+}
+#wheat:hover{
+    opacity: 0.5;
+}
