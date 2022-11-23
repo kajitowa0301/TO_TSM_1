@@ -349,9 +349,9 @@ button > i{
     height: 200px;
     margin: auto;
     border-radius:10px;
-    z-index:30;
+    z-index:50;
     display: flex;
-    /* display: none; */
+    display: none;
 }
 .subu-menu-back > .submenu-search{
     width: 50%;
