@@ -73,9 +73,11 @@ $allItemsList = $db->getAllItems();
       <br>
       <h6>合計　<span class="sum_mny">¥6500</span></h6>
       <!-- レジに進むボタン始まり -->
-      <form class="reji" action="" id="goReji">
+      <form class="reji" action="" id="goReji" method="post">
         <div class="reji_button">
-          <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg">
+          <input type="hidden" name="cartData" id="cartData" value="" />
+          <!-- <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg"> -->
+          <button type="submit" class="btn btn-outline-primary btn-lg" onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
         </div>
       </form>
       <!-- レジに進むボタン終わり -->
