@@ -81,7 +81,7 @@ function delCart(index) {
 function addFavorite(itemId) {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
@@ -99,7 +99,7 @@ function addFavorite(itemId) {
 function getFavorite() {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
@@ -114,7 +114,7 @@ function getFavorite() {
 function delFavorite(itemId) {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));

@@ -26,13 +26,12 @@
             $ps2->bindValue(3,"s",pdo::PARAM_STR);// size
             $ps2->bindValue(4,10,pdo::PARAM_INT);// vol
 
-            if ($ps2->execute()) {
-                header('Location: ./購入完了.html');
-                exit;
-            } else {
+            if (!($ps2->execute())) {
                 throw new Exception("Execute failed", 1);
             }
             // ---
+            header('Location: ./購入完了.html');
+            exit;
         } else {
             throw new Exception("Execute failed", 0);
         }
