@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./../style_css_file/style1.css">
+  <link rel="stylesheet" href="./../style_css_file/style3.css">
+  <script src="./script_file/script.js">
+  </script>
+</head>
+<div>
+    <!-- ナブバーの記述始まり -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://127.0.0.1:5501/HTML/index.html">
+            <p id="midasi">To TSM.</p>
+          </a>
+          <div class="btn-toolbar">
+            <div class="btn-toolbar">
+              <!--新規登録
+              <div class="button_solid003">
+                <a href="https://zozo.jp/_member/login.html?bkurl=%2F%3F">新規登録</a>
+              </div>
+            -->
+              <!-- 新規登録 -->
+    
+              <!-- ログインボタン -->
+    
+              <!--ログインボタン-->
+              <div class="button_solid003">
+                <?php
+                  if(isset($_SESSION['login_id'])) {
+                    echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
+                  } else {
+                    echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
+                  }
+                ?>
+              </div>
+              <!-- ログインボタン -->
+              <div class="btn btn-group">
+                <!--お気に入り閲覧ボタン始  -->
+                <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+                  data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+    
+                  <i class="bi bi-person-heart"></i>
+                  <span class="font-word-break">お気に入り</span>
+                </button>
+                <!-- お気に入り閲覧ボタン終 -->
+    
+                <!-- 検索のアイコン -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-controls="navbar" aria-expanded="false">
+                  <i class="button-submunu  bi bi-search"></i>
+                  <span class="font-word-break">検索</span>
+                </button>
+    
+                <!-- カゴのアイコン -->
+                <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-4"></i>
+                  <span class="font-word-break">カート</span>
+                </button>
+                <!-- 検索ドロップ -->
+                <div class="collapse navbar-collapse" id="navbar">
+                  <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 検索ドロップ終わり -->
+              </div>
+      </nav>
+      <!--ナブバの記述終わり  -->
+    </div>
+
+    <div class="paaa">
+        会社名 / 株式会社To.TSM<br>
+
+設立 / 1998年5月21日<br>
+
+代表取締役社長兼CEO / 梶原　永遠<br>
+
+資本金 / 1,359,903千円<br>
+
+所在地 /<br>
+
+西千葉オフィス（本社） / 〒263-0023 千葉県千葉市稲毛区緑町1-15-16 <br>
+
+紀尾井町オフィス / 〒102-0094 東京都千代田区紀尾井町1-3 東京ガーデンテラス紀尾井町 紀尾井タワー<br>
+
+宮崎オフィス / 〒880-0805 宮崎県宮崎市橘通東4-8-1 カリーノ宮崎 7階<br>
+
+物流拠点 /<br>
+
+ZOZOBASE習志野1 / 〒275-0024 千葉県習志野市茜浜3-7-10 プロロジスパーク習志野4<br>
+
+ZOZOBASE習志野2 / 〒275-0024 千葉県習志野市茜浜3-7-2 Landport習志野 5階<br>
+
+ZOZOBASEつくば1 / 〒300-2692 茨城県つくば市東光台5-6-2 プロロジスパークつくば1<br>
+
+ZOZOBASEつくば2 / 〒305-0019 茨城県つくば市さくらの森25-3 プロロジスパークつくば2<br>
+
+従業員 / 1,466名（平均年齢33.1歳）※グループ全体（2022年6月末時点）<br>
+
+役員<br>
+代表取締役社長兼CEO	梶原　永遠<br>
+取締役副社長兼CFO　本藤　尋<br>
+取締役兼COO	谷口　潤<br>
+取締役	今泉　洸貴<br>
+取締役	菅　俊輔<br>
+社外取締役	山﨑　智哉 *<br>
+社外取締役	堀田 和宣 *<br>
+社外取締役	齋藤 太郎 *<br>
+社外監査役（常勤）	梶原　涼子*<br>
+社外監査役（非常勤）　本藤　陽子*<br>
+社外監査役（非常勤）	谷口　麻生 *<br>
+執行役員	今泉　幸枝<br>
+執行役員	山﨑 孝郎<br>
+執行役員	菅　栄子<br>
+執行役員	安倍　秋恵<br>
+*東京証券取引所の定めに基づく独立役員<br>
+
+役員紹介ページを見る<br>
+主要子会社<br>
+株式会社ZOZO NEXT<br>
+事業内容：to.TSMグループの新規事業の創出、TO.TSM研究所を中心としたR&D<br>
+代表取締役CEO　梶原　永遠<br>
+
+グループ会社一覧<br>
+
+取引金融機関<br>
+三井住友銀行、千葉銀行、三菱UFJ銀行<br>
+
+主要取引先<br>
+アディダス ジャパン株式会社、株式会社アダストリア、株式会社アーバンリサーチ、株式会社アンダーカバー、株式会社エイネット、株式会社シップス、株式会社ジョイックスコーポレーション、株式会社TOKYO BASE、株式会社トゥモローランド、株式会社ナイキジャパン、株式会社ナノ・ユニバース、株式会社ノーウェア、株式会社バロックジャパンリミテッド、株式会社ビーズ インターナショナル、株式会社ビームス、株式会社ユナイテッドアローズ、株式会社ワコール、株式会社ワールド、ジュングループ、ディーゼルジャパン株式会社、ベイクルーズグループ、ラルフ ローレン株式会社 ほか多数<br>
+
+このページをシェアする<br>
+
+ツイート<br>
+シェア<br>
+シェア<br>
+    </div>
+</body>
+</html>
