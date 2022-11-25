@@ -130,15 +130,15 @@ $db = new DBManager();
     <h3>合わせやすい色</h3>
     <div class="color-btn-raido">
       <input type="radio" name="btn-radio" id="color1" value="color1"><label id="haishoku-1" for="color1"
-        onclick="HaishokuColor1()">
+        onclick="HaishokuColor(color[0],itemList)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color2" value="color2"><label id="haishoku-2" for="color2"
-        onclick="HaishokuColor2()">
+        onclick="HaishokuColor(color[1],itemList)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color3" value="color3"><label id="haishoku-3" for="color3"
-        onclick="HaishokuColor3()">
+        onclick="HaishokuColor(color[2],itemList)">
         <p class="haishoku-1">✓</p>
       </label>
     </div>
@@ -364,11 +364,20 @@ $db = new DBManager();
     const size = document.getElementsByName('exmple3');
     let selectSize;
 
+    const itemList = JSON.parse('<?php echo $db->getAllItems() ?>');
+
     // console.log(itemData);
     document.getElementById('itemId').value = itemData.items_id;
     document.getElementById('description').innerHTML = itemData.items_description;
     document.getElementById('price').innerHTML = itemData.items_price;
     document.getElementById('pic').src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
+
+    const color = setColor(itemData.items_color);
+    console.log(color);
+    // document.getElementById('haishoku-1').onclick = "HaishokuColor(color[0])";
+    // document.getElementById('haishoku-2').onclick = "HaishokuColor(color[1])";
+    // document.getElementById('haishoku-3').onclick = "HaishokuColor(color[2])";
+
     function chksize() {
       for (let i = 0; i < size.length; i++) {
         if (size[i].checked) {

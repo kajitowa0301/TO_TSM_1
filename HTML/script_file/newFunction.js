@@ -27,3 +27,27 @@ function HaishokuColor3(){
     document.getElementById("img-color-4").src = "./shoes_photo/bule2-shoes.jpg";
     document.getElementById('kakusu').style.display = 'inline';
 }
+
+function HaishokuColor(col,itemList){
+    const color = document.getElementById("select-color");
+    color.innerHTML=col;
+
+    itemList.forEach(ele => {
+        // console.log(allMakersList[ele.makers_id - 1]);
+        if (ele.items_color == col) {
+            // ここに
+        }
+    });
+
+    document.getElementById("img-color-1").src = "./pants_photo/bule-pants.jpg";
+    document.getElementById("img-color-2").src = "./shoes_photo/bule-shoes.jpg";
+    document.getElementById("img-color-3").src = "./pants_photo/bule2-pants.jpg";
+    document.getElementById("img-color-4").src = "./shoes_photo/bule2-shoes.jpg";
+    document.getElementById('kakusu').style.display = 'inline';
+}
+
+function setColor(color) {
+    if (color == "グレー") {
+        return ["オリーブ","黒","青"];
+    }
+}

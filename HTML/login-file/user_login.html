@@ -94,7 +94,7 @@ $db = new DBManager();
                                 echo $e->getMessage();
                             }
                         } else {
-                            $_SESSION['cartData'] = $_POST['cartData'];
+                            $_SESSION['cartData'] = json_decode($_POST['cartData']);
                         }
                     }
                 ?>

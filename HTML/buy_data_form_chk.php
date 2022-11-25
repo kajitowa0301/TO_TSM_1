@@ -28,9 +28,9 @@
     // 支払方法ごとの内容チェック
     switch ($_POST['paymentMethod']) {
         case '1':
-            if ($_POST['ccName'] == "") {
+            if ($_POST['ccName'] == "" || $_POST['ccNum'] == "" || $_POST['ccExp'] == "" || $_POST['ccCvv'] == "") {
                 $chkFlag = false;
-                $errMsg .= "カード名義を入力してください<br />";
+                $errMsg .= "カード情報を入力してください<br />";
             }
             break;
         
