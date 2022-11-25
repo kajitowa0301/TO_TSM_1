@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+#midasi{
+    font-family: 'Cherry Swash', cursive;
+    font-size: 5ex;
+    
+}
+
+.icon_color{
+color: aliceblue;
+}
+
+.font_whight{
+    font-weight: 900;
+    /* font-family: 'Caveat', cursive; */
+        font-family: 'Itim', cursive; 
+       /* font-family: 'Sacramento', cursive; */
+       text-align: center;
+       font-size: 5ex;
+       margin-left: 20px;
+}
+
+.noline{
+    text-decoration: none;
+    color: black;
+}
+
+/* 写真統一のCSS */
+.img_unification{
+   width: 100%;
+   height: 70%;
+}
+
+.card-btn {
+    border: none;
+    padding: 0%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* 商品説明のCSS */
+.reji{
+    margin-top: 5%;
+    text-align: right;
+    display: flex;
+}
+
+.buynow {
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+.mae{
+    margin-top: 5%;
+    text-align: left;
+	    float: left
+}
+
+.nedan{
+    text-align: right;
+}
+
+.ce{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom:2%;
+}
+.div_button{
+    text-align: center;
+}
+.button_kounyuu{
+    width:30%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-bottom:2em;
+    border-radius: 8px;
+    background-color:white;
+    color: #06f;;
+    border-style: solid;
+    border-color: #0066ff;
+}
+.button_kounyuu:hover{
+    background-color: #0066ff;
+    border-style: solid;
+    color:white;
+    box-shadow:2px 2px 5px #7c7c7c;
+}
+
+.size{
+    margin-top: 5%;
+    margin-right: 0%;
+    text-align: right;
+    border-radius: 20%;
+    font-size: larger;  
+}
+.suryou{
+    margin-top: 5%;
+    margin-right: 0%;
+    text-align: right;
+    border-radius: 20%;
+}
+
+form.card {
+    border: 0;
+    transition-duration: 0.3s;
+}
+
+form.card:hover {
+    opacity: 0.4;
+    transition-duration: 0.3s;
+}
+
+body{
+    padding-top:7.75rem;
+}
+/*ログイン*/
+.button_solid003 a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:0 auto;
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background:#282828;
+    border-radius: 8px;
+    border-bottom: solid 5px #474849;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+}
+.button_solid003 a:hover {
+    border-bottom: solid 2px #7c7c7c;
+    transform: translateY(3px);
+}
+
+.textlenlim {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* いいねボタンの色 */
+.example2 label{
+    color: #CCC;
+}
+.example2 input:checked+label{
+    /* background:pink; */
+     color: pink; 
+}
+.example2 input{
+    display: none;
+}
+
+.card-title{
+    text-align: left;
+    float:left;
+}
+.nedan_2{
+    text-align: left;
+    float:left;
+}
+.clear{
+    clear: both;
+}
+
+/* サイズのボタン */
+.example3 label{
+    display:inline-block;
+    width: 150px;
+    background:#CCC;
+    color:#474849;
+    padding:10px;
+    margin: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    
+}
+.example3 input:checked+label{
+    background: #66ccff;
+    color: #FFF;
+}
+.example3 input{
+    display: none;
+}
+.card{
+    border-style:solid;
+    border-width: 1em;
+    border-color: #eee;
+    /* border-right-width: 6px; */
+}
+
+.button_solid003 a{
+    margin-right: 10px;
+}
+
+.top-return-button{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    font-size:30px;
+    width: 65px;
+    border-radius: 100%;
+    opacity: 0.2;
+    border-style:solid;
+    border-color:#0066ff;
+    background-color:#06f;
+}
+.top-return-button:hover{
+    opacity: 1.0;
+    color: white;
+    background-color: #0066ff;
+    border-style:none;
+}
+.top-return-button > i{
+    color: white;
+}
+.senni{
+    margin: 8%;
+}
+
+.btn-kounyu-148{
+    width: 120px;
+    height: 60px;
+    background-color:#FFF;
+    color: yellowgreen;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: yellowgreen;
+    box-shadow:0px 5px 5px #bbb;
+}
+.btn-kounyu-148:hover{
+    background-color: yellowgreen;
+    border-color:yellowgreen;
+    color: #FFF;
+    box-shadow: none;
+}
+
+.btn-cart{
+    width: 120px;
+    height: 60px;
+    padding:5%;
+    background-color:#FFF;
+    color: #0066ff;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: #0066ff;
+    box-shadow:0px 5px 5px #bbb;
+}
+
+.btn-cart:hover{
+    background-color:#0066ff;
+    border-color:#0066ff;
+    color: #FFF;
+    box-shadow: none;
+}
+.unkounko{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.oritatami{
+    font-size: 40px;
+}
+
+/*配色の新機能のやつ*/
+.color-btn-raido label{
+    display:inline-block;
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 90%;
+    cursor: pointer;  
+}
+
+input[type=radio][value="color1"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color2"]:checked+label > p{
+    opacity: 1;
+}
+input[type=radio][value="color3"]:checked+label > p{
+    opacity: 1;
+}
+/* .color-btn-raido input:checked+label{
+    background: #66ccff;
+    color: #FFF;
+    border-style: solid;
+    border-color: #282828;
+} */
+.color-btn-raido input{
+    display: none;
+}
+#haishoku-1{
+    background-color: olivedrab;
+}
+#haishoku-1:hover{
+    opacity: 0.5;
+}
+#haishoku-2{
+    background-color: #000;
+}
+#haishoku-2:hover{
+    opacity: 0.5;
+}
+#haishoku-3{
+    background-color: #0066ff; 
+}
+#haishoku-3:hover{
+    opacity: 0.5;
+}
+
+.haishoku-1{
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0;
+}
+#kakusu{
+    display: none;
+}
+
+button > i{
+    color:rgba(252, 251, 251, 0.7);
+}
+
+/* サブメニューのやつ */
+.submenu-relative{
+    position:relative;
+}
+.subu-menu-back{
+    position:fixed;
+    top: 27%;
+    left:14%;
+    background-color: #ddd;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    border-radius:10px;
+    z-index:50;
+    display: flex;
+    display: none;
+}
+.subu-menu-back > .submenu-search{
+    width: 50%;
+}
+.subu-menu-back > .submenu-search > h3{
+    text-align: center;
+}
+.submenu-search > ul > li{
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    text-align: left;
+    list-style:none ;
+    border-bottom: none;
+}
+.search-li-3, .search-li-1 ,.search-li-2{
+    color: #000;
+    text-decoration: none;
+}
+.search-li-1:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.search-li-2:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.search-li-3:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.subu-menu-back > .submenu-rireki{
+    width: 50%;
+}
+.subu-menu-back > .submenu-rireki >h3{
+    text-align: center;
+}
+.submenu-rireki > ul > li{
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    text-align: left;
+    list-style: none;
+}
+.rireki-li-1, .rireki-li-2{
+    color: #000;
+    text-decoration: none;
+}
+.rireki-li-1:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.rireki-li-2:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}

@@ -44,7 +44,7 @@
   text-align: center;
 }
 
-/* .final-bottom{
+.final-bottom{
   width:50%;
   padding: 15px;
   border-radius: 15px;
@@ -76,8 +76,8 @@
   border-color: #eee;
   box-shadow: 0px 5px 15px #000;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 
 .textlenlim-1{
   float: left;
@@ -86,11 +86,10 @@
 .textlenlim-2{
   text-align: right;
   clear: both;
-=======
+}
 .line a{
   text-decoration: none;
 
-<<<<<<< HEAD
 }
 .paaa{
 margin-top: 40px;
@@ -111,11 +110,9 @@ margin-left: 40px;
 .dis{
   display: inline-block;
 }
-=======
->>>>>>> 9e4e7b489d84a124349d954b59afc872d823b861
-}
-=======
+
+
 .flex-button-style{
   flex-wrap: wrap;
-} */
+} 
 
