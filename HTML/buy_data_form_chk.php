@@ -20,7 +20,7 @@
         $errMsg .= "メールアドレスの形式で入力してください<br />";
     }
     // 住所チェック
-    if ($_POST['pref'] == "" || ($_POST['post'] == "" && is_numeric($_POST['post']) && mb_strlen($_POST['post']) == 7)) {
+    if ($_POST['pref'] == "" || ($_POST['post'] == "" && is_numeric($_POST['post']) && mb_strlen($_POST['post']) == 7) || $_POST['ad'] == "") {
         $chkFlag = false;
         $errMsg .= "住所を入力してください<br />";
     }

@@ -335,3 +335,74 @@ input[type=radio][value="color3"]:checked+label > p{
 button > i{
     color:rgba(252, 251, 251, 0.7);
 }
+
+/* サブメニューのやつ */
+.submenu-relative{
+    position:relative;
+}
+.subu-menu-back{
+    position:fixed;
+    top: 27%;
+    left:14%;
+    background-color: #ddd;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    border-radius:10px;
+    z-index:50;
+    display: flex;
+    display: none;
+}
+.subu-menu-back > .submenu-search{
+    width: 50%;
+}
+.subu-menu-back > .submenu-search > h3{
+    text-align: center;
+}
+.submenu-search > ul > li{
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    text-align: left;
+    list-style:none ;
+    border-bottom: none;
+}
+.search-li-3, .search-li-1 ,.search-li-2{
+    color: #000;
+    text-decoration: none;
+}
+.search-li-1:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.search-li-2:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.search-li-3:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.subu-menu-back > .submenu-rireki{
+    width: 50%;
+}
+.subu-menu-back > .submenu-rireki >h3{
+    text-align: center;
+}
+.submenu-rireki > ul > li{
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    text-align: left;
+    list-style: none;
+}
+.rireki-li-1, .rireki-li-2{
+    color: #000;
+    text-decoration: none;
+}
+.rireki-li-1:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}
+.rireki-li-2:hover{
+    color: #0066ff;
+    border-bottom: 1px solid #0066ff;
+}

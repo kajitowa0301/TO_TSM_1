@@ -81,7 +81,7 @@ function delCart(index) {
 function addFavorite(itemId) {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
@@ -99,7 +99,7 @@ function addFavorite(itemId) {
 function getFavorite() {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
@@ -114,7 +114,7 @@ function getFavorite() {
 function delFavorite(itemId) {
     // 変数用意
     let favItemsList;
-    // localstorageにカートが既に存在していればそれを取得
+    // localstorageにお気に入りリストが既に存在していればそれを取得
     if (localStorage.getItem('favItems') != null) {
         // json解読
         favItemsList = new Set(JSON.parse(localStorage.getItem('favItems')));
@@ -194,4 +194,78 @@ function createItemCard(parent, itemId, genre, maker, itemName, price, url) {
     cardLabel.appendChild(cardI);
     cardBody.appendChild(cardName);
     cardBody.appendChild(cardPrice);
+}
+
+//サブメニューのスクリプト 
+function search_onFunc(){
+    document.getElementById('subumenu').style.display = 'flex';
+}
+function submenu_overFunc(){
+    document.getElementById('subumenu').style.display ='flex';
+}
+function submenu_leaveFunc(){
+    document.getElementById('subumenu').style.display = 'none';
+    
+}
+
+// カラー選択画面のスクリプト
+function redOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "赤"; 
+    target.style.color  = 'red'
+}
+function greenOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "緑"; 
+    target.style.color  = 'green'
+}
+function yellowOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "黄"; 
+    target.style.color  = 'yellow'
+}
+function blueOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "青"; 
+    target.style.color  = 'blue'
+}
+function blackOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "黒"; 
+    target.style.color  = 'black'
+}
+function oliveOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "カーキ"; 
+    target.style.color  = 'olive'
+}
+function purpleOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "紫"; 
+    target.style.color  = 'purple'
+}
+function violetOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "ピンク"; 
+    target.style.color  = 'violet'
+}
+function brownOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "茶"; 
+    target.style.color  = 'brown'
+}
+function aquaOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "アクア"; 
+    target.style.color  = 'aqua'
+}
+function goldOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "金"; 
+    target.style.color  = 'gold'
+}
+function wheatOver(){
+    const target = document.getElementById('target_color');
+    target.innerHTML = "ベージュ"; 
+    target.style.color  = 'wheat'
 }
