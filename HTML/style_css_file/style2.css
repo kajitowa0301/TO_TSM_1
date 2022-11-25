@@ -140,7 +140,7 @@
     align-items: stretch;
 }
 
-.cnt_btn{
+/* .cnt_btn{
  width: 60px;
  font-weight: bold;
  padding:7%;
@@ -155,9 +155,9 @@
     background-color: white;
     color: olivedrab;
     box-shadow: none;
-}
+} */
 
-.delete_btn{
+/* .delete_btn{
     width:60px;
     font-weight: bold;
    padding:7%;
@@ -172,7 +172,7 @@
     background-color: white;
     color: #f55;
     box-shadow: none;
-}
+} */
 
 /* .shohin_val {
  
@@ -185,6 +185,12 @@
 
 .shohin_name {
     font-size: 25px;
+}
+
+.del_shohin_name {
+    font-size: 25px;
+    text-decoration: line-through;
+    color: red;
 }
 
 /* 住所登録.htmlの確認ボタン */
@@ -225,4 +231,74 @@
     background-color: #ffd1d1;
     padding: 1%;
     margin: 1%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+/* 商品購入数変更css */
+.number-spinner-wrap{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+
+.number-spinner-wrap input{
+    width: 100px; height: 30px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  .number-spinner-wrap .spinner{
+    position: absolute;
+    top: 0px;
+    width: 25px;
+    height: 30px;
+    /* transform: translate(0, -50%); */
+    font-size: 15px;
+    padding: 0px;
+    text-align: center;
+    background: lightgray;
+    border-radius: 3px;
+    /* cursor: pointer;
+    user-select: none; */
+    margin: auto;
+    font-weight: 800;
+  }
+
+.number-spinner-wrap .spinner-down{
+    left: 0px;
+    /* border-right: 1px solid lightgray; */
+    border-radius: 2px;
+    text-align: center;
+}
+
+.number-spinner-wrap .spinner-up{
+    left: 80px;
+    /* border-left: 1px solid lightgray; */
+    border-radius: 2px;
+    text-align: center;
+}
+
+.size_position {
+    text-align: center;
+}
+
+.del_icon {
+    text-align: center;
+}
+
+.hyou_size {
+    width: 80%;
+    margin: auto;
 }
