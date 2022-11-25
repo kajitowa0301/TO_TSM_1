@@ -130,15 +130,15 @@ $db = new DBManager();
     <h3>合わせやすい色</h3>
     <div class="color-btn-raido">
       <input type="radio" name="btn-radio" id="color1" value="color1"><label id="haishoku-1" for="color1"
-        onclick="HaishokuColor(color[0],itemList)">
+        onclick="HaishokuColor(color[0],itemList,allMakersList)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color2" value="color2"><label id="haishoku-2" for="color2"
-        onclick="HaishokuColor(color[1],itemList)">
+        onclick="HaishokuColor(color[1],itemList,allMakersList)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color3" value="color3"><label id="haishoku-3" for="color3"
-        onclick="HaishokuColor(color[2],itemList)">
+        onclick="HaishokuColor(color[2],itemList,allMakersList)">
         <p class="haishoku-1">✓</p>
       </label>
     </div>
@@ -146,77 +146,8 @@ $db = new DBManager();
     <div id="kakusu">
       <h2>選択している色：<span id="select-color">色</span></h2>
       <div class="container">
-        <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
-          <div class="card col-sm-3 ">
-            <img class="img_unification" type="submit" src="./sweat_photo/swet_7.jpg" id="img-color-1"
-              class="card-img-top img-fluid" onClick="location.href='./Shohin_seni.html'">
-            <div class="card-body">
-              <h5 class="card-title">stussy</h5>
-              <!-- いいねボタン始 -->
-              <div align="right">
-                <div class="example2">
-                  <input type="checkbox" name="example2" id="1"><label for="1"><i
-                      class="bi bi-heart-fill fs-5"></i></label>
-                </div>
-              </div>
-              <!-- いいねボタン終 -->
-              <h6 class="clear">スウェット</h6>
-              <h6 class="nedan_2">￥2,450</h6>
-              <div class="text-end">
-              </div>
-            </div>
-          </div>
-          <div class="card col-sm-3">
-            <img class="img_unification" src="./outer_photo/outer_6.jpg" id="img-color-2"
-              class="card-img-top img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">Hard ROCK</h5>
-              <!-- いいねボタン始 -->
-              <div align="right">
-                <div class="example2">
-                  <input type="checkbox" name="example2" id="2"><label for="2"><i
-                      class="bi bi-heart-fill fs-5"></i></label>
-                </div>
-              </div>
-              <!-- いいねボタン終 -->
-              <h6 class="clear">マウンテンパーカー</h6>
-              <h6 class="nedan_2">￥6,320</h6>
-            </div>
-          </div>
-          <div class="card col-sm-3">
-            <img class="img_unification" src="./outer_photo/m69810141178_1.jpg" id="img-color-3"
-              class="card-img-top img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">GU</h5>
-              <!-- いいねボタン始 -->
-              <div align="right">
-                <div class="example2">
-                  <input type="checkbox" name="example2" id="3"><label for="3"><i
-                      class="bi bi-heart-fill fs-5"></i></label>
-                </div>
-              </div>
-              <!-- いいねボタン終 -->
-              <h6 class="clear">ジャケット</h6>
-              <h6 class="nedan_2">￥980</h6>
-            </div>
-          </div>
-          <div class="card col-sm-3">
-            <img class="img_unification" src="./outer_photo/m93909701417_1.jpg" id="img-color-4"
-              class="card-img-top img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">BROWNS</h5>
-              <!-- いいねボタン始 -->
-              <div align="right">
-                <div class="example2">
-                  <input type="checkbox" name="example2" id="4"><label for="4"><i
-                      class="bi bi-heart-fill fs-5"></i></label>
-                </div>
-              </div>
-              <!-- いいねボタン終 -->
-              <h6 class="clear">スタジャン</h6>
-              <h6 class="nedan_2">￥4,570</h6>
-            </div>
-          </div>
+        <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4" id="recommended">
+          
         </div>
       </div>
     </div>
@@ -365,6 +296,7 @@ $db = new DBManager();
     let selectSize;
 
     const itemList = JSON.parse('<?php echo $db->getAllItems() ?>');
+    const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
 
     // console.log(itemData);
     document.getElementById('itemId').value = itemData.items_id;

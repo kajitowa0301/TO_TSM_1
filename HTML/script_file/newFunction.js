@@ -28,21 +28,30 @@ function HaishokuColor3(){
     document.getElementById('kakusu').style.display = 'inline';
 }
 
-function HaishokuColor(col,itemList){
+function HaishokuColor(col,itemList,allMakersList){
+    // console.log(allMakersList[1].makers_name);
     const color = document.getElementById("select-color");
     color.innerHTML=col;
+    let recList = [];
 
     itemList.forEach(ele => {
         // console.log(allMakersList[ele.makers_id - 1]);
         if (ele.items_color == col) {
             // ここに
+            recList.push(ele);
         }
     });
 
-    document.getElementById("img-color-1").src = "./pants_photo/bule-pants.jpg";
-    document.getElementById("img-color-2").src = "./shoes_photo/bule-shoes.jpg";
-    document.getElementById("img-color-3").src = "./pants_photo/bule2-pants.jpg";
-    document.getElementById("img-color-4").src = "./shoes_photo/bule2-shoes.jpg";
+    console.log(recList);
+
+    // document.getElementById("img-color-1").src = './' + recList[0].genre + '_photo/' + recList[0].url;
+    createItemCard("recommended", recList[0].items_id, recList[0].items_genre, allMakersList[recList[0].makers_id - 1].makers_name, recList[0].items_name, recList[0].items_price, recList[0].items_url);
+    createItemCard("recommended", recList[1].items_id, recList[1].items_genre, allMakersList[recList[1].makers_id - 1].makers_name, recList[1].items_name, recList[1].items_price, recList[1].items_url);
+    createItemCard("recommended", recList[2].items_id, recList[2].items_genre, allMakersList[recList[2].makers_id - 1].makers_name, recList[2].items_name, recList[2].items_price, recList[2].items_url);
+    // createItemCard("recommended", recList[3].items_id, recList[3].items_genre, allMakersList[recList[3].makers_id - 1].makers_name, recList[3].items_name, recList[3].items_price, recList[3].items_url);
+    // document.getElementById("img-color-2").src = "./shoes_photo/bule-shoes.jpg";
+    // document.getElementById("img-color-3").src = "./pants_photo/bule2-pants.jpg";
+    // document.getElementById("img-color-4").src = "./shoes_photo/bule2-shoes.jpg";
     document.getElementById('kakusu').style.display = 'inline';
 }
 
