@@ -140,6 +140,23 @@
     align-items: stretch;
 }
 
+<<<<<<< Updated upstream
+=======
+.text_position {
+    text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+>>>>>>> Stashed changes
 /* .cnt_btn{
  width: 60px;
  font-weight: bold;
@@ -157,8 +174,13 @@
     box-shadow: none;
 } */
 
+<<<<<<< Updated upstream
 /* .delete_btn{
     width:60px;
+=======
+.delete_btn{
+    /* width:60px;
+>>>>>>> Stashed changes
     font-weight: bold;
    padding:7%;
    background-color:#f55;
@@ -166,13 +188,60 @@
    border-style: solid;
    border-color:#f55;
    border-radius: 10px;
-   box-shadow: 0px 3px 3px #bbb;
+   box-shadow: 0px 3px 3px #bbb; */
+   margin: auto;
 }
 .delete_btn:hover{
     background-color: white;
     color: #f55;
     box-shadow: none;
 } */
+
+/* 商品購入数変更css */
+.number-spinner-wrap{
+    position: relative;
+    display: block;
+    width: 105px !important;
+    height: 30px;
+    margin:auto;
+}
+
+.number-spinner-wrap input{
+    width: 100%; height: 100%;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .number-spinner-wrap .spinner{
+    position: absolute;
+    top: 0px;
+    height: 30px;
+    width: 26px;
+    /* transform: translate(0, -50%); */
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    background: lightgray;
+    border-radius: 2px;
+    cursor: pointer; 
+    user-select: none;
+  }
+
+.number-spinner-wrap .spinner-down{
+    left: 0px;
+    /* border-right: 1px solid lightgray; */
+    /* margin-top:5px; */
+    text-align: center;
+}
+
+.number-spinner-wrap .spinner-up{
+    right: 0px;
+    /* border-left: 1px solid lightgray; */
+    /* margin-top: 5px; */
+    text-align: center;
+}
 
 /* .shohin_val {
  
@@ -225,6 +294,7 @@
     border:2px solid #474849;
 }
 
+<<<<<<< Updated upstream
 .errField {
     border: 2px solid #ff2c2c;
     border-radius: 5px;
@@ -302,3 +372,17 @@ input[type="number"] {
     width: 80%;
     margin: auto;
 }
+=======
+
+
+.hyou_size {
+    width: 70%;
+    margin: auto;
+}
+
+.del_icon {
+    border-radius: 5px;
+    margin: auto;
+}
+
+>>>>>>> Stashed changes

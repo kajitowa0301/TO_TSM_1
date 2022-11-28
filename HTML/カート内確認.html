@@ -84,6 +84,7 @@ $allItemsList = $db->getAllItems();
     </div>
   </div>
   <!-- 商品の小計・数量・削除を表示するテーブル-->
+  <div class = "hyou_size">
   <div class="flex_left">
     <table class="table table-bordered table table-striped hyou_size">
       <thead>
@@ -100,14 +101,23 @@ $allItemsList = $db->getAllItems();
       </thead>
       <tbody>
         <tr>
+<<<<<<< Updated upstream
 
           <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id = "gazou1" align="left">
             <span class = "shohin_name" id = "shohin_name1">あいうえおかきくけこさしすせそ</span>
+=======
+          <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id = "gazou1" align="left">
+            <span class = "shohin_name" id = "shohin_name1">あいうえおかきくけこさしすせそたちつてと</span>
+>>>>>>> Stashed changes
           </td>
             <div valign="bottom" class = "some_actions">
               
               <td valign="middle">
+<<<<<<< Updated upstream
                 <p class = "size_position">S</p>
+=======
+                <p class = "text_position">S</p>
+>>>>>>> Stashed changes
               </td> 
               <td valign="middle">
                 <label class="number-spinner-wrap">
@@ -120,11 +130,19 @@ $allItemsList = $db->getAllItems();
                 <button class = "bi bi-cart-x fs-3 del_icon" id = "delbtn1" onclick="bbbb()"></button>
               </td>
               <td valign = "middle">
+<<<<<<< Updated upstream
                 <span>¥19</span>
               </td>
               
             </div>
 
+=======
+                <span　class = "text_position">¥19000</span>
+              </td>
+              
+            </div>
+            
+>>>>>>> Stashed changes
           </td>
 
 
@@ -178,6 +196,7 @@ $allItemsList = $db->getAllItems();
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
   <!-- 商品の小計・数量・削除を表示するテーブル-->
 
@@ -262,6 +281,7 @@ $allItemsList = $db->getAllItems();
     }
   </script>
 
+<<<<<<< Updated upstream
   <!-- 数量変更処理js -->
   <script>
     const $wrap = document.querySelector('.number-spinner-wrap')
@@ -275,6 +295,9 @@ $allItemsList = $db->getAllItems();
     </script>
 
     <!-- 削除ボタン押下時の処理js -->
+=======
+  <!-- 削除ボタン押下時の処理js -->
+>>>>>>> Stashed changes
   <script>
     
     let delbtns = document.getElementById("delbtn1");
@@ -284,16 +307,38 @@ $allItemsList = $db->getAllItems();
       if(bbb == 0) {
         photoChange.src = "ぴらみっど.jpg";
         bbb++;
+<<<<<<< Updated upstream
         document.getElementById("delbtn1").setAttribute('class' , 'bi-arrow-clockwise fs-3');
+=======
+        document.getElementById("delbtn1").setAttribute('class' , 'bi bi-arrow-clockwise fs-3 del_icon');
+>>>>>>> Stashed changes
         document.getElementById("shohin_name1").setAttribute('class' , 'del_shohin_name');
       }else {
         photoChange.src = "./outer_photo/outer_5.jpg";
         bbb = 0;
+<<<<<<< Updated upstream
         document.getElementById("delbtn1").setAttribute('class' , 'bi bi-cart-x bi fs-3');
+=======
+        document.getElementById("delbtn1").setAttribute('class' , 'bi bi-cart-x fs-3 del_icon');
+>>>>>>> Stashed changes
         document.getElementById("shohin_name1").setAttribute('class' , 'shohin_name');
       }
     };
   </script>
+<<<<<<< Updated upstream
+=======
+  <!-- 数量変更処理js -->
+  <script>
+  const $wrap = document.querySelector('.number-spinner-wrap')
+  const $input = $wrap.querySelector('input')
+  $wrap.querySelector('.spinner-down').onclick = ()=>{
+      $input.stepDown()
+  }
+  $wrap.querySelector('.spinner-up').onclick = ()=>{
+    $input.stepUp()
+  }
+  </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
