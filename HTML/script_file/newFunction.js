@@ -36,7 +36,7 @@ function HaishokuColor(col,itemList,allMakersList){
 
     itemList.forEach(ele => {
         // console.log(allMakersList[ele.makers_id - 1]);
-        if (ele.items_color == col) {
+        if (ele.items_color == col){
             recList.push(ele);
         }
     });
