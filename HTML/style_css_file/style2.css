@@ -248,7 +248,7 @@ input[type="number"] {
     display: block;
     width: 100px;
     height: 30px;
-    text-align: center;
+    margin:  0 auto;
 }
 
 .number-spinner-wrap input{
@@ -284,7 +284,7 @@ input[type="number"] {
 }
 
 .number-spinner-wrap .spinner-up{
-    left: 80px;
+    left: 76px;
     /* border-left: 1px solid lightgray; */
     border-radius: 2px;
     text-align: center;
@@ -294,11 +294,13 @@ input[type="number"] {
     text-align: center;
 }
 
-.del_icon {
-    text-align: center;
-}
+
 
 .hyou_size {
-    width: 80%;
-    margin: auto;
+    width: 85%;
+    margin:0 auto;
+}
+
+.position_center {
+    text-align: center;
 }

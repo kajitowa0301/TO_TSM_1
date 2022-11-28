@@ -110,14 +110,18 @@ $allItemsList = $db->getAllItems();
                 <p class = "size_position">S</p>
               </td> 
               <td valign="middle">
+                <div class = "position_center">
                 <label class="number-spinner-wrap">
                   <input type = "number"  class = "cnt_btn" id = "cnt_btn1" value = "1" min = "1" max = "5" step = "1" pattern="^[0-9]+$">
                   <button class="spinner spinner-down">-</button>
                   <button class="spinner spinner-up">+</button>
                 </label>
+                </div>
               </td>
               <td valign = "middle">
-                <button class = "bi bi-cart-x fs-3 del_icon" id = "delbtn1" onclick="bbbb()"></button>
+                <div class = "position_center">
+                <button class = "bi bi-cart-x fs-3" id = "delbtn1" onclick="bbbb()"></button>
+                </div>
               </td>
               <td valign = "middle">
                 <span>¥19</span>
