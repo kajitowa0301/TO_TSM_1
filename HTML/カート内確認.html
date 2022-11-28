@@ -56,7 +56,8 @@ $allItemsList = $db->getAllItems();
           <!-- お気に入り閲覧ボタン終 -->
 
           <!-- home ボタン -->
-          <button class="navbar-toggler" onClick="location.href='./index.html'"><i class="bi bi-house-door-fill fs-2"></i>
+          <button class="navbar-toggler" onClick="location.href='./index.html'"><i
+              class="bi bi-house-door-fill fs-2"></i>
           </button>
         </div>
       </div>
@@ -77,7 +78,8 @@ $allItemsList = $db->getAllItems();
         <div class="reji_button">
           <input type="hidden" name="cartData" id="cartData" value="" />
           <!-- <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg"> -->
-          <button type="submit" class="btn btn-outline-primary btn-lg" onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
+          <button type="submit" class="btn btn-outline-primary btn-lg"
+            onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
         </div>
       </form>
       <!-- レジに進むボタン終わり -->
@@ -98,32 +100,33 @@ $allItemsList = $db->getAllItems();
 
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody">
         <tr>
 
-          <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id = "gazou1" align="left">
-            <span class = "shohin_name" id = "shohin_name1">あいうえおかきくけこさしすせそ</span>
+          <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
+            <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
           </td>
-            <div valign="bottom" class = "some_actions">
-              
-              <td valign="middle">
-                <p class = "size_position">S</p>
-              </td> 
-              <td valign="middle">
-                <label class="number-spinner-wrap">
-                  <input type = "number"  class = "cnt_btn" id = "cnt_btn1" value = "1" min = "1" max = "5" step = "1" pattern="^[0-9]+$">
-                  <button class="spinner spinner-down">-</button>
-                  <button class="spinner spinner-up">+</button>
-                </label>
-              </td>
-              <td valign = "middle">
-                <button class = "bi bi-cart-x fs-3 del_icon" id = "delbtn1" onclick="bbbb()"></button>
-              </td>
-              <td valign = "middle">
-                <span>¥19</span>
-              </td>
-              
-            </div>
+          <div valign="bottom" class="some_actions">
+
+            <td valign="middle">
+              <p class="size_position">S</p>
+            </td>
+            <td valign="middle">
+              <label class="number-spinner-wrap">
+                <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
+                  pattern="^[0-9]+$">
+                <button class="spinner spinner-down">-</button>
+                <button class="spinner spinner-up">+</button>
+              </label>
+            </td>
+            <td valign="middle">
+              <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
+            </td>
+            <td valign="middle">
+              <span>¥19</span>
+            </td>
+
+          </div>
 
           </td>
 
@@ -206,8 +209,10 @@ $allItemsList = $db->getAllItems();
         <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a>
+        </li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+            class="nav-link px-2 text-muted">概要</a></li>
       </ul>
       <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
     </footer>
@@ -229,36 +234,82 @@ $allItemsList = $db->getAllItems();
     }
 
     function createTr() {
-      const parent = document.getElementsByTagName('tbody');
+      const parent = document.getElementById('tbody');
       const tr = document.createElement('tr');
       const td = document.createElement('td');
       const tdImg = document.createElement('img');
-      const tdSpan = document.createElement('span');
+      const tdSpan1 = document.createElement('span');
       const div = document.createElement('div');
-      // const divTd1 = 
-//       <tr>
+      const divTd1 = document.createElement('td');
+      const p = document.createElement('p');
+      const divTd2 = document.createElement('td');
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      const button1 = document.createElement('button');
+      const button2 = document.createElement('button');
+      const divTd3 = document.createElement('td');
+      const button3 = document.createElement('button');
+      const divTd4 = document.createElement('td');
+      const tdSpan2 = document.createElement('span');
 
-// <td><img src="./photo/swet_4.jpg" class="kessai_img_size" align="left">
-//   <span class="shohin_name">商品名</span>
-// </td>
-// <div valign="bottom" class="some_actions">
+      td.setAttribute('class','td_css');
+      tdImg.setAttribute('src','');//items_url
+      tdImg.setAttribute('class','kessai_img_size');
+      tdImg.setAttribute('id','gazou1');
+      tdImg.setAttribute('align','left');
+      tdSpan1.setAttribute('class','shohin_name');
+      tdSpan1.setAttribute('id','shohin_name1');
+      div.setAttribute('valign','bottom');
+      div.setAttribute('class','some_actions');
+      divTd1.setAttribute('valign','middle');
+      p.setAttribute('class','size_position');
+      divTd2.setAttribute('valign','middle');
+      label.setAttribute('class','number-spinner-wrap');
+      input.setAttribute('type','number');
+      input.setAttribute('class','cnt_btn');
+      input.setAttribute('id','cnt_btn1');
+      input.setAttribute('value','1');//vol
+      input.setAttribute('min','1');
+      input.setAttribute('max','5');
+      input.setAttribute('step','1');
+      input.setAttribute('pattern','^[0-9]+$');
+      button1.setAttribute('class','spinner spinner-down');
+      button2.setAttribute('class','spinner spinner-up');
+      divTd3.setAttribute('valign','middle');
+      button3.setAttribute('class','bi bi-cart-x fs-3 del_icon');
+      button3.setAttribute('onclick','bbbb()');
+      divTd4.setAttribute('valign','middle');
 
-//   <td valign="middle">
-//     <span>S</span>
-//   </td>
-//   <td valign="middle">
-//     <button class="cnt_btn">数量</button>
-//   </td>
-//   <td valign="middle">
-//     <button class="delete_btn">削除</button>
-//   </td>
-//   <td valign="middle">
-//     <span>¥198000</span>
-//   </td>
+      parent.appendChild(tr);
+      tr.appendChild(td);
+      td.appendChild(tdImg);
+      td.appendChild(tdSpan1);
 
-// </div>
-
-// </tr>
+        // <tr>
+        //   <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
+        //     <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
+        //   </td>
+        //   <div valign="bottom" class="some_actions">
+        //     <td valign="middle">
+        //       <p class="size_position">S</p>
+        //     </td>
+        //     <td valign="middle">
+        //       <label class="number-spinner-wrap">
+        //         <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
+        //           pattern="^[0-9]+$">
+        //         <button class="spinner spinner-down">-</button>
+        //         <button class="spinner spinner-up">+</button>
+        //       </label>
+        //     </td>
+        //     <td valign="middle">
+        //       <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
+        //     </td>
+        //     <td valign="middle">
+        //       <span>¥19</span>
+        //     </td>
+        //   </div>
+        //   </td>
+        // </tr>
     }
   </script>
 
@@ -266,17 +317,17 @@ $allItemsList = $db->getAllItems();
   <script>
     const $wrap = document.querySelector('.number-spinner-wrap')
     const $input = $wrap.querySelector('input')
-    $wrap.querySelector('.spinner-down').onclick = ()=>{
-        $input.stepDown()
+    $wrap.querySelector('.spinner-down').onclick = () => {
+      $input.stepDown()
     }
-    $wrap.querySelector('.spinner-up').onclick = ()=>{
+    $wrap.querySelector('.spinner-up').onclick = () => {
       $input.stepUp()
     }
-    </script>
+  </script>
 
-    <!-- 削除ボタン押下時の処理js -->
+  <!-- 削除ボタン押下時の処理js -->
   <script>
-    
+
     let delbtns = document.getElementById("delbtn1");
     let photoChange = document.getElementById("gazou1");
     let bbb = 0;
@@ -284,13 +335,13 @@ $allItemsList = $db->getAllItems();
       if(bbb == 0) {
         photoChange.src = "./sweat_photo/delete.PNG";
         bbb++;
-        document.getElementById("delbtn1").setAttribute('class' , 'bi-arrow-clockwise fs-3');
-        document.getElementById("shohin_name1").setAttribute('class' , 'del_shohin_name');
-      }else {
+        document.getElementById("delbtn1").setAttribute('class', 'bi-arrow-clockwise fs-3');
+        document.getElementById("shohin_name1").setAttribute('class', 'del_shohin_name');
+      } else {
         photoChange.src = "./outer_photo/outer_5.jpg";
         bbb = 0;
-        document.getElementById("delbtn1").setAttribute('class' , 'bi bi-cart-x bi fs-3');
-        document.getElementById("shohin_name1").setAttribute('class' , 'shohin_name');
+        document.getElementById("delbtn1").setAttribute('class', 'bi bi-cart-x bi fs-3');
+        document.getElementById("shohin_name1").setAttribute('class', 'shohin_name');
       }
     };
   </script>
