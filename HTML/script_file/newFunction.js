@@ -28,7 +28,7 @@
 //     document.getElementById('kakusu').style.display = 'inline';
 // }
 
-function HaishokuColor(col,itemList,allMakersList){
+function HaishokuColor(col,itemList,allMakersList,genre){
     // console.log(allMakersList[1].makers_name);
     const color = document.getElementById("select-color");
     color.innerHTML=col;
@@ -36,7 +36,7 @@ function HaishokuColor(col,itemList,allMakersList){
 
     itemList.forEach(ele => {
         // console.log(allMakersList[ele.makers_id - 1]);
-        if (ele.items_color == col){
+        if (ele.items_color == col && ele.items_genre != genre){
             recList.push(ele);
         }
     });
@@ -70,8 +70,8 @@ function setColor(color) {
     if (color == "グレー") {
         document.getElementById("haishoku-1").style.backgroundColor ='olivedrab';
         document.getElementById("haishoku-2").style.backgroundColor ='dark';
-        document.getElementById("haishoku-3").style.backgroundColor ='green';
-        return ["オリーブ","黒","緑"];
+        document.getElementById("haishoku-3").style.backgroundColor ='white';
+        return ["オリーブ","黒","白"];
 
     // 赤色を判定
     }else if(color == "赤"){
