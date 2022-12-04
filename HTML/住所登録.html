@@ -268,7 +268,7 @@ $db = new DBManager();
     <!-- JSの設定ファイル -->
     <script src="form-validation.js"></script>
     <script>
-        // console.log(<?php echo $_SESSION['cartData']; ?>);
+        // console.log(<?php echo json_encode($_SESSION['cartData']); ?>);
 
         function crebitFunc() {
             document.getElementById("siharai").style.display = 'inline';
