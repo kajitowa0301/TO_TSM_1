@@ -106,28 +106,26 @@ $allItemsList = $db->getAllItems();
           <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
             <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
           </td>
-          <div valign="bottom" class="some_actions">
+          <!-- <div valign="bottom" class="some_actions"> -->
 
-            <td valign="middle">
-              <p class="size_position">S</p>
-            </td>
-            <td valign="middle">
-              <label class="number-spinner-wrap">
-                <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
-                  pattern="^[0-9]+$">
-                <button class="spinner spinner-down">-</button>
-                <button class="spinner spinner-up">+</button>
-              </label>
-            </td>
-            <td valign="middle">
-              <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
-            </td>
-            <td valign="middle">
-              <span>¥19</span>
-            </td>
+          <td valign="middle">
+            <p class="size_position">S</p>
+          </td>
+          <td valign="middle">
+            <label class="number-spinner-wrap">
+              <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1" pattern="^[0-9]+$">
+              <button class="spinner spinner-down">-</button>
+              <button class="spinner spinner-up">+</button>
+            </label>
+          </td>
+          <td valign="middle">
+            <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
+          </td>
+          <td valign="middle">
+            <span>¥19</span>
+          </td>
 
-          </div>
-
+          <!-- </div> -->
           </td>
 
 
@@ -233,13 +231,15 @@ $allItemsList = $db->getAllItems();
       reji.action = "./login-file/user_login.html";
     }
 
+    createTr();
+
     function createTr() {
       const parent = document.getElementById('tbody');
       const tr = document.createElement('tr');
       const td = document.createElement('td');
       const tdImg = document.createElement('img');
       const tdSpan1 = document.createElement('span');
-      const div = document.createElement('div');
+      // const div = document.createElement('div');
       const divTd1 = document.createElement('td');
       const p = document.createElement('p');
       const divTd2 = document.createElement('td');
@@ -252,64 +252,57 @@ $allItemsList = $db->getAllItems();
       const divTd4 = document.createElement('td');
       const tdSpan2 = document.createElement('span');
 
-      td.setAttribute('class','td_css');
-      tdImg.setAttribute('src','');//items_url
-      tdImg.setAttribute('class','kessai_img_size');
-      tdImg.setAttribute('id','gazou1');
-      tdImg.setAttribute('align','left');
-      tdSpan1.setAttribute('class','shohin_name');
-      tdSpan1.setAttribute('id','shohin_name1');
-      div.setAttribute('valign','bottom');
-      div.setAttribute('class','some_actions');
-      divTd1.setAttribute('valign','middle');
-      p.setAttribute('class','size_position');
-      divTd2.setAttribute('valign','middle');
-      label.setAttribute('class','number-spinner-wrap');
-      input.setAttribute('type','number');
-      input.setAttribute('class','cnt_btn');
-      input.setAttribute('id','cnt_btn1');
-      input.setAttribute('value','1');//vol
-      input.setAttribute('min','1');
-      input.setAttribute('max','5');
-      input.setAttribute('step','1');
-      input.setAttribute('pattern','^[0-9]+$');
-      button1.setAttribute('class','spinner spinner-down');
-      button2.setAttribute('class','spinner spinner-up');
-      divTd3.setAttribute('valign','middle');
-      button3.setAttribute('class','bi bi-cart-x fs-3 del_icon');
-      button3.setAttribute('onclick','bbbb()');
-      divTd4.setAttribute('valign','middle');
+      td.setAttribute('class', 'td_css');
+      tdImg.setAttribute('src', '');//items_url
+      tdImg.setAttribute('class', 'kessai_img_size');
+      tdImg.setAttribute('id', 'gazou');//id
+      tdImg.setAttribute('align', 'left');
+      tdSpan1.setAttribute('class', 'shohin_name');
+      tdSpan1.setAttribute('id', 'shouhin');//id
+      // div.setAttribute('valign', 'bottom');
+      // div.setAttribute('class', 'some_actions');
+      divTd1.setAttribute('valign', 'middle');
+      p.setAttribute('class', 'size_position');
+      divTd2.setAttribute('valign', 'middle');
+      label.setAttribute('class', 'number-spinner-wrap');
+      input.setAttribute('type', 'number');
+      input.setAttribute('class', 'cnt_btn');
+      input.setAttribute('id', 'cnt_btn');//id
+      input.setAttribute('value', '1');//vol
+      input.setAttribute('min', '1');
+      input.setAttribute('max', '5');
+      input.setAttribute('step', '1');
+      input.setAttribute('pattern', '^[0-9]+$');
+      button1.setAttribute('class', 'spinner spinner-down');
+      button2.setAttribute('class', 'spinner spinner-up');
+      divTd3.setAttribute('valign', 'middle');
+      button3.setAttribute('class', 'bi bi-cart-x fs-3 del_icon');
+      button3.setAttribute('id', 'delbtn')//id;
+      button3.setAttribute('onclick', 'delBtn()');
+      divTd4.setAttribute('valign', 'middle');
 
       parent.appendChild(tr);
       tr.appendChild(td);
       td.appendChild(tdImg);
       td.appendChild(tdSpan1);
+      // tr.appendChild(div);
+      tr.appendChild(divTd1);
+      divTd1.appendChild(p);
+      tr.appendChild(divTd2);
+      divTd2.appendChild(label);
+      label.appendChild(input);
+      label.appendChild(button1);
+      label.appendChild(button2);
+      tr.appendChild(divTd3);
+      divTd3.appendChild(button3);
+      tr.appendChild(divTd4);
+      divTd4.appendChild(tdSpan2);
 
-        // <tr>
-        //   <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
-        //     <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
-        //   </td>
-        //   <div valign="bottom" class="some_actions">
-        //     <td valign="middle">
-        //       <p class="size_position">S</p>
-        //     </td>
-        //     <td valign="middle">
-        //       <label class="number-spinner-wrap">
-        //         <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
-        //           pattern="^[0-9]+$">
-        //         <button class="spinner spinner-down">-</button>
-        //         <button class="spinner spinner-up">+</button>
-        //       </label>
-        //     </td>
-        //     <td valign="middle">
-        //       <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
-        //     </td>
-        //     <td valign="middle">
-        //       <span>¥19</span>
-        //     </td>
-        //   </div>
-        //   </td>
-        // </tr>
+      tdSpan1.innerHTML = "aaa";
+      p.innerHTML = "S";
+      button1.innerHTML = "-";
+      button2.innerHTML = "+";
+      tdSpan2.innerHTML = "1111";
     }
   </script>
 
@@ -328,11 +321,12 @@ $allItemsList = $db->getAllItems();
   <!-- 削除ボタン押下時の処理js -->
   <script>
 
-    let delbtns = document.getElementById("delbtn1");
+    // let delbtns = document.getElementById("delbtn1");
     let photoChange = document.getElementById("gazou1");
     let bbb = 0;
-    function bbbb() {
-      if(bbb == 0) {
+
+    function delBtn() {
+      if (bbb == 0) {
         photoChange.src = "./sweat_photo/delete.PNG";
         bbb++;
         document.getElementById("delbtn1").setAttribute('class', 'bi-arrow-clockwise fs-3');
