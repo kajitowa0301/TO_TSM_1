@@ -359,7 +359,7 @@ $allItemsList = $db->getAllItems();
 
     function delBtn(id, genre, url) {
       let photoChange = document.getElementById("gazou" + id);
-      if (bbb == 0) {
+      if (photoChange.src != "./sweat_photo/delete.png") {
         photoChange.src = "./sweat_photo/delete.png";
         bbb++;
         document.getElementById("delbtn" + id).setAttribute('class', 'bi-arrow-clockwise fs-3');
