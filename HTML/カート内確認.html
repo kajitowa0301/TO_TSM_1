@@ -66,42 +66,43 @@ $allItemsList = $db->getAllItems();
 <br><br><br><br><br><br><br>
 
 <body>
-  <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
-  <div class="fixed_text">
-    <div class="sum_text">
-      <h6> 商品数 <span id="item-cnt"></span>個</h6>
-      <h6>小計(税込み)¥<span id="prices"></span></h6>
-      <br>
-      <h6>合計　¥<span class="sum_mny">6500</span></h6>
-      <!-- レジに進むボタン始まり -->
-      <form class="reji" action="" id="goReji" method="post">
-        <div class="reji_button">
-          <input type="hidden" name="cartData" id="cartData" value="" />
-          <!-- <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg"> -->
-          <button type="submit" class="btn btn-outline-primary btn-lg"
-            onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
-        </div>
-      </form>
-      <!-- レジに進むボタン終わり -->
+  <div id="cartbody">
+    <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
+    <div class="fixed_text">
+      <div class="sum_text">
+        <h6> 商品数 <span id="item-cnt"></span>個</h6>
+        <h6>小計(税込み)¥<span id="prices"></span></h6>
+        <br>
+        <h6>合計　¥<span class="sum_mny">6500</span></h6>
+        <!-- レジに進むボタン始まり -->
+        <form class="reji" action="" id="goReji" method="post">
+          <div class="reji_button">
+            <input type="hidden" name="cartData" id="cartData" value="" />
+            <!-- <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg"> -->
+            <button type="submit" class="btn btn-outline-primary btn-lg"
+              onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
+          </div>
+        </form>
+        <!-- レジに進むボタン終わり -->
+      </div>
     </div>
-  </div>
-  <!-- 商品の小計・数量・削除を表示するテーブル-->
-  <div class="flex_left">
-    <table class="table table-bordered table table-striped hyou_size">
-      <thead>
-        <tr>
-          <!-- <th scope="col">商品ID</th> -->
-          <th scope="col" class="teble_dai">商品</th>
-          <th scope="col" class="teble_dai">サイズ</th>
-          <th scope="col" class="teble_dai">数量</th>
-          <th scope="col" class="teble_dai">削除</th>
-          <th scope="col" class="teble_dai">価格</th>
+    <!-- 商品の小計・数量・削除を表示するテーブル-->
+    <div class="flex_left">
+      <table class="table table-bordered table table-striped hyou_size">
+        <thead>
+          <tr>
+            <!-- <th scope="col">商品ID</th> -->
+            <th scope="col" class="teble_dai">商品</th>
+            <th scope="col" class="teble_dai">サイズ</th>
+            <th scope="col" class="teble_dai">数量</th>
+            <th scope="col" class="teble_dai">削除</th>
+            <th scope="col" class="teble_dai">価格</th>
 
 
-        </tr>
-      </thead>
-      <tbody id="tbody">
-        <!-- <tr>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!-- <tr>
 
           <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
             <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
@@ -177,15 +178,16 @@ $allItemsList = $db->getAllItems();
           </div>
 
         </tr> -->
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
+    <!-- 商品の小計・数量・削除を表示するテーブル-->
+
+    <br><br><br>
+    <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
+
+    <br style="clear:both">
   </div>
-  <!-- 商品の小計・数量・削除を表示するテーブル-->
-
-  <br><br><br>
-  <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
-
-  <br style="clear:both">
 
   <!-- 一個前の画面に戻るボタン始まり -->
   <FORM class="mae">
@@ -353,7 +355,7 @@ $allItemsList = $db->getAllItems();
         document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
         console.log(changeIndexList);
       }
-      
+
     }
   </script>
 
@@ -364,7 +366,7 @@ $allItemsList = $db->getAllItems();
     let bbb = 0;
     let delIndexList = new Set();
 
-    window.onbeforeunload = function(e) {
+    window.onbeforeunload = function (e) {
       // console.log("aaaaaaaaaaaaaaa");
       changeCart(changeIndexList);
       delCart(Array.from(delIndexList));
@@ -387,6 +389,12 @@ $allItemsList = $db->getAllItems();
       }
       // console.log(delIndexList);
     };
+  </script>
+  <script>
+    if (id == 0) {
+      document.getElementById('cartbody').innerHTML = "カートが空です";
+      document.getElementById('cartbody').setAttribute('class', 'errField')
+    }
   </script>
 </body>
 

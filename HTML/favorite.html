@@ -19,6 +19,7 @@ $db = new DBManager();
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="./favorite_style.css">
   <link rel="stylesheet" href="style_css_file/style1.css">
+  <link rel="stylesheet" href="style_css_file/style2.css">
   <script src="script_file/script.js"></script>
   <title>favorite</title>
 </head>
@@ -191,6 +192,11 @@ $db = new DBManager();
         createItemCard('fav', u[0].items_id, u[0].items_genre, allMakersList[u[0].makers_id - 1].makers_name, u[0].items_name, u[0].items_price, u[0].items_url);
       }
     });
+
+    if (favList.length == 0) {
+      document.getElementById('fav').innerHTML = "お気に入りされた商品がありません。"
+      document.getElementById('fav').setAttribute("class", "errField");
+    }
 
     function checkFavSt(itemId) {
       const favorite = document.getElementById(itemId);
