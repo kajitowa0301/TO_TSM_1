@@ -69,10 +69,10 @@ $allItemsList = $db->getAllItems();
   <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
   <div class="fixed_text">
     <div class="sum_text">
-      <h6> 商品数 3個</h6>
-      <h6>小計(税込み)¥6000</h6>
+      <h6> 商品数 <span id="item-cnt"></span>個</h6>
+      <h6>小計(税込み)¥<span id="prices"></span></h6>
       <br>
-      <h6>合計　<span class="sum_mny">¥6500</span></h6>
+      <h6>合計　¥<span class="sum_mny">6500</span></h6>
       <!-- レジに進むボタン始まり -->
       <form class="reji" action="" id="goReji" method="post">
         <div class="reji_button">
@@ -101,33 +101,31 @@ $allItemsList = $db->getAllItems();
         </tr>
       </thead>
       <tbody id="tbody">
-        <tr>
+        <!-- <tr>
 
           <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
             <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
           </td>
           <div valign="bottom" class="some_actions">
 
-            <td valign="middle">
-              <p class="size_position">S</p>
-            </td>
-            <td valign="middle">
-              <label class="number-spinner-wrap">
-                <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
-                  pattern="^[0-9]+$">
-                <button class="spinner spinner-down">-</button>
-                <button class="spinner spinner-up">+</button>
-              </label>
-            </td>
-            <td valign="middle">
-              <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
-            </td>
-            <td valign="middle">
-              <span>¥19</span>
-            </td>
+          <td valign="middle">
+            <p class="size_position">S</p>
+          </td>
+          <td valign="middle">
+            <label class="number-spinner-wrap">
+              <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1" pattern="^[0-9]+$">
+              <button class="spinner spinner-down">-</button>
+              <button class="spinner spinner-up">+</button>
+            </label>
+          </td>
+          <td valign="middle">
+            <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
+          </td>
+          <td valign="middle">
+            <span>¥19</span>
+          </td>
 
           </div>
-
           </td>
 
 
@@ -178,7 +176,7 @@ $allItemsList = $db->getAllItems();
 
           </div>
 
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -222,7 +220,8 @@ $allItemsList = $db->getAllItems();
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
   <script>
-    const cart = getCart('<?php echo $allItemsList; ?>');
+    const allItemsList = '<?php echo $allItemsList; ?>';
+    const cart = getCart(allItemsList);
     console.log(cart);
 
     const reji = document.getElementById('goReji');
@@ -233,13 +232,24 @@ $allItemsList = $db->getAllItems();
       reji.action = "./login-file/user_login.html";
     }
 
-    function createTr() {
+    let price = 0;
+    let id = 0;
+    cart.forEach(ele => {
+      createTr(id, ele.name, ele.size, ele.vol, ele.price, ele.genre, ele.url);
+      price += ele.price * ele.vol;
+      id++;
+    });
+
+    document.getElementById('item-cnt').innerHTML = id;
+    document.getElementById('prices').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
+
+    function createTr(id, name, size, vol, price, genre, url) {
       const parent = document.getElementById('tbody');
       const tr = document.createElement('tr');
       const td = document.createElement('td');
       const tdImg = document.createElement('img');
       const tdSpan1 = document.createElement('span');
-      const div = document.createElement('div');
+      // const div = document.createElement('div');
       const divTd1 = document.createElement('td');
       const p = document.createElement('p');
       const divTd2 = document.createElement('td');
@@ -252,97 +262,122 @@ $allItemsList = $db->getAllItems();
       const divTd4 = document.createElement('td');
       const tdSpan2 = document.createElement('span');
 
-      td.setAttribute('class','td_css');
-      tdImg.setAttribute('src','');//items_url
-      tdImg.setAttribute('class','kessai_img_size');
-      tdImg.setAttribute('id','gazou1');
-      tdImg.setAttribute('align','left');
-      tdSpan1.setAttribute('class','shohin_name');
-      tdSpan1.setAttribute('id','shohin_name1');
-      div.setAttribute('valign','bottom');
-      div.setAttribute('class','some_actions');
-      divTd1.setAttribute('valign','middle');
-      p.setAttribute('class','size_position');
-      divTd2.setAttribute('valign','middle');
-      label.setAttribute('class','number-spinner-wrap');
-      input.setAttribute('type','number');
-      input.setAttribute('class','cnt_btn');
-      input.setAttribute('id','cnt_btn1');
-      input.setAttribute('value','1');//vol
-      input.setAttribute('min','1');
-      input.setAttribute('max','5');
-      input.setAttribute('step','1');
-      input.setAttribute('pattern','^[0-9]+$');
-      button1.setAttribute('class','spinner spinner-down');
-      button2.setAttribute('class','spinner spinner-up');
-      divTd3.setAttribute('valign','middle');
-      button3.setAttribute('class','bi bi-cart-x fs-3 del_icon');
-      button3.setAttribute('onclick','bbbb()');
-      divTd4.setAttribute('valign','middle');
+      td.setAttribute('class', 'td_css');
+      tdImg.setAttribute('src', genre + "_photo/" + url);//items_url
+      tdImg.setAttribute('class', 'kessai_img_size');
+      tdImg.setAttribute('id', 'gazou' + id);//id
+      tdImg.setAttribute('align', 'left');
+      tdSpan1.setAttribute('class', 'shohin_name');
+      tdSpan1.setAttribute('id', 'shohin_name' + id);//id
+      // div.setAttribute('valign', 'bottom');
+      // div.setAttribute('class', 'some_actions');
+      divTd1.setAttribute('valign', 'middle');
+      p.setAttribute('class', 'size_position');
+      divTd2.setAttribute('valign', 'middle');
+      label.setAttribute('class', 'number-spinner-wrap');
+      label.setAttribute('id', id);
+      input.setAttribute('type', 'number');
+      input.setAttribute('class', 'cnt_btn');
+      input.setAttribute('id', 'cnt_btn' + id);//id
+      input.setAttribute('value', vol);//vol
+      input.setAttribute('min', '1');
+      input.setAttribute('max', '5');
+      input.setAttribute('step', '1');
+      input.setAttribute('pattern', '^[0-9]+$');
+      button1.setAttribute('class', 'spinner spinner-down');
+      button1.setAttribute('onclick', 'dec(' + id + ')');
+      button2.setAttribute('class', 'spinner spinner-up');
+      button2.setAttribute('onclick', 'inc(' + id + ')');
+      divTd3.setAttribute('valign', 'middle');
+      button3.setAttribute('class', 'bi bi-cart-x fs-3 del_icon');
+      button3.setAttribute('id', 'delbtn' + id)//id;
+      button3.setAttribute('onclick', 'delBtn(' + id + ',"' + genre + '","' + url + '")');
+      divTd4.setAttribute('valign', 'middle');
+      tdSpan2.setAttribute('id', 'sp' + id);
 
       parent.appendChild(tr);
       tr.appendChild(td);
       td.appendChild(tdImg);
       td.appendChild(tdSpan1);
+      // tr.appendChild(div);
+      tr.appendChild(divTd1);
+      divTd1.appendChild(p);
+      tr.appendChild(divTd2);
+      divTd2.appendChild(label);
+      label.appendChild(input);
+      label.appendChild(button1);
+      label.appendChild(button2);
+      tr.appendChild(divTd3);
+      divTd3.appendChild(button3);
+      tr.appendChild(divTd4);
+      divTd4.appendChild(tdSpan2);
 
-        // <tr>
-        //   <td class="td_css"><img src="./outer_photo/outer_5.jpg" class="kessai_img_size" id="gazou1" align="left">
-        //     <span class="shohin_name" id="shohin_name1">あいうえおかきくけこさしすせそ</span>
-        //   </td>
-        //   <div valign="bottom" class="some_actions">
-        //     <td valign="middle">
-        //       <p class="size_position">S</p>
-        //     </td>
-        //     <td valign="middle">
-        //       <label class="number-spinner-wrap">
-        //         <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1"
-        //           pattern="^[0-9]+$">
-        //         <button class="spinner spinner-down">-</button>
-        //         <button class="spinner spinner-up">+</button>
-        //       </label>
-        //     </td>
-        //     <td valign="middle">
-        //       <button class="bi bi-cart-x fs-3 del_icon" id="delbtn1" onclick="bbbb()"></button>
-        //     </td>
-        //     <td valign="middle">
-        //       <span>¥19</span>
-        //     </td>
-        //   </div>
-        //   </td>
-        // </tr>
+      tdSpan1.innerHTML = name;
+      p.innerHTML = size;
+      button1.innerHTML = "-";
+      button2.innerHTML = "+";
+      tdSpan2.innerHTML = "¥" + price * vol;
     }
   </script>
 
   <!-- 数量変更処理js -->
   <script>
-    const $wrap = document.querySelector('.number-spinner-wrap')
-    const $input = $wrap.querySelector('input')
-    $wrap.querySelector('.spinner-down').onclick = () => {
-      $input.stepDown()
+    // const $wrap = document.querySelector('.number-spinner-wrap');
+    // const $input = $wrap.querySelector('input');
+    // $wrap.querySelector('.spinner-down').onclick = () => {
+    //   $input.stepDown()
+    // }
+    // $wrap.querySelector('.spinner-up').onclick = () => {
+    //   $input.stepUp()
+    // }
+    function inc(id) {
+      const $wrap = document.getElementById(id);
+      const $input = $wrap.querySelector('input');
+      $wrap.querySelector('.spinner-up').onclick = () => {
+        $input.stepUp();
+        // console.log($input.value);
+        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+      }
     }
-    $wrap.querySelector('.spinner-up').onclick = () => {
-      $input.stepUp()
+
+    function dec(id) {
+      const $wrap = document.getElementById(id);
+      const $input = $wrap.querySelector('input');
+      $wrap.querySelector('.spinner-down').onclick = () => {
+        $input.stepDown();
+        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+      }
     }
   </script>
 
   <!-- 削除ボタン押下時の処理js -->
   <script>
 
-    let delbtns = document.getElementById("delbtn1");
-    let photoChange = document.getElementById("gazou1");
+    // let delbtns = document.getElementById("delbtn1");
     let bbb = 0;
-    function bbbb() {
-      if(bbb == 0) {
-        photoChange.src = "./sweat_photo/delete.PNG";
+    let delIndexList = new Set();
+
+    window.onbeforeunload = function(e) {
+      // console.log("aaaaaaaaaaaaaaa");
+      delCart(Array.from(delIndexList));
+    };
+
+    function delBtn(id, genre, url) {
+      let photoChange = document.getElementById("gazou" + id);
+      if (photoChange.src != "http://localhost/Web/github/TO_TSM_1/HTML/sweat_photo/delete.png") {
+        photoChange.src = "./sweat_photo/delete.png";
         bbb++;
-        document.getElementById("delbtn1").setAttribute('class', 'bi-arrow-clockwise fs-3');
-        document.getElementById("shohin_name1").setAttribute('class', 'del_shohin_name');
+        document.getElementById("delbtn" + id).setAttribute('class', 'bi-arrow-clockwise fs-3');
+        document.getElementById("shohin_name" + id).setAttribute('class', 'del_shohin_name');
+        delIndexList.add(id);
       } else {
-        photoChange.src = "./outer_photo/outer_5.jpg";
+        photoChange.src = "./" + genre + "_photo/" + url;
         bbb = 0;
-        document.getElementById("delbtn1").setAttribute('class', 'bi bi-cart-x bi fs-3');
-        document.getElementById("shohin_name1").setAttribute('class', 'shohin_name');
+        document.getElementById("delbtn" + id).setAttribute('class', 'bi bi-cart-x bi fs-3');
+        document.getElementById("shohin_name" + id).setAttribute('class', 'shohin_name');
+        delIndexList.delete(id);
       }
+      // console.log(delIndexList);
     };
   </script>
 </body>

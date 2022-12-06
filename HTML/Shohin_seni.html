@@ -130,15 +130,15 @@ $db = new DBManager();
     <h3>合わせやすい色</h3>
     <div class="color-btn-raido">
       <input type="radio" name="btn-radio" id="color1" value="color1"><label id="haishoku-1" for="color1"
-        onclick="HaishokuColor(color[0],itemList,allMakersList)">
+        onclick="HaishokuColor(color[0],itemList,allMakersList,itemData.items_genre)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color2" value="color2"><label id="haishoku-2" for="color2"
-        onclick="HaishokuColor(color[1],itemList,allMakersList)">
+        onclick="HaishokuColor(color[1],itemList,allMakersList,itemData.items_genre)">
         <p class="haishoku-1">✓</p>
       </label>
       <input type="radio" name="btn-radio" id="color3" value="color3"><label id="haishoku-3" for="color3"
-        onclick="HaishokuColor(color[2],itemList,allMakersList)">
+        onclick="HaishokuColor(color[2],itemList,allMakersList,itemData.items_genre)">
         <p class="haishoku-1">✓</p>
       </label>
     </div>
@@ -239,7 +239,7 @@ $db = new DBManager();
         </div>
       </div>
       <div class="card col-sm-3">
-        <img class="img_unification" src="./outer_photo/m69810141178_1.jpg" class="card-img-top img-fluid">
+        <img class="img_unification" src="./sweat_photo/purple_sweat3.jpg" class="card-img-top img-fluid">
         <div class="card-body">
           <h5 class="card-title">GU</h5>
           <!-- いいねボタン始 -->
@@ -254,7 +254,7 @@ $db = new DBManager();
         </div>
       </div>
       <div class="card col-sm-3">
-        <img class="img_unification" src="./outer_photo/m93909701417_1.jpg" class="card-img-top img-fluid">
+        <img class="img_unification" src="./outer_photo/green_outer3.jpg" class="card-img-top img-fluid">
         <div class="card-body">
           <h5 class="card-title">BROWNS</h5>
           <!-- いいねボタン始 -->
@@ -306,6 +306,7 @@ $db = new DBManager();
 
     const color = setColor(itemData.items_color);
     console.log(color);
+    // const genre = 
 
     function chksize() {
       for (let i = 0; i < size.length; i++) {

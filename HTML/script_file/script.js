@@ -53,15 +53,17 @@ function getCart(itemsList) {
             name: allItemsList[ele.id - 1].items_name,
             size: ele.size,
             vol: ele.vol,
-            price: allItemsList[ele.id - 1].items_price
+            price: allItemsList[ele.id - 1].items_price,
+            genre: allItemsList[ele.id - 1].items_genre,
+            url: allItemsList[ele.id - 1].items_url
         }
         i++;
     });
     return cart;
 }
 
-// カート削除機能（引数：要素位置）
-function delCart(index) {
+// カート削除機能（引数：要素位置配列）
+function delCart(indexList) {
     // 配列用意
     let cartItemsList = [];
     // localstorageにカートが既に存在していればそれを取得
@@ -71,7 +73,14 @@ function delCart(index) {
     }
 
     // データ削除
-    cartItemsList.splice(index, 1);
+    // cartItemsList.splice(index, 1);
+    indexList.forEach(ele => {
+        delete cartItemsList[ele];
+    });
+
+    cartItemsList = cartItemsList.filter(function( item ) {
+        return item !== null;
+      });
 
     // localstorageに保存
     localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
@@ -268,4 +277,26 @@ function wheatOver(){
     const target = document.getElementById('target_color');
     target.innerHTML = "ベージュ"; 
     target.style.color  = 'wheat'
+}
+
+// メーカの絞り込み
+function makerNameFunc1(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("1");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc2(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("2");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc3(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("3");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc4(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("4");
+    target.innerHTML = target_maker.textContent;
 }
