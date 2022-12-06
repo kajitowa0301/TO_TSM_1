@@ -278,3 +278,25 @@ function wheatOver(){
     target.innerHTML = "ベージュ"; 
     target.style.color  = 'wheat'
 }
+
+// メーカの絞り込み
+function makerNameFunc1(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("1");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc2(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("2");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc3(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("3");
+    target.innerHTML = target_maker.textContent;
+}
+function makerNameFunc4(){
+    const target = document.getElementById("makers_name");
+    const target_maker = document.getElementById("4");
+    target.innerHTML = target_maker.textContent;
+}
