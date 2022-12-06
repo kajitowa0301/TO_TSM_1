@@ -202,3 +202,12 @@ background-color: brown;
 #wheat:hover{
     opacity: 0.5;
 }
+.submitStyle{
+    font-size:large;
+    border: none;
+    background-color: #bbb;
+    padding-left: 0%;
+}
+.submitStyle:hover{
+    text-decoration: underline #09f;
+}

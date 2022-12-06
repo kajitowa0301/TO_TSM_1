@@ -10,196 +10,163 @@ $db = new DBManager();
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHubシステム開発演習</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./style_css_file/style1.css">
-    <!-- <link rel="stylesheet" href="./style_css_file/style4.css"> -->
-    <script src="./script_file/script.js">
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>システム開発演習</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./style_css_file/style1.css">
+  <script src="./script_file/script.js"></script>
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-
-
-    <!-- jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <!-- ジャンボトロン 
+  <!-- ジャンボトロン -->
   <style>
     .bg-img {
-        background-image: url("./photo/cloud_backo_img.JPG");
-        background-size: cover;
-        background-position: center 60%;
+      background-image: url("./back_photo/images4.jpg");
+      background-size: cover;
+      background-position: center 60%;
     }
-</style>
- ジャンボトロン -->
-    <style type="text/css">
-        #photo {
-            width: 100%;
-            height: 300px;
-            margin: 0 auto;
-            text-align: left;
-            overflow: hidden;
-            position: relative;
-        }
 
-        #photo img {
-            top: 0;
-            left: 0;
-            position: absolute;
-        }
-    </style>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            var setImg = '#photo';
-            var fadeSpeed = 2000;
-            var switchDelay = 5000;
+    #photo {
+      width: 100%;
+      height: 300px;
+      margin: 0 auto;
+      text-align: left;
+      overflow: hidden;
+      position: relative;
+    }
 
-            $(setImg).children('img').css({ opacity: '0' });
-            $(setImg + ' img:first').stop().animate({ opacity: '1', zIndex: '0' }, fadeSpeed);
-
-            setInterval(function () {
-                $(setImg + ' :first-child').animate({ opacity: '0' }, fadeSpeed).next('img').animate({ opacity: '1' }, fadeSpeed).end().appendTo(setImg);
-            }, switchDelay);
-        });
-    </script>
-
-
+    #photo img {
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+  </style>
+  <!-- ジャンボトロン -->
 </head>
 
 <body>
-    <div class="submenu-relative">
-        <!-- ナブバーの記述始まり -->
-        <nav class="navbar navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                    <p id="midasi">To TSM.</p>
-                </a>
-                <div class="btn-toolbar">
-                    <div class="btn-toolbar">
-                        <!--ログインボタン-->
-                        <div class="button_solid003">
-                            <?php
-              if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
-              } else {
-                echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
-              }
-            ?>
-                        </div>
-                        <!-- ログインボタン -->
-                        <div class="btn btn-group">
-                            <!--お気に入り閲覧ボタン始  -->
-                            <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button">
-                                <i class="bi bi-heart-fill fs-2"></i>
-                            </button>
-                            <!-- お気に入り閲覧ボタン終 -->
+  <!-- ナブバーの記述始まり -->
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <p id="midasi">To TSM.</p>
+      </a>
+      <div class="btn-toolbar">
+        <div class="btn-toolbar">
+          <!-- 新規登録ボタン
+           <div class="button_solid003">
+            <a href="https://zozo.jp/_member/regist/?pattern=">新規登録
+            </a>
+          </div>-->
+          <!--新規登録ボタン-->
 
-                            <!-- 検索のアイコン -->
-                            <button class="navbar-toggler" type="button" onclick="search_onFunc()">
-                                <i class="button-submunu  bi bi-search fs-2"></i>
-                            </button>
+          <!--ログインボタン-->
+          <div class="button_solid003">
+            <a href="./login-file/user_login.html">ログイン</a>
+          </div>
+          <!-- ログインボタン -->
+          <div class="btn-group">
+            <!--お気に入り閲覧ボタン始  -->
+            <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+              data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+              <i class="bi bi-heart-fill fs-2"></i>
+            </button>
+            <!-- お気に入り閲覧ボタン終 -->
+            <!-- 検索のアイコン -->
+            <button class="navbar-toggler" type="button" onclick="search_onFunc()">
+              <i class="bi bi-search fs-2"></i>
+            </button>
+            <!-- カゴのアイコン -->
+            <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
+            </button>
+  </nav>
+  </div>
+  </div>
+  <!--ナブバの記述終わり  -->
 
-                            <!-- カゴのアイコン -->
-                            <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
-                                    class="bi bi-cart4 fs-2"></i>
-                            </button>
-                        </div>
-        </nav>
-        <!--ナブバの記述終わり  -->
-
-        <!-- サブメニュー表示 -->
-        <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
-            <div class="submenu-search">
-                <h3>--検索--</h3>
-                <ul>
-                    <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
-                    <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
-                    <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
-                </ul>
-            </div>
-            <div class="submenu-rireki">
-                <h3>--購入履歴--</h3>
-                <ul>
-                    <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
-                    <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
-                    <!-- <p style="color:violet; font-weight: 800;">※枠から出たらサブメニューが閉じます</p> -->
-                </ul>
-            </div>
-        </div>
-        <!--サブメニュー表示  -->
-        <h2 class="font_whight">
-            -----<span id="makers_name">Maker</span>-----
-        </h2>
-       
-        <!-- トップに戻るボタン -->
-        <a href="#"><button class="top-return-button"><i class="bi bi-chevron-up"></i></button></a>
-        <!--トップボタンここまで -->
-        <!--フッター始まり-->
-        <div>
-            <footer class="py-3 my-4">
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html"
-                            class="nav-link px-2 text-muted">FAQ</a></li>
-                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
-                </ul>
-                <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
-            </footer>
-        </div>
-        <!-- フッター終わり -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
-        <script src="./script_file/script.js"></script>
-        <script>
-            const allItemsList = JSON.parse('<?php echo $db->getAllItems(); ?>');
-            const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
-            let outerCnt = 0;
-            let pantsCnt = 0;
-            let sweatCnt = 0;
-
-            // allItemsList.forEach(ele => {
-            //     // console.log(allMakersList[ele.makers_id - 1]);
-            //     if (ele.items_genre == "outer") {
-            //         outerCnt++;
-            //         if (outerCnt <= 4) {
-            //             createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-            //         }
-            //     } else if (ele.items_genre == "pants") {
-            //         pantsCnt++;
-            //         if (pantsCnt <= 4) {
-            //             createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-            //         }
-            //     } else if (ele.items_genre == "sweat") {
-            //         sweatCnt++;
-            //         if (sweatCnt <= 4) {
-            //             createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-            //         }
-            //     }
-            // });
-
-            function checkFavSt(itemId) {
-                const favorite = document.getElementById(itemId);
-                // console.log(favorite.checked);
-                if (favorite.checked) {
-                    addFavorite(itemId);
-                } else {
-                    delFavorite(itemId);
-                }
-            }
-        </script>
+  <!-- ジャンボトロン -->
+  <!-- <div id="photo">
+    <img src="./back_photo/images4.jpg" />
+  </div> -->
+  <!--ジャンボトロン-->
+  <!-- サブメニュー表示 -->
+  <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+    <div class="submenu-search">
+      <h3>--検索--</h3>
+      <ul>
+        <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+        <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+        <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+      </ul>
     </div>
+    <div class="submenu-rireki">
+      <h3>--購入履歴--</h3>
+      <ul>
+        <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+        <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--サブメニュー表示  -->
+  <!-- Card1 開始 -->
+  <h2 class="font_whight">
+    -----<?php echo $_POST['makerName']?>-----
+  </h2>
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4" id="items">
+      <!-- ここに商品が自動生成されます -->
+      <!-- xamppの無い環境では、エラーが出るか商品が表示されないですが気にしないでください -->
+    </div>
+  </div>
+  <!-- Card1　終わり -->
+
+  <!-- トップに戻るボタン -->
+  <a href="#"><button class="top-return-button"><i class="bi bi-chevron-up"></i></button></a>
+  <!--トップボタンここまで -->
+  <!--フッター始まり-->
+  <div>
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+      </ul>
+      <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
+    </footer>
+  </div>
+  <!-- フッター終わり -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <script>
+    // const id = "<?php $_POST['makerId']?>";
+    const outerItemsList = JSON.parse('<?php echo $db->getItemsFromMaker($_POST["makerId"]); ?>');
+    const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
+
+    outerItemsList.forEach(ele => {
+      console.log(allMakersList[ele.makers_id - 1]);
+      createItemCard('items', ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
+    });
+
+    function checkFavSt(itemId) {
+      const favorite = document.getElementById(itemId);
+      // console.log(favorite.checked);
+      if (favorite.checked) {
+        addFavorite(itemId);
+      } else {
+        delFavorite(itemId);
+      }
+    }
+  </script>
 </body>
 
 </html>
