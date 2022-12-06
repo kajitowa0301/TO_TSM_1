@@ -21,6 +21,35 @@ function addCart(itemId, itemSize, itemVol) {
     localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
 }
 
+// カート変更機能（引数：要素位置と数量の配列）
+function changeCart(changeItemList) {
+    // 配列用意
+    let cartItemsList = [];
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('cartItems') != null) {
+        // json解読
+        cartItemsList = JSON.parse(localStorage.getItem('cartItems'));
+    }
+    
+    // カートデータ更新
+    for(var v of changeItemList.keys()) {
+        console.log(v);
+        cartItemsList.splice(v, 1, {
+            id: cartItemsList[v].id,
+            size: cartItemsList[v].size,
+            vol: changeItemList.get(v)
+        });
+    }
+
+    // let i = 0;
+    // while (i <= 2000000000) {
+    //     i++
+    // }
+
+    // localstorageに保存
+    localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
+}
+
 // カート取得機能（引数：全商品のjson）
 function getCart(itemsList) {
     // 配列用意

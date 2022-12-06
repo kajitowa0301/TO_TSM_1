@@ -330,13 +330,17 @@ $allItemsList = $db->getAllItems();
     // $wrap.querySelector('.spinner-up').onclick = () => {
     //   $input.stepUp()
     // }
+    let changeIndexList = new Map();
+
     function inc(id) {
       const $wrap = document.getElementById(id);
       const $input = $wrap.querySelector('input');
       $wrap.querySelector('.spinner-up').onclick = () => {
         $input.stepUp();
         // console.log($input.value);
+        changeIndexList.set(id, $input.value);
         document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        console.log(changeIndexList);
       }
     }
 
@@ -345,8 +349,11 @@ $allItemsList = $db->getAllItems();
       const $input = $wrap.querySelector('input');
       $wrap.querySelector('.spinner-down').onclick = () => {
         $input.stepDown();
+        changeIndexList.set(id, $input.value);
         document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        console.log(changeIndexList);
       }
+      
     }
   </script>
 
@@ -359,6 +366,7 @@ $allItemsList = $db->getAllItems();
 
     window.onbeforeunload = function(e) {
       // console.log("aaaaaaaaaaaaaaa");
+      changeCart(changeIndexList);
       delCart(Array.from(delIndexList));
     };
 
