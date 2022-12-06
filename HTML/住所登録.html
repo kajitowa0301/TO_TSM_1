@@ -7,7 +7,7 @@ $_SESSION['cartData'] = json_decode($_POST['cartData']);
 require_once "../データベース関連/DBManager.php";
 $db = new DBManager();
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -266,7 +266,7 @@ $db = new DBManager();
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <!-- JSの設定ファイル -->
-    <script src="form-validation.js"></script>
+    <!-- <script src="form-validation.js"></script> -->
     <script>
         // console.log(<?php echo json_encode($_SESSION['cartData']); ?>);
 
