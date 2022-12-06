@@ -69,10 +69,10 @@ $allItemsList = $db->getAllItems();
   <!-- 商品の数量・商品合計・送料・支払金額を表示する -->
   <div class="fixed_text">
     <div class="sum_text">
-      <h6> 商品数 3個</h6>
-      <h6>小計(税込み)¥6000</h6>
+      <h6> 商品数 <span id="item-cnt"></span>個</h6>
+      <h6>小計(税込み)¥<span id="prices"></span></h6>
       <br>
-      <h6>合計　<span class="sum_mny">¥6500</span></h6>
+      <h6>合計　¥<span class="sum_mny">6500</span></h6>
       <!-- レジに進むボタン始まり -->
       <form class="reji" action="" id="goReji" method="post">
         <div class="reji_button">
@@ -232,11 +232,16 @@ $allItemsList = $db->getAllItems();
       reji.action = "./login-file/user_login.html";
     }
 
+    let price = 0;
     let id = 0;
     cart.forEach(ele => {
       createTr(id, ele.name, ele.size, ele.vol, ele.price, ele.genre, ele.url);
+      price += ele.price * ele.vol;
       id++;
     });
+
+    document.getElementById('item-cnt').innerHTML = id;
+    document.getElementById('prices').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
 
     function createTr(id, name, size, vol, price, genre, url) {
       const parent = document.getElementById('tbody');
@@ -359,7 +364,7 @@ $allItemsList = $db->getAllItems();
 
     function delBtn(id, genre, url) {
       let photoChange = document.getElementById("gazou" + id);
-      if (bbb == 0) {
+      if (photoChange.src != "http://localhost/Web/github/TO_TSM_1/HTML/sweat_photo/delete.png") {
         photoChange.src = "./sweat_photo/delete.png";
         bbb++;
         document.getElementById("delbtn" + id).setAttribute('class', 'bi-arrow-clockwise fs-3');
@@ -372,7 +377,7 @@ $allItemsList = $db->getAllItems();
         document.getElementById("shohin_name" + id).setAttribute('class', 'shohin_name');
         delIndexList.delete(id);
       }
-      console.log(delIndexList);
+      // console.log(delIndexList);
     };
   </script>
 </body>
