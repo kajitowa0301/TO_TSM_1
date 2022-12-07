@@ -94,11 +94,12 @@
     display: flex;
     justify-content: space-evenly;
 }
-.color-1 > input[type= button]{
+.color-1 > form > input[type=submit]{
     width: 50px;
     height:50px;
     margin: 10px;
     border-radius: 90%;
+    border-style: solid;
     cursor: pointer;
 }
 .color-2{
@@ -108,11 +109,12 @@
     display: flex;
     justify-content: space-evenly;
 }
-.color-2 > input[type= button]{
+.color-2 >  form > input[type= submit]{
     width: 50px;
     height:50px;
     margin: 10px;
     border-radius: 90%;
+    border-style: solid;
     cursor: pointer;
 }
 .color-3{
@@ -122,11 +124,12 @@
     display: flex;
     justify-content: space-evenly;
 }
-.color-3 > input[type= button]{
+.color-3 > form > input[type=submit]{
     width: 50px;
     height:50px;
     margin: 10px;
     border-radius: 90%;
+    border-style: solid;
     cursor: pointer;
 }
 /* カラー選択するボタンの色の付け */
@@ -161,7 +164,7 @@
     opacity: 0.5;
 }
 #olive{
-    background-color: olive;
+    background-color: olivedrab;
 }
 #olive:hover{
     opacity: 0.5;
@@ -185,7 +188,7 @@ background-color: brown;
     opacity: 0.5;
 }
 #aqua{
-    background-color: aqua;
+    background-color: #1cf;
 }
 #aqua:hover{
     opacity: 0.5;

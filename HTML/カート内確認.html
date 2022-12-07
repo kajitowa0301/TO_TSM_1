@@ -73,7 +73,7 @@ $allItemsList = $db->getAllItems();
         <h6> 商品数 <span id="item-cnt"></span>個</h6>
         <h6>小計(税込み)¥<span id="prices"></span></h6>
         <br>
-        <h6>合計　¥<span class="sum_mny">6500</span></h6>
+        <h6>合計　¥<span class="sum_mny" id="sum">6500</span></h6>
         <!-- レジに進むボタン始まり -->
         <form class="reji" action="" id="goReji" method="post">
           <div class="reji_button">
@@ -244,6 +244,7 @@ $allItemsList = $db->getAllItems();
 
     document.getElementById('item-cnt').innerHTML = id;
     document.getElementById('prices').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
+    document.getElementById('sum').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
 
     function createTr(id, name, size, vol, price, genre, url) {
       const parent = document.getElementById('tbody');
@@ -342,7 +343,7 @@ $allItemsList = $db->getAllItems();
         $input.stepUp();
         // console.log($input.value);
         changeIndexList.set(id, $input.value);
-        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * $input.value;
         console.log(changeIndexList);
       }
     }
@@ -353,7 +354,7 @@ $allItemsList = $db->getAllItems();
       $wrap.querySelector('.spinner-down').onclick = () => {
         $input.stepDown();
         changeIndexList.set(id, $input.value);
-        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * $input.value;
         console.log(changeIndexList);
       }
 
@@ -376,8 +377,10 @@ $allItemsList = $db->getAllItems();
 
     window.onchange = function (e) {
       const val = Math.min(Math.max(e.target.value, 1), 5);
-      changeIndexList.set(Number(e.target.id.replace(/cnt_btn/g, "")), val);
+      const id = e.target.id.replace(/cnt_btn/g, "");
+      changeIndexList.set(Number(id), val);
       document.getElementById(e.target.id).value = val;
+      document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * val;
       console.log(changeIndexList);
       // console.log(e.target.id);
     }

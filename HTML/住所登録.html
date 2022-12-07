@@ -156,7 +156,7 @@ $db = new DBManager();
 
                         <div class="col-12">
                             <label for="address" class="form-label">市区町村</label>
-                            <input type="text" class="form-control" name="ad" id="address" placeholder="地番" required>
+                            <input type="text" class="form-control" name="ad" id="address" placeholder="地番" value="<?php echo $_SESSION['login_ad1']; ?>" required>
                             <div class="invalid-feedback">
                                 配送先住所を入力してください
                             </div>
