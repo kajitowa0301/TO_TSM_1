@@ -305,25 +305,28 @@ input[type=radio][value="color3"]:checked+label > p{
 }
 #haishoku-1{
     background-color: olivedrab;
+    border: solid #000;
 }
 #haishoku-1:hover{
     opacity: 0.5;
 }
 #haishoku-2{
     background-color: #000;
+    border: solid #000;
 }
 #haishoku-2:hover{
     opacity: 0.5;
 }
 #haishoku-3{
-    background-color: #0066ff; 
+    background-color:#0066ff; 
+    border: solid #000;
 }
 #haishoku-3:hover{
     opacity: 0.5;
 }
 
 .haishoku-1{
-    color:white;
+    color:#66ddff;
     text-align: center;
     font-size: 30px;
     opacity: 0;

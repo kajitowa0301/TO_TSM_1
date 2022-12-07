@@ -28,7 +28,7 @@
 //     document.getElementById('kakusu').style.display = 'inline';
 // }
 
-function HaishokuColor(col,itemList,allMakersList){
+function HaishokuColor(col,itemList,allMakersList,genre){
     // console.log(allMakersList[1].makers_name);
     const color = document.getElementById("select-color");
     color.innerHTML=col;
@@ -36,7 +36,7 @@ function HaishokuColor(col,itemList,allMakersList){
 
     itemList.forEach(ele => {
         // console.log(allMakersList[ele.makers_id - 1]);
-        if (ele.items_color == col) {
+        if (ele.items_color == col && ele.items_genre != genre){
             recList.push(ele);
         }
     });
@@ -64,9 +64,76 @@ function HaishokuColor(col,itemList,allMakersList){
     // document.getElementById("img-color-4").src = "./shoes_photo/bule2-shoes.jpg";
     document.getElementById('kakusu').style.display = 'inline';
 }
-
+//haishoku-1,haishoku-3,haishoku-2 background-color選択でボタンの色変更できる
 function setColor(color) {
+    // グレー色を判定
     if (color == "グレー") {
-        return ["オリーブ","黒","青"];
+        document.getElementById("haishoku-1").style.backgroundColor ='olivedrab';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='white';
+        return ["オリーブ","黒","白"];
+
+    // 赤色を判定
+    }else if(color == "赤"){
+        document.getElementById("haishoku-1").style.backgroundColor ='#ccc';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='white';
+        return["グレー","黒","白"];
+
+    // 緑色を判定
+    }else if(color =="緑"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
+        return ["白","黒","グレー"];
+
+    // 白色を判定
+    }else if(color == "白"){
+        document.getElementById("haishoku-1").style.backgroundColor ='green';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='brown';
+        return ["緑","黒","茶"];
+
+    // 黒色を判定
+    }else if(color == "黒"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#0066ff';
+        return ["白","黒","青"];
+
+    // 水色を判定
+    }else if(color == "水色"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='olivedrab';
+        document.getElementById("haishoku-3").style.backgroundColor ='#000';
+        return ["白","カーキ","黒"];
+
+    // オリーブ色を判定
+    }else if(color == "オリーブ"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
+        return ["白","黒","グレー"];
+
+    // 茶色を判定
+    }else if(color == "茶"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
+        return ["白","黒","グレー"];
+
+    // 黄色を判定
+    }else if(color == "黄"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
+        return ["白","黒","グレー"];
+
+    // 青色を判定
+    }else if(color == "青"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='dark';
+        document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
+        return ["白","黒","グレー"];
     }
 }

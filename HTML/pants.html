@@ -69,8 +69,7 @@ $db = new DBManager();
             <button class="navbar-toggler" onClick="location.href='./index.html'"><i class="bi bi-house-door-fill fs-2"></i>
             </button>
             <!-- 検索のアイコン -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-              aria-controls="navbar" aria-expanded="false">
+            <button class="navbar-toggler" type="button"onclick="search_onFunc()">
               <i class="bi bi-search fs-2"></i>
             </button>
             <!-- カゴのアイコン -->
@@ -89,7 +88,25 @@ $db = new DBManager();
     </p>
   </div>
   <!--ジャンボトロン-->
-
+<!-- サブメニュー表示 -->
+<div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+  <div class="submenu-search">
+    <h3>--検索--</h3>
+    <ul>
+      <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+      <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+      <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+    </ul>
+  </div>
+  <div class="submenu-rireki">
+    <h3>--購入履歴--</h3>
+    <ul>
+      <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+      <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+    </ul>
+  </div>
+</div>
+<!--サブメニュー表示  -->
 
   <!-- card 1行目-->
   <h2 class="font_whight">
@@ -114,8 +131,8 @@ $db = new DBManager();
         <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+        <li class="nav-item"><a href="./FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
+        <li class="nav-item"><a href="./FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
       </ul>
       <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
     </footer>

@@ -7,7 +7,7 @@
 }
 .maker-list-1{
     width: 25%;
-    background-color: #ddd;
+    background-color: #bbb;
     border-radius:10px ;
     font-size: 20px;
 }
@@ -21,7 +21,7 @@
 }
 .maker-list-2{
     width: 25%; 
-    background-color: #ddd;
+    background-color: #bbb;
     border-radius:10px ;
     font-size: 20px;
 }
@@ -35,7 +35,7 @@
    }
 .maker-list-3{
     width: 25%;
-    background-color: #ddd;
+    background-color: #bbb;
     border-radius:10px ;
     font-size: 20px;
 }
@@ -49,7 +49,7 @@
    }
 .maker-list-4{
     width: 25%;
-    background-color: #ddd;
+    background-color: #bbb;
     border-radius:10px ;
     font-size: 20px;
 }
@@ -63,12 +63,12 @@
    }
    /* hrefの設定 */
 .li-href{
+    text-decoration:none #09f;
     color: #444;
-    text-decoration: none;
 }
 .li-href:hover{
     color: #444;
-    text-decoration: underline #09f;
+    /* text-decoration: underline #09f; */
 }
 
 /* カラー検索画面のデザイン */
@@ -201,4 +201,13 @@ background-color: brown;
 }
 #wheat:hover{
     opacity: 0.5;
+}
+.submitStyle{
+    font-size:large;
+    border: none;
+    background-color: #bbb;
+    padding-left: 0%;
+}
+.submitStyle:hover{
+    text-decoration: underline #09f;
 }

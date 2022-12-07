@@ -2,12 +2,13 @@
 // セッション
 session_start();
 $_SESSION['cartData'] = json_decode($_POST['cartData']);
+if (empty($_SESSION['cartData'])) header("Location: カート内確認.html");
 
 // データベースマネージャの読込
 require_once "../データベース関連/DBManager.php";
 $db = new DBManager();
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -266,9 +267,9 @@ $db = new DBManager();
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <!-- JSの設定ファイル -->
-    <script src="form-validation.js"></script>
+    <!-- <script src="form-validation.js"></script> -->
     <script>
-        // console.log(<?php echo $_SESSION['cartData']; ?>);
+        // console.log("<?php echo json_encode($_SESSION['cartData']); ?>");
 
         function crebitFunc() {
             document.getElementById("siharai").style.display = 'inline';

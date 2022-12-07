@@ -104,5 +104,11 @@
             $ps->execute();
             return json_encode($ps->fetchAll());
         }
+
+        public function getMakerName($makerId){
+            $ps = $this -> connectDb() ->prepare("SELECT makers_name FROM makers WHERE makers_id = ?");
+            $ps->execute();
+            return $ps->fetch();
+        }
     }
 ?>
