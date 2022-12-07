@@ -145,34 +145,56 @@ $db = new DBManager();
         </div>
         <div class="btn-color">
             <div class="color-1">
-                <input type="button" name="color" id="red" onClick="location.href='./index.html'"
-                    onmouseover="redOver()"><label for="red"></label>
-                <input type="button" name="color" id="green" onClick="location.href='./index.html'"
-                    onmouseover="greenOver()"><label for="green"></label>
-                <input type="button" name="color" id="yellow" onClick="location.href='./index.html'"
-                    onmouseover="yellowOver()"><label for="yellow"></label>
-                <input type="button" name="color" id="blue" onClick="location.href='./index.html'"
-                    onmouseover="blueOver()"><label for="blue"></label>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="red"><input type="hidden" name="ColorName" value="赤"><input type="submit" name="color"
+                        id="red" value=" " onmouseover="redOver()"><label for="red"></label>
+                </form>
+
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="green"><input type="hidden" name="ColorName" value="緑"><input type="submit" name="color"
+                        id="green" value=" " onmouseover="greenOver()"><label for="green"></label>
+                </form>
+
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="yellow"><input type="hidden" name="ColorName" value="黄"><input type="submit" name="color"
+                        id="yellow" value=" " onmouseover="yellowOver()"><label for="yellow"></label>
+                </form>
+
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="blue"><input type="hidden" name="ColorName" value="青"><input type="submit" name="color"
+                        id="blue" value=" " onmouseover="blueOver()">
+                    <labelfor="blue"></label>
+                </form>
+
             </div><br>
             <div class="color-2">
-                <input type="button" name="color" id="black" onClick="location.href='./index.html'"
-                    onmouseover="blackOver()"><label for="black"></label>
-                <input type="button" name="color" id="olive" onClick="location.href='./index.html'"
-                    onmouseover="oliveOver()"><label for="olive"></label>
-                <input type="button" name="color" id="purple" onClick="location.href='./index.html'"
-                    onmouseover="purpleOver()"><label for="purple"></label>
-                <input type="button" name="color" id="violet" onClick="location.href='./index.html'"
-                    onmouseover="violetOver()"><label for="violet"></label>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="black"><input type="hidden" name="ColorName" value="黒"><input type="submit" name="color"
+                        id="black" value=" " onmouseover="blackOver()"><label for="black"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="Khaki"><input type="hidden" name="ColorName" value="カーキ"><input type="submit"
+                        name="color" id="olive" value=" " onmouseover="oliveOver()"><label for="olive"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="purple"><input type="hidden" name="ColorName" value="紫"><input type="submit" name="color"
+                        id="purple" value=" " onmouseover="purpleOver()"><label for="purple"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName"
+                        value="violet"><input type="hidden" name="ColorName" value="ピンク"><input type="submit"
+                        name="color" id="violet" value=" " onmouseover="violetOver()"><label for="violet"></label>
+                </form>
             </div><br>
             <div class="color-3">
-                <input type="button" name="color" id="brown" onClick="location.href='./index.html'"
-                    onmouseover="brownOver()"><label for="brown"></label>
-                <input type="button" name="color" id="aqua" onClick="location.href='./index.html'"
-                    onmouseover="aquaOver()"><label for="aqua"></label>
-                <input type="button" name="color" id="gold" onClick="location.href='./index.html'"
-                    onmouseover="goldOver()"><label for="gold"></label>
-                <input type="button" name="color" id="wheat" onClick="location.href='./index.html'"
-                    onmouseover="wheatOver()"><label for="wheat"></label>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName" value="brown"><input type="hidden" name="ColorName" value="茶"><input
+                        type="submit" name="color" id="brown" value=" " onmouseover="brownOver()"><label
+                        for="brown"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName" value="aqua"><input type="hidden" name="ColorName" value="水色"><input
+                        type="submit" name="color" id="aqua" value=" " onmouseover="aquaOver()"><label
+                        for="aqua"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName" value="gold"><input type="hidden" name="ColorName" value="金"><input
+                        type="submit" name="color" id="gold" value=" " onmouseover="goldOver()"><label
+                        for="gold"></label></form>
+                <form action="./color_2.html" method="post"><input type="hidden" name="ColorEnglishName" value="beige"><input type="hidden" name="ColorName" value="ベージュ"><input
+                        type="submit" name="color" id="wheat" value=" " onmouseover="wheatOver()"><label
+                        for="wheat"></label></form>
             </div><br>
         </div>
         <!-- トップに戻るボタン -->
@@ -187,7 +209,8 @@ $db = new DBManager();
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
                     <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html"
                             class="nav-link px-2 text-muted">FAQ</a></li>
-                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+                            class="nav-link px-2 text-muted">概要</a></li>
                 </ul>
                 <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
             </footer>
@@ -201,29 +224,6 @@ $db = new DBManager();
         <script>
             const allItemsList = JSON.parse('<?php echo $db->getAllItems(); ?>');
             const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
-            let outerCnt = 0;
-            let pantsCnt = 0;
-            let sweatCnt = 0;
-
-            allItemsList.forEach(ele => {
-                // console.log(allMakersList[ele.makers_id - 1]);
-                if (ele.items_genre == "outer") {
-                    outerCnt++;
-                    if (outerCnt <= 4) {
-                        createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-                    }
-                } else if (ele.items_genre == "pants") {
-                    pantsCnt++;
-                    if (pantsCnt <= 4) {
-                        createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-                    }
-                } else if (ele.items_genre == "sweat") {
-                    sweatCnt++;
-                    if (sweatCnt <= 4) {
-                        createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-                    }
-                }
-            });
 
             function checkFavSt(itemId) {
                 const favorite = document.getElementById(itemId);
