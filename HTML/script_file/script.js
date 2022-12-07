@@ -294,7 +294,7 @@ function brownOver(){
 }
 function aquaOver(){
     const target = document.getElementById('target_color');
-    target.innerHTML = "アクア"; 
+    target.innerHTML = "水色"; 
     target.style.color  = 'aqua'
 }
 function goldOver(){
