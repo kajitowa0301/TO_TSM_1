@@ -80,7 +80,7 @@ $allItemsList = $db->getAllItems();
             <input type="hidden" name="cartData" id="cartData" value="" />
             <!-- <input type="submit" value="レジに進む" class="btn btn-outline-primary btn-lg"> -->
             <button type="submit" class="btn btn-outline-primary btn-lg"
-              onclick="document.getElementById('cartData').value = JSON.stringify(cart)">レジに進む</button>
+              onclick="changeCart(changeIndexList);delCart(Array.from(delIndexList));document.getElementById('cartData').value = JSON.stringify(getCart(allItemsList));">レジに進む</button>
           </div>
         </form>
         <!-- レジに進むボタン終わり -->
@@ -282,6 +282,7 @@ $allItemsList = $db->getAllItems();
       input.setAttribute('class', 'cnt_btn');
       input.setAttribute('id', 'cnt_btn' + id);//id
       input.setAttribute('value', vol);//vol
+      // input.setAttribute('onChange', 'changeIndexList.set(id, $input.value)')
       input.setAttribute('min', '1');
       input.setAttribute('max', '5');
       input.setAttribute('step', '1');
@@ -370,7 +371,16 @@ $allItemsList = $db->getAllItems();
       // console.log("aaaaaaaaaaaaaaa");
       changeCart(changeIndexList);
       delCart(Array.from(delIndexList));
+      cart = getCart(allItemsList);
     };
+
+    window.onchange = function (e) {
+      const val = Math.min(Math.max(e.target.value, 1), 5);
+      changeIndexList.set(Number(e.target.id.replace(/cnt_btn/g, "")), val);
+      document.getElementById(e.target.id).value = val;
+      console.log(changeIndexList);
+      // console.log(e.target.id);
+    }
 
     function delBtn(id, genre, url) {
       let photoChange = document.getElementById("gazou" + id);
