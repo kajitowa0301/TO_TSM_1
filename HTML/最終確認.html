@@ -5,6 +5,9 @@ session_start();
 // データベースマネージャの読込
 require_once "../データベース関連/DBManager.php";
 $db = new DBManager();
+
+// DBからjson形式で全商品取得
+$allItemsList = $db->getAllItems();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -88,10 +91,10 @@ $db = new DBManager();
             <div class="col-md-5 col-lg-4 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-primary">カート</span>
-                    <span class="badge bg-primary rounded-pill">3</span>
+                    <span class="badge bg-primary rounded-pill" id="item-cnt">3</span>
                 </h4>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                <ul class="list-group mb-3" id="cart-list">
+                    <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">アウター</h6>
                             <small class="text-muted">商品説明</small>
@@ -118,11 +121,11 @@ $db = new DBManager();
                             <small class="text-muted">全国どこでも均一価格</small>
                         </div>
                         <span class="text-muted">￥500</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
+                    </li> -->
+                    <!-- <li class="list-group-item d-flex justify-content-between">
                         <span>合計 (円)</span>
                         <strong>￥2500</strong>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- 商品表示 -->
 
@@ -277,8 +280,10 @@ $db = new DBManager();
                 <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-                <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-                <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+                <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html"
+                        class="nav-link px-2 text-muted">FAQ</a></li>
+                <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+                        class="nav-link px-2 text-muted">概要</a></li>
             </ul>
             <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
         </footer>
@@ -291,6 +296,60 @@ $db = new DBManager();
         crossorigin="anonymous"></script>
     <!-- JSの設定ファイル -->
     <!-- <script src="form-validation.js"></script> -->
+    <script>
+        const allItemsList = '<?php echo $allItemsList; ?>';
+        const cart = getCart(allItemsList);
+        console.log(cart);
+        let sum = 0;
+        cart.forEach(ele => {
+            createCartList(ele.name,ele.price*ele.vol);
+            sum += ele.price*ele.vol;
+        });
+
+        const ul = document.getElementById('cart-list');
+        // create list item element
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item d-flex justify-content-between';
+
+        // create span element for total label
+        const totalLabel = document.createElement('span');
+        totalLabel.textContent = '合計 (円)';
+
+        // create strong element for total value
+        const totalValue = document.createElement('strong');
+        totalValue.textContent = '￥'+sum;
+
+        // append label and value to list item
+        ul.appendChild(listItem);
+        listItem.appendChild(totalLabel);
+        listItem.appendChild(totalValue);
+
+        document.getElementById('item-cnt').innerHTML = cart.length;
+
+
+        function createCartList(name,price) {
+            const ul = document.getElementById('cart-list');
+            const li = document.createElement('li');
+            const div = document.createElement('div');
+            const h6 = document.createElement('h6');
+            const span = document.createElement('span');
+
+            li.setAttribute('class', 'list-group-item d-flex justify-content-between lh-sm');
+            h6.setAttribute('class', 'my-0');
+            span.setAttribute('class', 'text-muted');
+
+            ul.appendChild(li);
+            li.appendChild(div);
+            div.appendChild(h6);
+            li.appendChild(span);
+
+            h6.innerHTML = name;
+            span.innerHTML = "￥" + price;
+        }
+
+        
+
+    </script>
 </body>
 
 </html>

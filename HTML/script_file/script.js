@@ -115,6 +115,27 @@ function delCart(indexList) {
     localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
 }
 
+function addHistory(cartlist) {
+    // 配列用意
+    let buyHistory = [];
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('buyHistory') != null) {
+        // json解読
+        buyHistory = JSON.parse(localStorage.getItem('buyHistory'));
+    }
+
+    // 購入履歴にカートの内容を追加
+    for(var v of cartlist) {
+        buyHistory.push(v);
+    }
+
+    // カート削除
+    localStorage.removeItem('cartItems');
+
+    // localstorageに保存
+    localStorage.setItem('buyHistory', JSON.stringify(buyHistory, undefined, 1));
+}
+
 // お気に入り追加機能（引数：商品ID）
 function addFavorite(itemId) {
     // 変数用意
