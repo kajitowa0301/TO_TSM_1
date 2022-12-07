@@ -26,70 +26,65 @@ $db = new DBManager();
 </head>
 
 <body>
-  <!-- ナブバーの記述始まり -->
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <p id="midasi">To TSM.</p>
-      </a>
-      <div class="btn-toolbar">
-        <div class="btn-toolbar">
-          <!-- 新規登録ボタン
+  <div class="submenu-relative">
+    <!-- ナブバーの記述始まり -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <p id="midasi">To TSM.</p>
+            </a>
+            <div class="btn-toolbar">
+                <div class="btn-toolbar">
+                    <!--ログインボタン-->
                     <div class="button_solid003">
-                        <a href="https://zozo.jp/_member/regist/?pattern=">新規登録
-                        </a>
-                    </div>-->
-          <!--新規登録ボタン-->
+                        <?php
+          if(isset($_SESSION['login_id'])) {
+            echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
+          } else {
+            echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
+          }
+        ?>
+                    </div>
+                    <!-- ログインボタン -->
+                    <div class="btn btn-group">
+                        <!--お気に入り閲覧ボタン始  -->
+                        <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button">
+                            <i class="bi bi-heart-fill fs-2"></i>
+                        </button>
+                        <!-- お気に入り閲覧ボタン終 -->
 
-          <!--ログインボタン-->
-          <div class="button_solid003">
-            <?php
-              if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
-              } else {
-                echo "<a href='./login-file/user_login.html'>ログイン</a>";
-              }
-            ?>
-          </div>
-          <!-- ログインボタン -->
-          <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler"  onClick="location.href='./favorite.html'" type="button" data-bs-target="#navbar" aria-controls="navbar"
-            aria-expanded="false">
-            <i class="bi bi-person-heart"></i>
-            <span class="font-word-break">お気に入り</span>
-          </button>
-          <!-- お気に入り閲覧ボタン終 -->
+                        <!-- 検索のアイコン -->
+                        <button class="navbar-toggler" type="button" onclick="search_onFunc()">
+                            <i class="button-submunu  bi bi-search fs-2"></i>
+                        </button>
 
-          <!-- 検索のアイコン -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-            aria-controls="navbar" aria-expanded="false">
-            <i class="bi bi-search"></i>
-            <span class="font-word-break">検索</span>
-          </button>
-
-          <!-- カゴのアイコン -->
-          <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
-              class="bi bi-cart4 fs-4"></i>
-            <span class="font-word-break">カート</span>
-          </button>
-
-          <!-- 検索ドロップ -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 検索ドロップ終わり -->
-  </nav>
-  <!--ナブバの記述終わり  -->
+                        <!-- カゴのアイコン -->
+                        <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
+                                class="bi bi-cart4 fs-2"></i>
+                        </button>
+                    </div>
+    </nav>
+    <!--ナブバの記述終わり  -->
+     <!-- サブメニュー表示 -->
+     <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+      <div class="submenu-search">
+          <h3>--検索--</h3>
+          <ul>
+              <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+              <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+              <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+          </ul>
+      </div>
+      <div class="submenu-rireki">
+          <h3>--購入履歴--</h3>
+          <ul>
+              <li><a href="https://zozo.jp/" class="rireki-li-1">購入履歴</a></li>
+              <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+              <p style="color:violet; font-weight: 800;">※枠から出たらサブメニューが閉じます</p>
+          </ul>
+      </div>
+  </div>
+  <!--サブメニュー表示  -->
   <h1 class="ce"><i class="bi bi-check-circle-fill text-success"></i>カートに追加しました</h1>
   <table class="table table-bordered table table-striped" style="width: 80%;margin-right: auto;margin-left: auto;">
     <thead>
@@ -123,7 +118,7 @@ $db = new DBManager();
   <div class="container-fluid">
     <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4">
       <div class="card col-sm-3 ">
-        <img class="img_unification" type="submit" src="./photo/swet_7.jpg" class="card-img-top img-fluid"
+        <img class="img_unification" type="submit" src="./sweat_photo/purple_sweat2.jpg" class="card-img-top img-fluid"
           onClick="location.href='./Shohin_seni.html'">
         <div class="card-body">
           <h5 class="card-title">stussy</h5>
@@ -142,7 +137,7 @@ $db = new DBManager();
         </div>
       </div>
       <div class="card col-sm-3">
-        <img class="img_unification" src="./outer_photo/outer_6.jpg" class="card-img-top img-fluid">
+        <img class="img_unification" src="./sweat_photo/sweat_9.jpg" class="card-img-top img-fluid">
         <div class="card-body">
           <h5 class="card-title">Hard ROCK</h5>
           <!-- いいねボタン始 -->
@@ -157,7 +152,7 @@ $db = new DBManager();
         </div>
       </div>
       <div class="card col-sm-3">
-        <img class="img_unification" src="./outer_photo/m69810141178_1.jpg" class="card-img-top img-fluid">
+        <img class="img_unification" src="./shoes_photo/bule2-shoes.jpg" class="card-img-top img-fluid">
         <div class="card-body">
           <h5 class="card-title">GU</h5>
           <!-- いいねボタン始 -->
@@ -172,7 +167,7 @@ $db = new DBManager();
         </div>
       </div>
       <div class="card col-sm-3">
-        <img class="img_unification" src="./outer_photo/m93909701417_1.jpg" class="card-img-top img-fluid">
+        <img class="img_unification" src="./outer_photo/green_outer2.jpg" class="card-img-top img-fluid">
         <div class="card-body">
           <h5 class="card-title">BROWNS</h5>
           <!-- いいねボタン始 -->
