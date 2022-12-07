@@ -20,56 +20,99 @@ $db = new DBManager();
   <link rel="stylesheet" href="./favorite_style.css">
   <link rel="stylesheet" href="style_css_file/style1.css">
   <link rel="stylesheet" href="style_css_file/style2.css">
-  <script src="script_file/script.js"></script>
+  <script src="./script_file/script.js"></script>
   <title>favorite</title>
 </head>
 
 <body>
-  <!-- ナブバーの記述始まり -->
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html">
-        <p id="midasi">To TSM.</p>
-      </a>
-      <div class="btn-toolbar">
+  <div class="submenu-relative">
+    <!-- ナブバーの記述始まり -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <p id="midasi">To TSM.</p>
+        </a>
         <div class="btn-toolbar">
-          <!--新規登録
+          <div class="btn-toolbar">
+            <!--新規登録
           <div class="button_solid003">
             <a href="https://zozo.jp/_member/login.html?bkurl=%2F%3F">新規登録</a>
           </div>
         -->
-          <!-- 新規登録 -->
-
-          <!-- ログインボタン -->
-
-          <!--ログインボタン-->
-          <div class="button_solid003">
-            <?php
+            <!-- 新規登録 -->
+            <!--ログインボタン-->
+            <div class="button_solid003">
+              <?php
               if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
+                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
               } else {
-                echo "<a href='./login-file/user_login.html'>ログイン</a>";
+                echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
               }
             ?>
-          </div>
-          <!-- ログインボタン -->
-          <div class="btn btn-group">
+            </div>
+            <!-- ログインボタン -->
+            <div class="btn btn-group">
+              <!--お気に入り閲覧ボタン始  -->
+              <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button">
+                <i class="bi bi-heart-fill fs-2"></i>
+              </button>
+              <!-- お気に入り閲覧ボタン終 -->
 
-            <!-- 検索のアイコン -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-              aria-controls="navbar" aria-expanded="false">
-              <i class="button-submunu  bi bi-search fs-2"></i>
-            </button>
+              <!-- 検索のアイコン -->
+              <button class="navbar-toggler" type="button" onclick="search_onFunc()">
+                <i class="button-submunu  bi bi-search fs-2"></i>
+              </button>
 
-            <!-- カゴのアイコン -->
-            <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
-                class="bi bi-cart4 fs-2"></i>
-            </button>
-          
-  </nav>
+              <!-- カゴのアイコン -->
+              <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
+              </button>
+              <!-- 検索ドロップ -->
+              <!-- <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
+                  </li>
+                </ul>
+              </div> -->
+              <!-- 検索ドロップ終わり -->
+            </div>
+    </nav>
+    <!--ナブバの記述終わり  -->
+
+    <!-- ジャンボトロン 
+  <div class="bg-img p-5 text-center">
+    <img src="./photo/beni2.png" width="50%" />
+    <p style="color: white; font-size: 2vw;">
+    </p>
+  </div> 
+  -ジャンボトロン-->
+    <!-- サブメニュー表示 -->
+    <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+      <div class="submenu-search">
+        <h3>--検索--</h3>
+        <ul>
+          <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+          <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+          <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+        </ul>
+      </div>
+      <div class="submenu-rireki">
+        <h3>--購入履歴--</h3>
+        <ul>
+          <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+          <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--サブメニュー表示  -->
   <br><br><br><br><br><br>
   <!--ナブバの記述終わり  -->
-
   <!-- お気に入り画面　始まり -->
   <h2 class="favorite">
     -----favorite-----
