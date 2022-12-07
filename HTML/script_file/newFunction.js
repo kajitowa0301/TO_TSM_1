@@ -71,7 +71,7 @@ function setColor(color) {
         document.getElementById("haishoku-1").style.backgroundColor ='olivedrab';
         document.getElementById("haishoku-2").style.backgroundColor ='dark';
         document.getElementById("haishoku-3").style.backgroundColor ='white';
-        return ["オリーブ","黒","白"];
+        return ["カーキ","黒","白"];
 
     // 赤色を判定
     }else if(color == "赤"){
@@ -109,7 +109,7 @@ function setColor(color) {
         return ["白","カーキ","黒"];
 
     // オリーブ色を判定
-    }else if(color == "オリーブ"){
+    }else if(color == "カーキ"){
         document.getElementById("haishoku-1").style.backgroundColor ='white';
         document.getElementById("haishoku-2").style.backgroundColor ='dark';
         document.getElementById("haishoku-3").style.backgroundColor ='#ccc';

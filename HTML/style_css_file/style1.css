@@ -98,12 +98,78 @@ color: aliceblue;
     border-radius: 20%;
     font-size: larger;  
 }
-.suryou{
-    margin-top: 5%;
+/* .suryou{
+    margin-top:15%;
     margin-right: 0%;
-    text-align: right;
+    width: 100px;
+    height: 30px;
     border-radius: 20%;
+} */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+.suryou_area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+    margin-right: 4%;
+}
+
+.number-spinner-wrap{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin-right:  0%;
+    text-align: right;
+}
+
+.number-spinner-wrap input{
+    width: 100px; height: 30px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  .number-spinner-wrap .spinner{
+    position: absolute;
+    top: 0px;
+    width: 25px;
+    height: 30px;
+    /* transform: translate(0, -50%); */
+    font-size: 15px;
+    padding: 0px;
+    text-align: center;
+    background: lightgray;
+    border-radius: 3px;
+    /* cursor: pointer;
+    user-select: none; */
+    /* margin: auto; */
+    font-weight: 800;
+  }
+
+.number-spinner-wrap .spinner-down{
+    left: 0px;
+    /* border-right: 1px solid lightgray; */
+    border-radius: 2px;
+    text-align: center;
+}
+
+.number-spinner-wrap .spinner-up{
+    left: 76px;
+    /* border-left: 1px solid lightgray; */
+    border-radius: 2px;
+    text-align: center;
+}
+
 
 form.card {
     border: 0;

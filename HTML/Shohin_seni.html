@@ -173,8 +173,16 @@ $db = new DBManager();
       </div>
     </div>
 
-    <div class="suryou">
-      <input type="button" value="+"><input type="text" value="1" size="1"><input type="button" value="-">
+    <!-- <div class="suryou">
+      <input type="button" value="+"><input type="text" value="1" size="1" class="pa"><input type="button" value="-">
+    </div> -->
+
+    <div class = "suryou_area">
+      <label class="number-spinner-wrap">
+        <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1" pattern="^[0-9]+$">
+        <button class="spinner spinner-down">-</button>
+        <button class="spinner spinner-up">+</button>
+      </label>
     </div>
 
     <div class="mae">
@@ -318,6 +326,43 @@ $db = new DBManager();
 
       addCart(itemData.items_id, selectSize, '10');
     }
+  </script>
+
+  <!-- 数量変更処理js -->
+  <script>
+    const $wrap = document.querySelector('.number-spinner-wrap');
+    const $input = $wrap.querySelector('input');
+    $wrap.querySelector('.spinner-down').onclick = () => {
+      $input.stepDown()
+    }
+    $wrap.querySelector('.spinner-up').onclick = () => {
+      $input.stepUp()
+    }
+    // let changeIndexList = new Map();
+
+    // function inc(id) {
+    //   const $wrap = document.getElementById(id);
+    //   const $input = $wrap.querySelector('input');
+    //   $wrap.querySelector('.spinner-up').onclick = () => {
+    //     $input.stepUp();
+    //     // console.log($input.value);
+    //     changeIndexList.set(id, $input.value);
+    //     document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+    //     console.log(changeIndexList);
+    //   }
+    // }
+
+    // function dec(id) {
+    //   const $wrap = document.getElementById(id);
+    //   const $input = $wrap.querySelector('input');
+    //   $wrap.querySelector('.spinner-down').onclick = () => {
+    //     $input.stepDown();
+    //     changeIndexList.set(id, $input.value);
+    //     document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+    //     console.log(changeIndexList);
+    //   }
+
+    // }
   </script>
 </body>
 
