@@ -115,6 +115,7 @@ function delCart(indexList) {
     localStorage.setItem('cartItems', JSON.stringify(cartItemsList, undefined, 1));
 }
 
+// 購入履歴追加機能（引数：カート配列）
 function addHistory(cartlist) {
     // 配列用意
     let buyHistory = [];
@@ -134,6 +135,35 @@ function addHistory(cartlist) {
 
     // localstorageに保存
     localStorage.setItem('buyHistory', JSON.stringify(buyHistory, undefined, 1));
+}
+
+// 購入履歴取得機能（引数：全商品のjson）
+function getHistory(itemsList) {
+    // 配列用意
+    let buyHistory = [];
+    // 全商品が渡されるはず
+    let allItemsList = JSON.parse(itemsList);
+    // localstorageにカートが既に存在していればそれを取得
+    if (localStorage.getItem('cartItems') != null) {
+        // json解読
+        buyHistory = JSON.parse(localStorage.getItem('cartItems'));
+    }
+
+    // カートにある商品を全商品から検索して商品情報をオブジェクト配列で返す
+    let cart = [];
+    let i = 0;
+    buyHistory.forEach(ele => {
+        cart[i] = {
+            name: allItemsList[ele.id - 1].items_name,
+            size: ele.size,
+            vol: ele.vol,
+            price: allItemsList[ele.id - 1].items_price,
+            genre: allItemsList[ele.id - 1].items_genre,
+            url: allItemsList[ele.id - 1].items_url
+        }
+        i++;
+    });
+    return cart;
 }
 
 // お気に入り追加機能（引数：商品ID）

@@ -323,8 +323,10 @@ $db = new DBManager();
         }
       }
       document.getElementById('itemSize').value = selectSize;
+      document.getElementById('itemVol').value = document.getElementById('cnt_btn1').value;
+      let vol = document.getElementById('itemVol').value;
 
-      addCart(itemData.items_id, selectSize, '10');
+      addCart(itemData.items_id, selectSize, vol);
     }
   </script>
 
