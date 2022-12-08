@@ -403,19 +403,19 @@ $allItemsList = $db->getAllItems();
 </script>
 
 <script>
-    if(radioChecked[1].checked) {
+    if(radioChecked[2].checked) {
         const selectedConveni = document.getElementById('conbini-Id');
         selectedConveni.value= "<?php echo $_SESSION['buyData']['conveni'] ?>";
     }
 </script>
 
 <script>
-    // console.log("<?php echo json_encode($_SESSION['cartData']); ?>");
+
 
     if(radioChecked[0].checked) {
         document.getElementById("siharai").style.display = 'inline';
         document.getElementById("siharai-conbini").style.display = 'none';
-    }else if(radioChecked[1].checked) {
+    }else if(radioChecked[2].checked) {
         document.getElementById("siharai").style.display = 'none';
         document.getElementById("siharai-conbini").style.display = 'inline';
     }else {
