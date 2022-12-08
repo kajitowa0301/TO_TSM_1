@@ -151,6 +151,8 @@ $allItemsList = $db->getAllItems();
                         <div class="col-sm-6">
                             <label for="familyName" class="form-label">姓</label>
                             <input type="text" class="form-control" id="familyName" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['ln']; ?>" disabled>
+                            <input type="hidden" class="form-control" id="familyName" placeholder=""
                                 value="<?php echo $_SESSION['buyData']['ln']; ?>">
                             <div class="invalid-feedback">
                                 名字を入力してください
@@ -159,6 +161,8 @@ $allItemsList = $db->getAllItems();
                         <div class="col-sm-6">
                             <label for="givenName" class="form-label">名</label>
                             <input type="text" class="form-control" id="givenName" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['fn']; ?>" disabled>
+                            <input type="hidden" class="form-control" id="givenName" placeholder=""
                                 value="<?php echo $_SESSION['buyData']['fn']; ?>">
                             <div class="invalid-feedback">
                                 名前を入力してください
@@ -167,6 +171,8 @@ $allItemsList = $db->getAllItems();
                         <div class="col-12">
                             <label for="email" class="form-label">Eメール <span class="text-muted">(任意)</span></label>
                             <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                value="<?php echo $_SESSION['buyData']['mail']; ?>" disabled>
+                            <input type="hidden" class="form-control" id="email" placeholder="you@example.com"
                                 value="<?php echo $_SESSION['buyData']['mail']; ?>">
                             <div class="invalid-feedback">
                                 配送の更新に有効なメールアドレスを入力してください
@@ -176,12 +182,16 @@ $allItemsList = $db->getAllItems();
                         <div class="col-md-6">
                             <label for="pref" class="form-label">都道府県</label>
                             <input type="text" class="form-control d-block w-100" placeholder="福岡県"
+                                value="<?php echo $_SESSION['buyData']['pref']; ?>" disabled>
+                            <input type="hidden" class="form-control d-block w-100" placeholder="福岡県"
                                 value="<?php echo $_SESSION['buyData']['pref']; ?>">
                         </div>
                         <!-- 郵便番号 -->
                         <div class="col-md-6">
                             <label for="zip" class="form-label">郵便番号</label>
                             <input type="text" class="form-control" id="zip" placeholder=""
+                                value="<?php echo $_SESSION['buyData']['post']; ?>" disabled>
+                            <input type="hidden" class="form-control" id="zip" placeholder=""
                                 value="<?php echo $_SESSION['buyData']['post']; ?>">
                             <div class="invalid-feedback">
                                 郵便番号を入力してください
@@ -192,6 +202,8 @@ $allItemsList = $db->getAllItems();
                     <div class="col-12">
                         <label for="address" class="form-label">市区町村</label>
                         <input type="text" class="form-control" id="address" placeholder="地番"
+                            value="<?php echo $_SESSION['buyData']['ad']; ?>" disabled>
+                        <input type="hidden" class="form-control" id="address" placeholder="地番"
                             value="<?php echo $_SESSION['buyData']['ad']; ?>">
                         <div class="invalid-feedback">
                             配送先住所を入力してください
@@ -201,60 +213,88 @@ $allItemsList = $db->getAllItems();
                     <div class="col-12">
                         <label for="address2" class="form-label">住所 2 <span class="text-muted">(任意)</span></label>
                         <input type="text" class="form-control" id="address2" placeholder="アパート・マンション名"
+                            value="<?php echo $_SESSION['buyData']['ad2']; ?>" disabled>
+                        <input type="hidden" class="form-control" id="address2" placeholder="アパート・マンション名"
                             value="<?php echo $_SESSION['buyData']['ad2']; ?>">
                     </div>
                     <hr class="my-4">
-
+                
                     <h4 class="mb-3">お支払い方法</h4>
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" disabled>
+                            <input id="credit" name="paymentMethod" type="hidden" class="form-check-input">
                             <label class="form-check-label" for="credit">クレジットカード</label>
                         </div>
                         <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" disabled>
+                            <input id="debit" name="paymentMethod" type="hidden" class="form-check-input">
                             <label class="form-check-label" for="debit">コンビニ支払い</label>
                         </div>
                         <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" disabled>
+                            <input id="paypal" name="paymentMethod" type="hidden" class="form-check-input">
                             <label class="form-check-label" for="paypal">代金引換</label>
                         </div>
                     </div>
-                    <div class="row gy-3">
-                        <div class="col-md-6">
-                            <label for="cc-name" class="form-label">カードの名義</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder=""
-                                value="<?php echo $_SESSION['buyData']['ccName']; ?>">
-                            <small class="text-muted">カード上に表示されているフルネーム</small>
-                            <div class="invalid-feedback">
-                                カードの名義を入力してください
+                    <div id="siharai">
+                        <div class="row gy-3">
+                            <div class="col-md-6">
+                                <label for="cc-name" class="form-label">カードの名義</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccName']; ?>" disabled>
+                                <input type="hidden" class="form-control" id="cc-name" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccName']; ?>">
+                                <small class="text-muted">カード上に表示されているフルネーム</small>
+                                <div class="invalid-feedback">
+                                    カードの名義を入力してください
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cc-number" class="form-label">クレジットカード番号</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccNum']; ?>" disabled>
+                                <input type="hidden" class="form-control" id="cc-number" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccNum']; ?>">
+                                <div class="invalid-feedback">
+                                    クレジットカード番号を入力してください
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cc-expiration" class="form-label">有効期限</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccExp']; ?>" disabled>
+                                <input type="hidden" class="form-control" id="cc-expiration" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccExp']; ?>">
+                                <div class="invalid-feedback">
+                                    有効期限を入力してください
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cc-cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccCvv']; ?>" disabled>
+                                <input type="hidden" class="form-control" id="cc-cvv" placeholder=""
+                                    value="<?php echo $_SESSION['buyData']['ccCvv']; ?>">
+                                <div class="invalid-feedback">
+                                    セキュリティコードを入力してください
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="cc-number" class="form-label">クレジットカード番号</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder=""
-                                value="<?php echo $_SESSION['buyData']['ccNum']; ?>">
-                            <div class="invalid-feedback">
-                                クレジットカード番号を入力してください
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="cc-expiration" class="form-label">有効期限</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder=""
-                                value="<?php echo $_SESSION['buyData']['ccExp']; ?>">
-                            <div class="invalid-feedback">
-                                有効期限を入力してください
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="cc-cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder=""
-                                value="<?php echo $_SESSION['buyData']['ccCvv']; ?>">
-                            <div class="invalid-feedback">
-                                セキュリティコードを入力してください
-                            </div>
-                        </div>
+                    </div>
+
+                    <!-- コンビニ支払専用画面 -->
+                    <div id="siharai-conbini">
+                        <select class="conbini" name="conbini-Name" id = "conbini-Id" disabled>
+                            <option value="seven" style="color: #f66;">セブンイレブン</option>
+                            <option value="lowson" style="color:#0af;">ローソン</option>
+                            <option value="famima" style="color:#7f7 ;">ファミリーマート</option>
+                            <option value="mini" style="color:#00f ;">ミニストップ</option>
+                            <option value="popura" style="color: #d60;">ポプラ</option>
+                            <option value="dayry" style="color:#f33 ;">デイリー</option>
+                        </select>
+                        <input type = "hidden" name="conbini-Name" value = "<?php echo $_SESSION['buyData']['conveni'] ?>">
                     </div>
 
                     <hr class="my-4">
@@ -350,6 +390,53 @@ $allItemsList = $db->getAllItems();
         
 
     </script>
+
+
+
+<script>
+    let radioChecked = document.getElementsByName('paymentMethod');
+    const pay = "<?php echo $_SESSION['buyData']['pay'] ?>";
+    radioChecked[pay - 1].checked = true;
+
+</script>
+
+<script>
+    if(radioChecked[1].checked) {
+        const selectedConveni = document.getElementById('conbini-Id');
+        selectedConveni.value= "<?php echo $_SESSION['buyData']['conveni'] ?>";
+    }
+</script>
+
+<script>
+    // console.log("<?php echo json_encode($_SESSION['cartData']); ?>");
+
+    if(radioChecked[0].checked) {
+        document.getElementById("siharai").style.display = 'inline';
+        document.getElementById("siharai-conbini").style.display = 'none';
+    }else if(radioChecked[1].checked) {
+        document.getElementById("siharai").style.display = 'none';
+        document.getElementById("siharai-conbini").style.display = 'inline';
+    }else {
+        document.getElementById("siharai").style.display = 'none';
+        document.getElementById("siharai-conbini").style.display = 'none';
+    }
+
+    // function crebitFunc() {
+    //     document.getElementById("siharai").style.display = 'inline';
+    //     document.getElementById("siharai-conbini").style.display = 'none';
+
+    // }
+    // function conbiniFunc() {
+    //     document.getElementById("siharai").style.display = 'none';
+    //     document.getElementById("siharai-conbini").style.display = 'inline';
+    // }
+    // function paypayFunc() {
+    //     document.getElementById("siharai").style.display = 'none';
+    //     document.getElementById("siharai-conbini").style.display = 'none';
+    // }
+</script>
+
+
 </body>
 
 </html>
