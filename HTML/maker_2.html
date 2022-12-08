@@ -68,7 +68,13 @@ $db = new DBManager();
 
           <!--ログインボタン-->
           <div class="button_solid003">
-            <a href="./login-file/user_login.html">ログイン</a>
+            <?php
+            if(isset($_SESSION['login_id'])) {
+              echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
+            } else {
+              echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
+            }
+          ?>
           </div>
           <!-- ログインボタン -->
           <div class="btn-group">
@@ -114,9 +120,11 @@ $db = new DBManager();
     </div>
   </div>
   <!--サブメニュー表示  -->
+  <br><br><br><br>
   <!-- Card1 開始 -->
   <h2 class="font_whight">
-    -----<?php echo $_POST['makerName']?>-----
+    -----
+    <?php echo $_POST['makerName']?>-----
   </h2>
   <div class="container">
     <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4" id="items">
@@ -136,8 +144,10 @@ $db = new DBManager();
         <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a>
+        </li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+            class="nav-link px-2 text-muted">概要</a></li>
       </ul>
       <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
     </footer>

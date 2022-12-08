@@ -37,76 +37,68 @@ $db = new DBManager();
       </a>
       <div class="btn-toolbar">
         <div class="btn-toolbar">
+          <!-- 新規登録ボタン
+           <div class="button_solid003">
+            <a href="https://zozo.jp/_member/regist/?pattern=">新規登録
+            </a>
+          </div>-->
+          <!--新規登録ボタン-->
+
           <!--ログインボタン-->
           <div class="button_solid003">
             <?php
-              if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
-              } else {
-                echo "<a href='./login-file/user_login.html'>ログイン</a>";
-              }
-            ?>
+            if(isset($_SESSION['login_id'])) {
+              echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
+            } else {
+              echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
+            }
+          ?>
           </div>
           <!-- ログインボタン -->
-          <!--お気に入り閲覧ボタン始  -->
-          <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button">
-            <i class="bi bi-heart-fill fs-2"></i>
-          </button>
-          <!-- お気に入り閲覧ボタン終 -->
-
-          <!-- 検索のアイコン -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-            aria-controls="navbar" aria-expanded="false">
-            <i class="bi bi-search fs-2"></i>
-          </button>
-
-          <!-- カゴのアイコン -->
-          <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
-          </button>
-
-          <!-- 検索ドロップ -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/outer.html">-----outer-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/sweat.html">-----sweat-----</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./janru_html/pants.html">-----pants-----</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 検索ドロップ終わり -->
-
-          <!-- アカウントドロップ -->
-          <div class="collapse navbar-collapse" id="person">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="person"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ログイン</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">新規登録</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <div class="btn-group">
+            <!--お気に入り閲覧ボタン始  -->
+            <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
+              data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
+              <i class="bi bi-heart-fill fs-2"></i>
+            </button>
+            <!-- お気に入り閲覧ボタン終 -->
+            <!-- 検索のアイコン -->
+            <button class="navbar-toggler" type="button" onclick="search_onFunc()">
+              <i class="bi bi-search fs-2"></i>
+            </button>
+            <!-- カゴのアイコン -->
+            <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
+            </button>
   </nav>
   </div>
   </div>
   <!--ナブバの記述終わり  -->
 
-  <!-- <details>
-    <summary>クリック</summary>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </details> -->
-
+  <!-- ジャンボトロン -->
+  <!-- <div id="photo">
+    <img src="./back_photo/images4.jpg" />
+  </div> -->
+  <!--ジャンボトロン-->
+  <!-- サブメニュー表示 -->
+  <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+    <div class="submenu-search">
+      <h3>--検索--</h3>
+      <ul>
+        <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+        <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+        <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+      </ul>
+    </div>
+    <div class="submenu-rireki">
+      <h3>--購入履歴--</h3>
+      <ul>
+        <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+        <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--サブメニュー表示  -->
+  <br><br><br>
   <div class="senni">
     <div>
       <div class="unkounko">
@@ -147,7 +139,7 @@ $db = new DBManager();
       <h2>選択している色：<span id="select-color">色</span></h2>
       <div class="container">
         <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4" id="recommended">
-          
+
         </div>
       </div>
     </div>
@@ -177,7 +169,7 @@ $db = new DBManager();
       <input type="button" value="+"><input type="text" value="1" size="1" class="pa"><input type="button" value="-">
     </div> -->
 
-    <div class = "suryou_area">
+    <div class="suryou_area">
       <label class="number-spinner-wrap">
         <input type="number" class="cnt_btn" id="cnt_btn1" value="1" min="1" max="5" step="1" pattern="^[0-9]+$">
         <button class="spinner spinner-down">-</button>
@@ -288,8 +280,10 @@ $db = new DBManager();
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a>
+        </li>
+        <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+            class="nav-link px-2 text-muted">概要</a></li>
       </ul>
       <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
     </footer>
