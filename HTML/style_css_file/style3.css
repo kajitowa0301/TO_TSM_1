@@ -16,11 +16,10 @@
   background-color: #0066ff;
   color: white;
   text-align: center;
-  margin-left:30px ;
-  margin-right: 30%;
-  padding:3% 2%;
+  padding:2% 1%;
   border-radius: 10px;
   border: solid #0066ff;
+  /* margin-right: 1%; */
 }
 .continue-button-style:hover{
   background-color: white;
@@ -31,9 +30,11 @@
   background-color:#f66;
   color: white;
   text-align: center;
-  padding: 3% 2%;
+  padding: 2% 1%;
   border-radius: 10px;
   border:solid #f66;
+  /* margin-left: 1%; */
+  margin-top: 2%;
 }
 .log-out-button-style:hover{
  background-color:  white;

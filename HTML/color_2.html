@@ -120,11 +120,11 @@ $db = new DBManager();
     </div>
   </div>
   <!--サブメニュー表示  -->
-  <br><br><br><br>
   <!-- Card1 開始 -->
+  <br><br><br><br>
   <h2 class="font_whight">
     -----
-    <?php echo $_POST['makerName']?>-----
+    <?php echo $_POST['ColorEnglishName']?>-----
   </h2>
   <div class="container">
     <div class="row row-cols-lg-4 row-cols-sm-4 row-cols-2 g-4" id="items">
@@ -158,8 +158,7 @@ $db = new DBManager();
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"></script>
   <script>
-    // const id = "<?php $_POST['makerId']?>";
-    const outerItemsList = JSON.parse('<?php echo $db->getItemsFromMaker($_POST["makerId"]); ?>');
+    const outerItemsList = JSON.parse('<?php echo $db->getItemsFromColor($_POST["ColorName"]); ?>');
     const allMakersList = JSON.parse('<?php echo $db->getAllMaker(); ?>');
 
     outerItemsList.forEach(ele => {

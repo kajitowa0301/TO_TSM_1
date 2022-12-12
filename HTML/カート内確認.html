@@ -40,12 +40,12 @@ $allItemsList = $db->getAllItems();
           <!--ログインボタン-->
           <div class="button_solid003">
             <?php
-              if(isset($_SESSION['login_id'])) {
-                echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト：<i class='bi bi-person-fill'></i>".$_SESSION['login_id']."</a>";
-              } else {
-                echo "<a href='./login-file/user_login.html'>ログイン</a>";
-              }
-            ?>
+            if(isset($_SESSION['login_id'])) {
+              echo "<a href='./login-file/user_logout' class='textlenlim'>ログアウト<i class='bi bi-box-arrow-right'></i></a>";
+            } else {
+              echo "<a href='./login-file/user_login.html'>ログイン<i class='bi bi-box-arrow-in-right'></i></a>";
+            }
+          ?>
           </div>
           <!-- ログインボタン -->
 
@@ -73,7 +73,7 @@ $allItemsList = $db->getAllItems();
         <h6> 商品数 <span id="item-cnt"></span>個</h6>
         <h6>小計(税込み)¥<span id="prices"></span></h6>
         <br>
-        <h6>合計　¥<span class="sum_mny">6500</span></h6>
+        <h6>合計　¥<span class="sum_mny" id="sum">6500</span></h6>
         <!-- レジに進むボタン始まり -->
         <form class="reji" action="" id="goReji" method="post">
           <div class="reji_button">
@@ -244,6 +244,7 @@ $allItemsList = $db->getAllItems();
 
     document.getElementById('item-cnt').innerHTML = id;
     document.getElementById('prices').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
+    document.getElementById('sum').innerHTML = String(price).replace(/\B(?=(\d{3})+$)/g, ',');
 
     function createTr(id, name, size, vol, price, genre, url) {
       const parent = document.getElementById('tbody');
@@ -292,6 +293,7 @@ $allItemsList = $db->getAllItems();
       button2.setAttribute('class', 'spinner spinner-up');
       button2.setAttribute('onclick', 'inc(' + id + ')');
       divTd3.setAttribute('valign', 'middle');
+      divTd3.setAttribute('class', 'text-center')
       button3.setAttribute('class', 'bi bi-cart-x fs-3 del_icon');
       button3.setAttribute('id', 'delbtn' + id)//id;
       button3.setAttribute('onclick', 'delBtn(' + id + ',"' + genre + '","' + url + '")');
@@ -342,7 +344,7 @@ $allItemsList = $db->getAllItems();
         $input.stepUp();
         // console.log($input.value);
         changeIndexList.set(id, $input.value);
-        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * $input.value;
         console.log(changeIndexList);
       }
     }
@@ -353,7 +355,7 @@ $allItemsList = $db->getAllItems();
       $wrap.querySelector('.spinner-down').onclick = () => {
         $input.stepDown();
         changeIndexList.set(id, $input.value);
-        document.getElementById('sp' + id).innerHTML = cart[id].price * $input.value;
+        document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * $input.value;
         console.log(changeIndexList);
       }
 
@@ -376,15 +378,17 @@ $allItemsList = $db->getAllItems();
 
     window.onchange = function (e) {
       const val = Math.min(Math.max(e.target.value, 1), 5);
-      changeIndexList.set(Number(e.target.id.replace(/cnt_btn/g, "")), val);
+      const id = e.target.id.replace(/cnt_btn/g, "");
+      changeIndexList.set(Number(id), val);
       document.getElementById(e.target.id).value = val;
+      document.getElementById('sp' + id).innerHTML = "¥" + cart[id].price * val;
       console.log(changeIndexList);
       // console.log(e.target.id);
     }
 
     function delBtn(id, genre, url) {
       let photoChange = document.getElementById("gazou" + id);
-      if (photoChange.src != "http://localhost/Web/github/TO_TSM_1/HTML/sweat_photo/delete.png") {
+      if (photoChange.src != "http://localhost/Web/GitHub/TO_TSM_1/HTML/sweat_photo/delete.png") {
         photoChange.src = "./sweat_photo/delete.png";
         bbb++;
         document.getElementById("delbtn" + id).setAttribute('class', 'bi-arrow-clockwise fs-3');
