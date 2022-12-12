@@ -23,7 +23,7 @@
 
             // // foreach---
             foreach ($cart as $key) {
-                $ps2 = $db->connectDb()->prepare("INSERT INTO details VALUES (?,?,?,?)");
+                $ps2 = $db->connectDb()->prepare("INSERT INTO details VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE details_vol = details_vol + VALUES(details_vol)");
                 $ps2->bindValue(1,$buyId,pdo::PARAM_INT);
                 $ps2->bindValue(2,$key->id,pdo::PARAM_INT);// items_id
                 $ps2->bindValue(3,$key->size,pdo::PARAM_STR);// size
