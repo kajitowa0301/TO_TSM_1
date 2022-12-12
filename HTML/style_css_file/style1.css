@@ -475,3 +475,58 @@ button > i{
     color: #0066ff;
     border-bottom: 1px solid #0066ff;
 }
+/*カート内CSSの追加 */
+.modoru_button_div{
+    text-align: center;
+}
+.return-btn{
+    width: 150px;
+    padding:13px;
+    border-radius:15px;
+    border-style: solid;
+    color: green;
+    border-color: green;
+    background-color: #FFF;
+  }
+.return-btn:hover{
+    color: white;
+    background-color: green;
+    box-shadow: 0px 3px 20px #bbb;
+}
+.fixed_text{
+    margin: 0 auto 2em;
+    right: 3vw;
+    padding: 6px 40px;
+    background-color: cornsilk;
+    width: 400px;
+    border: 3px solid #282828;
+    border-radius: 5px;
+}
+
+.sum_mny {
+    font-size: 30px;
+}
+
+.sum_text {
+    text-align: center;
+}
+
+.some_actions {
+    display: flex;
+    align-items: stretch;
+}
+.btn-position{
+    height: 60px;
+    width: 120px;
+    background-color: white;
+    color: #06f;
+    border:  solid #0066ff;
+    border-radius: 10px;
+}
+.btn-position:hover{
+    background-color: #0066ff;
+    color: white;
+}
+.from-reji-btn{
+    text-align: center;
+}
