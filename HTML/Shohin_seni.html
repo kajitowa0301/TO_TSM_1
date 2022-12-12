@@ -151,8 +151,7 @@ $db = new DBManager();
     <!-- いいねボタン始 -->
     <div align="right">
       <div class="example2">
-        <input type="checkbox" name="example2" id="10000"><label for="10000"><i
-            class="bi bi-heart-fill fs-4"></i></label>
+        <input type="checkbox" name="example2" id="<?php echo $_GET['itemId'] ?>" onclick="checkFavSt()"><label for="<?php echo $_GET['itemId'] ?>"><i class="bi bi-heart-fill fs-4"></i></label>
       </div>
     </div>
     <!-- いいねボタン終 -->
@@ -308,6 +307,11 @@ $db = new DBManager();
 
     const color = setColor(itemData.items_color);
     console.log(color);
+
+
+    if (new Set(getFavorite()).has(itemData.items_id)) {
+      document.getElementById(itemData.items_id).checked = true;
+    }
     // const genre = 
 
     function chksize() {
@@ -321,6 +325,16 @@ $db = new DBManager();
       let vol = document.getElementById('itemVol').value;
 
       addCart(itemData.items_id, selectSize, vol);
+    }
+
+    function checkFavSt() {
+      const favorite = document.getElementById(itemData.items_id);
+      // console.log(favorite.checked);
+      if (favorite.checked) {
+        addFavorite(itemData.items_id);
+      } else {
+        delFavorite(itemData.items_id);
+      }
     }
   </script>
 
