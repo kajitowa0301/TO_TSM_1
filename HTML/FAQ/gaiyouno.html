@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="./../style_css_file/style1.css">
   <link rel="stylesheet" href="./../style_css_file/style3.css">
-  <script src="./script_file/script.js">
+  <script src="./../script_file/script.js">
   </script>
 </head>
 <br><br><br>
@@ -66,7 +66,12 @@
               <!-- カゴのアイコン -->
               <button class="navbar-toggler" onClick="location.href='./../カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
               </button>
-              <!-- 検索ドロップ -->
+
+               <!-- Homeのアイコン -->
+              <a href="./../index.html">
+                <button class="navbar-toggler" type="button">
+                    <i class="bi bi-house-door-fill fs-2"></i></button>
+                  <!-- 検索ドロップ -->
               <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav me-auto mb-2">
                   <li class="nav-item">
@@ -85,6 +90,26 @@
     </nav>
     <!--ナブバの記述終わり  -->
   </div>
+
+  <!-- サブメニュー表示 -->
+<div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+  <div class="submenu-search">
+    <h3>--検索--</h3>
+    <ul>
+      <li><a href="./../category.html" class="search-li-1">カテゴリーで検索</a></li>
+      <li><a href="./../maker.html" class="search-li-2">メーカーで検索</a></li>
+      <li><a href="./../color.html" class="search-li-3">カラーで検索</a></li>
+    </ul>
+  </div>
+  <div class="submenu-rireki">
+    <h3>--購入履歴--</h3>
+    <ul>
+      <li><a href="./../kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+      <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+    </ul>
+  </div>
+</div>
+<!--サブメニュー表示  -->
 
   <div class="paaa">
     会社名 / 株式会社To.TSM<br>
