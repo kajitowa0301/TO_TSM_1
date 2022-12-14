@@ -144,7 +144,7 @@ $db = new DBManager();
       const itemData = JSON.parse('<?php echo $db->getItem($_POST["itemid"]) ?>');
       const src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
       document.getElementById('name').innerHTML = "<img src=\"" + src + "\" class=\"kessai_img_size\" style=\"width: 20%;\" id=\"pic\">" + itemData.items_name;
-      document.getElementById('price').innerHTML = "¥" + itemData.items_price * <? php echo $_POST["itemvol"] ?>;
+      document.getElementById('price').innerHTML = "¥" + itemData.items_price * <?php echo $_POST["itemvol"] ?>;
     </script>
     <script>
       const itemList = JSON.parse('<?php echo $db->getAllItems() ?>');
