@@ -1,12 +1,26 @@
 <?php
 // セッション
 session_start();
-//$_SESSION['cartData'] = json_decode($_POST['cartData']);
-//if (empty($_SESSION['cartData'])) header("Location: カート内確認.html");
+if (empty($_POST['cartData']) && empty($_POST['itemid'])) header("Location: カート内確認.html");
+if (!empty($_POST['cartData'])) $_SESSION['cartData'] = json_decode($_POST['cartData']);
 
 // データベースマネージャの読込
 require_once "../データベース関連/DBManager.php";
 $db = new DBManager();
+
+if (!empty($_POST['itemid'])) {
+    $item = json_decode($db->getItem($_POST['itemid']));
+    //echo print_r($item->items_name);
+    $_SESSION['cartData'] = [];
+    $_SESSION['cartData'][0] = [
+        "name" => $item->items_name,
+        "size" => $_POST['itemsize'],
+        "vol" => $_POST['itemvol'],
+        "price" => $item->items_price,
+        "genre" => $item->items_genre,
+        "url" => $item->items_url
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -126,7 +140,8 @@ $db = new DBManager();
 
                         <div class="col-12">
                             <label for="address" class="form-label">市区町村</label>
-                            <input type="text" class="form-control" name="ad" id="address" placeholder="地番" value="<?php echo $_SESSION['login_ad1']; ?>" required>
+                            <input type="text" class="form-control" name="ad" id="address" placeholder="地番"
+                                value="<?php echo $_SESSION['login_ad1']; ?>" required>
                             <div class="invalid-feedback">
                                 配送先住所を入力してください
                             </div>
@@ -222,8 +237,17 @@ $db = new DBManager();
             <footer class="py-3 my-4">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">ホーム</a></li>
+<<<<<<< HEAD
                     <li class="nav-item"><a href="./FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
                     <li class="nav-item"><a href="./FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
+=======
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
+                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html"
+                            class="nav-link px-2 text-muted">FAQ</a></li>
+                    <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+                            class="nav-link px-2 text-muted">概要</a></li>
+>>>>>>> db9a1137430a8bc1771de9e738cfeb9259e44a33
                 </ul>
                 <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
             </footer>
@@ -237,7 +261,6 @@ $db = new DBManager();
     <!-- JSの設定ファイル -->
     <!-- <script src="form-validation.js"></script> -->
     <script>
-    
 
         function crebitFunc() {
             document.getElementById("siharai").style.display = 'inline';
