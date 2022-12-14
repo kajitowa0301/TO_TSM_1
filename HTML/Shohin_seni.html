@@ -151,7 +151,8 @@ $db = new DBManager();
     <!-- いいねボタン始 -->
     <div align="right">
       <div class="example2">
-        <input type="checkbox" name="example2" id="<?php echo $_GET['itemId'] ?>" onclick="checkFavSt()"><label for="<?php echo $_GET['itemId'] ?>"><i class="bi bi-heart-fill fs-4"></i></label>
+        <input type="checkbox" name="example2" id="<?php echo $_GET['itemId'] ?>" onclick="checkFavSt()"><label
+          for="<?php echo $_GET['itemId'] ?>"><i class="bi bi-heart-fill fs-4"></i></label>
       </div>
     </div>
     <!-- いいねボタン終 -->
@@ -181,9 +182,12 @@ $db = new DBManager();
     </div>
 
     <div class="reji">
-      <form action="" method="post" class="buynow">
+      <form action="./住所登録.html" method="post" class="buynow">
         <!-- <a href="./決済_html/住所登録.html"> -->
-        <button type="button" class="btn-kounyu-148">今すぐ購入</button>
+        <input type="hidden" name="itemid" value="" id="itemId2">
+        <input type="hidden" name="itemsize" value="" id="itemSize2">
+        <input type="hidden" name="itemvol" value="1" id="itemVol2">
+        <button type="submit" class="btn-kounyu-148" onclick="chksize(1)">今すぐ購入</button>
         <!-- </a> -->
       </form>
       <form action="./kounyuu.html" method="post">
@@ -191,7 +195,7 @@ $db = new DBManager();
         <input type="hidden" name="itemid" value="" id="itemId">
         <input type="hidden" name="itemsize" value="" id="itemSize">
         <input type="hidden" name="itemvol" value="10" id="itemVol">
-        <button type="submit" class="btn-cart" onclick="chksize()">カートに入れる</button>
+        <button type="submit" class="btn-cart" onclick="chksize(0)">カートに入れる</button>
         <!-- </a> -->
       </form>
     </div>
@@ -238,6 +242,7 @@ $db = new DBManager();
 
     // console.log(itemData);
     document.getElementById('itemId').value = itemData.items_id;
+    document.getElementById('itemId2').value = itemData.items_id;
     document.getElementById('description').innerHTML = itemData.items_description;
     document.getElementById('price').innerHTML = itemData.items_price;
     document.getElementById('pic').src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
@@ -251,17 +256,25 @@ $db = new DBManager();
     }
     // const genre = 
 
-    function chksize() {
+    function chksize(mode) {
       for (let i = 0; i < size.length; i++) {
         if (size[i].checked) {
           selectSize = size[i].value;
         }
       }
-      document.getElementById('itemSize').value = selectSize;
-      document.getElementById('itemVol').value = document.getElementById('cnt_btn1').value;
-      let vol = document.getElementById('itemVol').value;
 
-      addCart(itemData.items_id, selectSize, vol);
+      if (mode == 0) {
+        document.getElementById('itemSize').value = selectSize;
+        document.getElementById('itemVol').value = document.getElementById('cnt_btn1').value;
+        let vol = document.getElementById('itemVol').value;
+
+        addCart(itemData.items_id, selectSize, vol);
+      } else if (mode == 1) {
+        document.getElementById('itemSize2').value = selectSize;
+        document.getElementById('itemVol2').value = document.getElementById('cnt_btn1').value;
+        let vol = document.getElementById('itemVol2').value;
+      }
+
     }
 
     function checkFavSt() {
@@ -312,22 +325,11 @@ $db = new DBManager();
     // }
   </script>
   <script>
-
-      // itemList.forEach(ele => {
-      //   console.log(allMakersList[ele.makers_id - 1]);
-      //   if (ele.items_genre == "outer") {
-      //     cnt++;
-      //     if (cnt <= 4) {
-      //       createItemCard(ele.items_genre, ele.items_id, ele.items_genre, allMakersList[ele.makers_id - 1].makers_name, ele.items_name, ele.items_price, ele.items_url);
-      //     }
-      //   }
-      // });
-
-      for (let i = 0; i < 4; i++) {
-        var r = Math.floor(Math.random() * itemList.length);
-        console.log(r);
-            createItemCard('recommend', itemList[r].items_id, itemList[r].items_genre, allMakersList[itemList[r].makers_id - 1].makers_name, itemList[r].items_name, itemList[r].items_price, itemList[r].items_url);
-      }
+    for (let i = 0; i < 4; i++) {
+      var r = Math.floor(Math.random() * itemList.length);
+      console.log(r);
+      createItemCard('recommend', itemList[r].items_id, itemList[r].items_genre, allMakersList[itemList[r].makers_id - 1].makers_name, itemList[r].items_name, itemList[r].items_price, itemList[r].items_url);
+    }
   </script>
 </body>
 
