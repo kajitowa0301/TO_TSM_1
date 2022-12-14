@@ -8,6 +8,12 @@ $db = new DBManager();
 
 // DBからjson形式で全商品取得
 $allItemsList = $db->getAllItems();
+
+if(!empty($_SESSION['itemid'])) {
+    $buynow = '\"id\":'.$_SESSION['itemid'].',\"size\":\"'.$_SESSION['itemsize'].'\",\"vol\":'.$_SESSION['itemvol'];
+} else {
+    $buynow = "";
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -219,7 +225,7 @@ $allItemsList = $db->getAllItems();
                             value="<?php echo $_SESSION['buyData']['ad2']; ?>">
                     </div>
                     <hr class="my-4">
-                
+
                     <h4 class="mb-3">お支払い方法</h4>
 
                     <div class="my-3">
@@ -287,7 +293,7 @@ $allItemsList = $db->getAllItems();
 
                     <!-- コンビニ支払専用画面 -->
                     <div id="siharai-conbini">
-                        <select class="conbini" name="conbini-Name" id = "conbini-Id" disabled>
+                        <select class="conbini" name="conbini-Name" id="conbini-Id" disabled>
                             <option value="seven" style="color: #f66;">セブンイレブン</option>
                             <option value="lowson" style="color:#0af;">ローソン</option>
                             <option value="famima" style="color:#7f7 ;">ファミリーマート</option>
@@ -295,7 +301,7 @@ $allItemsList = $db->getAllItems();
                             <option value="popura" style="color: #d60;">ポプラ</option>
                             <option value="dayry" style="color:#f33 ;">デイリー</option>
                         </select>
-                        <input type = "hidden" name="conbini-Name" value = "<?php echo $_SESSION['buyData']['conveni'] ?>">
+                        <input type="hidden" name="conbini-Name" value="<?php echo $_SESSION['buyData']['conveni'] ?>">
                     </div>
 
                     <hr class="my-4">
@@ -341,12 +347,17 @@ $allItemsList = $db->getAllItems();
         const allItemsList = '<?php echo $allItemsList; ?>';
         // const cart = getCart(allItemsList);
         const cart = [JSON.parse(`<?php echo json_encode($_SESSION['cartData']); ?>`)][0];
-        console.log(cart);
         let sum = 0;
-        document.getElementById('cart').value = localStorage.getItem('cartItems');
+        const buynow = "<?php echo $buynow; ?>";
+        // document.getElementById('cart').value = cart;
+        if ("<?php echo empty($_SESSION['itemid']); ?>") {
+            document.getElementById('cart').value = localStorage.getItem('cartItems');
+        } else {
+            document.getElementById('cart').value = "[{"+buynow+"}]";
+        }
         cart.forEach(ele => {
-            createCartList(ele.name,ele.price*ele.vol);
-            sum += ele.price*ele.vol;
+            createCartList(ele.name, ele.price * ele.vol);
+            sum += ele.price * ele.vol;
         });
 
         const ul = document.getElementById('cart-list');
@@ -360,7 +371,7 @@ $allItemsList = $db->getAllItems();
 
         // create strong element for total value
         const totalValue = document.createElement('strong');
-        totalValue.textContent = '￥'+sum;
+        totalValue.textContent = '￥' + sum;
 
         // append label and value to list item
         ul.appendChild(listItem);
@@ -370,7 +381,7 @@ $allItemsList = $db->getAllItems();
         document.getElementById('item-cnt').innerHTML = cart.length;
 
 
-        function createCartList(name,price) {
+        function createCartList(name, price) {
             const ul = document.getElementById('cart-list');
             const li = document.createElement('li');
             const div = document.createElement('div');
@@ -390,39 +401,39 @@ $allItemsList = $db->getAllItems();
             span.innerHTML = "￥" + price;
         }
 
-        
+
 
     </script>
 
 
 
-<script>
-    let radioChecked = document.getElementsByName('paymentMethod');
-    const pay = "<?php echo $_SESSION['buyData']['pay'] ?>";
-    radioChecked[pay - 1].checked = true;
+    <script>
+        let radioChecked = document.getElementsByName('paymentMethod');
+        const pay = "<?php echo $_SESSION['buyData']['pay'] ?>";
+        radioChecked[pay - 1].checked = true;
 
-</script>
+    </script>
 
-<script>
-    if(radioChecked[2].checked) {
-        const selectedConveni = document.getElementById('conbini-Id');
-        selectedConveni.value= "<?php echo $_SESSION['buyData']['conveni'] ?>";
-    }
-</script>
+    <script>
+        if (radioChecked[2].checked) {
+            const selectedConveni = document.getElementById('conbini-Id');
+            selectedConveni.value = "<?php echo $_SESSION['buyData']['conveni'] ?>";
+        }
+    </script>
 
-<script>
+    <script>
 
 
-    if(radioChecked[0].checked) {
-        document.getElementById("siharai").style.display = 'inline';
-        document.getElementById("siharai-conbini").style.display = 'none';
-    }else if(radioChecked[2].checked) {
-        document.getElementById("siharai").style.display = 'none';
-        document.getElementById("siharai-conbini").style.display = 'inline';
-    }else {
-        document.getElementById("siharai").style.display = 'none';
-        document.getElementById("siharai-conbini").style.display = 'none';
-    }
+        if (radioChecked[0].checked) {
+            document.getElementById("siharai").style.display = 'inline';
+            document.getElementById("siharai-conbini").style.display = 'none';
+        } else if (radioChecked[2].checked) {
+            document.getElementById("siharai").style.display = 'none';
+            document.getElementById("siharai-conbini").style.display = 'inline';
+        } else {
+            document.getElementById("siharai").style.display = 'none';
+            document.getElementById("siharai-conbini").style.display = 'none';
+        }
 
     // function crebitFunc() {
     //     document.getElementById("siharai").style.display = 'inline';
@@ -437,7 +448,7 @@ $allItemsList = $db->getAllItems();
     //     document.getElementById("siharai").style.display = 'none';
     //     document.getElementById("siharai-conbini").style.display = 'none';
     // }
-</script>
+    </script>
 
 
 </body>

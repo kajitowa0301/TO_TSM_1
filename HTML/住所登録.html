@@ -20,6 +20,10 @@ if (!empty($_POST['itemid'])) {
         "genre" => $item->items_genre,
         "url" => $item->items_url
     ];
+
+    $_SESSION['itemid'] = $_POST['itemid'];
+    $_SESSION['itemsize'] = $_POST['itemsize'];
+    $_SESSION['itemvol'] = $_POST['itemvol'];
 }
 ?>
 <!DOCTYPE html>

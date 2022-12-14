@@ -9,6 +9,10 @@
 
     // DBからjson形式で全商品取得
     $allItemsList = $db->getAllItems();
+
+    if(!empty($_SESSION['itemid'])){
+        $_SESSION['itemid'] = [];
+    }
 ?>
 <!DOCTYPE html>
 <html>
