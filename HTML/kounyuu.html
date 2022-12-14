@@ -58,7 +58,6 @@ $db = new DBManager();
                 <i class="button-submunu  bi bi-search fs-2"></i>
               </button>
 
-<<<<<<< HEAD
                         <!-- カゴのアイコン -->
                         <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
                                 class="bi bi-cart4 fs-2"></i>
@@ -68,12 +67,6 @@ $db = new DBManager();
                           <button class="navbar-toggler" type="button">
                               <i class="bi bi-house-door-fill fs-1"></i>
                     </div>
-=======
-              <!-- カゴのアイコン -->
-              <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i class="bi bi-cart4 fs-2"></i>
-              </button>
-            </div>
->>>>>>> db9a1137430a8bc1771de9e738cfeb9259e44a33
     </nav>
     <!--ナブバの記述終わり  -->
     <!-- サブメニュー表示 -->
@@ -95,31 +88,6 @@ $db = new DBManager();
         </ul>
       </div>
     </div>
-<<<<<<< HEAD
-  </div>
-  <br>
-  <!--フッター始まり-->
-  <div>
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">TOP</a></li>
-        <li class="nav-item"><a href="./FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
-        <li class="nav-item"><a href="./FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
-      </ul>
-      <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
-    </footer>
-  </div>
-  <!-- フッター終わり -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-    crossorigin="anonymous"></script>
-  <script>
-    const itemData = JSON.parse('<?php echo $db->getItem($_POST["itemid"]) ?>');
-    const src = './' + itemData.items_genre + '_photo/' + itemData.items_url;
-    document.getElementById('name').innerHTML = "<img src=\"" + src + "\" class=\"kessai_img_size\" style=\"width: 20%;\" id=\"pic\">" + itemData.items_name;
-    document.getElementById('price').innerHTML = "¥" + itemData.items_price * <?php echo $_POST["itemvol"] ?>;
-  </script>
-=======
     <!--サブメニュー表示  -->
     <h1 class="ce"><i class="bi bi-check-circle-fill text-success"></i>カートに追加しました</h1>
     <table class="table table-bordered table table-striped" style="width: 80%;margin-right: auto;margin-left: auto;">
@@ -163,11 +131,9 @@ $db = new DBManager();
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">TOP</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">特徴</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">価格設定</a></li>
-          <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/FAQ.html"
+          <li class="nav-item"><a href="./FAQ/FAQ.html"
               class="nav-link px-2 text-muted">FAQ</a></li>
-          <li class="nav-item"><a href="http://127.0.0.1:5501/HTML/FAQ/gaiyouno.html"
+          <li class="nav-item"><a href="./FAQ/gaiyouno.html"
               class="nav-link px-2 text-muted">概要</a></li>
         </ul>
         <p class="text-center text-muted"><img src="./sweat_photo/beni2.png" style="height: 100px;"></p>
@@ -192,7 +158,6 @@ $db = new DBManager();
         createItemCard('recommend', itemList[r].items_id, itemList[r].items_genre, allMakersList[itemList[r].makers_id - 1].makers_name, itemList[r].items_name, itemList[r].items_price, itemList[r].items_url);
       }
     </script>
->>>>>>> db9a1137430a8bc1771de9e738cfeb9259e44a33
 </body>
 
 </html>
