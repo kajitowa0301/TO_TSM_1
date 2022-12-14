@@ -305,7 +305,8 @@ $allItemsList = $db->getAllItems();
     <!-- <script src="form-validation.js"></script> -->
     <script>
         const allItemsList = '<?php echo $allItemsList; ?>';
-        const cart = getCart(allItemsList);
+        // const cart = getCart(allItemsList);
+        const cart = [JSON.parse(`<?php echo json_encode($_SESSION['cartData']); ?>`)][0];
         console.log(cart);
         let sum = 0;
         document.getElementById('cart').value = localStorage.getItem('cartItems');
