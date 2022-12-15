@@ -20,6 +20,8 @@ $db = new DBManager();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="./../style_css_file/style4.css">
+    <script src="./../script_file/script.js"></script>
 </head>
 
 <body>
@@ -52,32 +54,47 @@ $db = new DBManager();
                             <i class="bi bi-heart-fill fs-2"></i>
                         </button>
                         <!-- お気に入り閲覧ボタン終 -->
-
                         <!-- 検索のアイコン -->
-                        <button class="navbar-toggler" type="button">
+                        <button class="navbar-toggler" type="button" onclick="search_onFunc()">
                             <i class="bi bi-search fs-2"></i>
                         </button>
-
                         <!-- カゴのアイコン -->
                         <button class="navbar-toggler" onClick="location.href='./../カート内確認.html'"><i
                                 class="bi bi-cart4 fs-2"></i>
                         </button>
-                         <!-- Homeのアイコン -->
-                        <a href="./../index.html">
-                            <button class="navbar-toggler" type="button">
-                                <i class="bi bi-house-door-fill fs-1"></i></button></a>
-                        
+                        <!-- Homeのアイコン -->
+                        <button class="navbar-toggler" onClick="location.href='./../index.html'" type="button">
+                            <i class="bi bi-house-door-fill fs-1"></i></button></a>
 
-                      
+
+
         </nav>
     </div>
-    <!-- <h1 style="font-size:50px; color: tomato;">はよ新規登録しろや！！🤬</h1> -->
+    <!-- サブメニュー表示 -->
+  <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+    <div class="submenu-search">
+      <h3>--検索--</h3>
+      <ul>
+        <li><a href="./../category.html" class="search-li-1">カテゴリーで検索</a></li>
+        <li><a href="./../maker.html" class="search-li-2">メーカーで検索</a></li>
+        <li><a href="./../color.html" class="search-li-3">カラーで検索</a></li>
+      </ul>
+    </div>
+    <div class="submenu-rireki">
+      <h3>--購入履歴--</h3>
+      <ul>
+        <li><a href="./../kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+        <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--サブメニュー表示  -->
     <p class="p-top-font"><i class="bi bi-person-lines-fill"></i>新規登録画面</p>
     <div class="container">
         <div class="back-color-center">
             <!-- 拡張子のせいでphpが見えちゃってますが気にしないでください、アレだったらコメントアウトしてください -->
             <span class="text-danger fw-bold">
-            <?php
+                <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 $res = false;
@@ -149,7 +166,7 @@ $db = new DBManager();
     <div class="margin-top">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="./../index.html" class="nav-link px-2 text-muted">TOP</a></li>
+                <li class="nav-item"><a href="./../index.html" class="nav-link px-2 text-muted">HOME</a></li>
                 <li class="nav-item"><a href="./../FAQ/FAQ.html" class="nav-link px-2 text-muted">FAQ</a></li>
                 <li class="nav-item"><a href="./../FAQ/gaiyouno.html" class="nav-link px-2 text-muted">概要</a></li>
             </ul>

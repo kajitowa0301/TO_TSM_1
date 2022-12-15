@@ -141,5 +141,10 @@ function setColor(color) {
         document.getElementById("haishoku-2").style.backgroundColor ='#06f';
         document.getElementById("haishoku-3").style.backgroundColor ='white';
         return["黒","青","白"];
+    }else if(color=="ピンク"){
+        document.getElementById("haishoku-1").style.backgroundColor ='white';
+        document.getElementById("haishoku-2").style.backgroundColor ='#ccc';
+        document.getElementById("haishoku-3").style.backgroundColor ='wheat';
+        return["白","グレー","ベージュ"];
     }
 }

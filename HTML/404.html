@@ -104,48 +104,21 @@ $db = new DBManager();
                     <!-- ログインボタン -->
                     <div class="btn btn-group">
                         <!--お気に入り閲覧ボタン始  -->
-                        <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button"
-                            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false">
-
-                            <i class="bi bi-person-heart"></i>
-                            <span class="font-word-break">お気に入り</span>
+                        <button class="navbar-toggler" onClick="location.href='./favorite.html'" type="button">
+                            <i class="bi bi-heart-fill"></i>
                         </button>
                         <!-- お気に入り閲覧ボタン終 -->
 
                         <!-- 検索のアイコン -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                            aria-controls="navbar" aria-expanded="false">
-                            <i class="button-submunu  bi bi-search"></i>
-                            <span class="font-word-break">検索</span>
-                        </button>
-
+                        <button class="navbar-toggler" type="button" onclick="search_onFunc()">
+                            <i class="bi bi-search fs-2"></i>
                         <!-- カゴのアイコン -->
-                        <button class="navbar-toggler" onClick="location.href='./カート内確認.html'"><i
-                                class="bi bi-cart4 fs-4"></i>
-                            <span class="font-word-break">カート</span>
+                        <button class="navbar-toggler" onClick="location.href='./カート内確認.html'">
+                            <i class="bi bi-cart4 fs-4"></i>
                         </button>
                         <!-- Homeのアイコン -->
-                        <a href="./index.html">
-                            <button class="navbar-toggler" type="button">
-                                <i class="bi bi-house-door-fill fs-1"></i>
-                        <!-- 検索ドロップ -->
-                        <div class="collapse navbar-collapse" id="navbar">
-                            <ul class="navbar-nav me-auto mb-2">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="./janru_html/outer.html">-----outer-----</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="./janru_html/sweat.html">-----sweat-----</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="./janru_html/pants.html">-----pants-----</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- 検索ドロップ終わり -->
+                            <button class="navbar-toggler" onClick="location.href='./index.html'" type="button">
+                                <i class="bi bi-house-door-fill fs-2"></i>
                     </div>
     </nav>
     <!--ナブバの記述終わり  -->
@@ -157,6 +130,25 @@ $db = new DBManager();
     </p>
   </div> 
   -ジャンボトロン-->
+    <!-- サブメニュー表示 -->
+    <div class="subu-menu-back" id="subumenu" onmouseover="submenu_overFunc()" onmouseleave="submenu_leaveFunc()">
+        <div class="submenu-search">
+          <h3>--検索--</h3>
+          <ul>
+            <li><a href="./category.html" class="search-li-1">カテゴリーで検索</a></li>
+            <li><a href="./maker.html" class="search-li-2">メーカーで検索</a></li>
+            <li><a href="./color.html" class="search-li-3">カラーで検索</a></li>
+          </ul>
+        </div>
+        <div class="submenu-rireki">
+          <h3>--購入履歴--</h3>
+          <ul>
+            <li><a href="./kounyurireki.html" class="rireki-li-1">購入履歴</a></li>
+            <li><a href="https://zozo.jp/" class="rireki-li-2">注文中の商品</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--サブメニュー表示  -->
 
 
     <!-- 画像切り替えのとこ -->
