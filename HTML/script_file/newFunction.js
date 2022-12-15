@@ -135,5 +135,11 @@ function setColor(color) {
         document.getElementById("haishoku-2").style.backgroundColor ='dark';
         document.getElementById("haishoku-3").style.backgroundColor ='#ccc';
         return ["白","黒","グレー"];
+   //紫の判定
+    }else if(color == "紫"){
+        document.getElementById("haishoku-1").style.backgroundColor ='#000';
+        document.getElementById("haishoku-2").style.backgroundColor ='#06f';
+        document.getElementById("haishoku-3").style.backgroundColor ='white';
+        return["黒","青","白"];
     }
 }
