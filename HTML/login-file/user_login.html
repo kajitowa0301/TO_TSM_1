@@ -117,7 +117,7 @@ $db = new DBManager();
                                 // エラー表示
                                 echo $e->getMessage();
                             }
-                        } else {
+                        } else if(isset($_POST['cartData'])){
                             $_SESSION['cartData'] = json_decode($_POST['cartData']);
                         }
                     }
